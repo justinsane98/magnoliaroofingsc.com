@@ -1,6 +1,5 @@
-// Home hero: "The State's Best" winner badges (2025 + 2026): the official The State's Best logo
-// (votethestate.com) with a year ribbon. Swap in the official per-year winner badges from The State
-// when Magnolia has them (put them in assets/site/badges/ and change the <img> below).
+// Home hero: "The State's Best" 2025 + 2026 winner badges (assets/site/badges/the-states-best-<year>.png).
+// The images include some background; site.css clips them to the badge outline (.mr-badge img).
 (function () {
   var hero = document.querySelector(".mr-hero");
   var h1 = hero && hero.querySelector("h1");
@@ -17,9 +16,7 @@
   BADGES.forEach(function (b, i) {
     var el = document.createElement("div");
     el.className = "mr-badge mr-badge--" + (i ? "right" : "left");
-    el.innerHTML =
-      '<img src="/assets/site/badges/the-states-best.png" alt="The State\u2019s Best" width="190" height="168">' +
-      '<span class="mr-badge-yr">' + b.year + " Winner</span>";
+    el.innerHTML = '<img src="/assets/site/badges/the-states-best-' + b.year + '.png" alt="The State\u2019s Best ' + b.year + ' Winner" width="225" height="231">';
     wrap.appendChild(el);
   });
   var eyebrow = document.createElement("div");
