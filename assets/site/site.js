@@ -61,6 +61,24 @@
     submitForm(btn.closest('[data-role="form"]'), btn);
   }, true);
 
+  // Example placeholders, keyed by the field's data-name.
+  var PLACEHOLDERS = {
+    Name: "John Hasaleak",
+    Email: "john@hasaleakinhisroof.com",
+    Phone: "(803) 865-5309",
+    Subject: "Leak in roof",
+    Message: "Wanted to get an estimate and see when you guys could come out and take a look.",
+  };
+  function applyPlaceholders() {
+    document.querySelectorAll('[data-role="form"] [data-name]').forEach(function (el) {
+      var p = PLACEHOLDERS[el.getAttribute("data-name")];
+      if (p && el.placeholder !== p) el.placeholder = p;
+    });
+  }
+  applyPlaceholders();
+  // The platform's phone plugin (intl-tel-input) sets its own "(201) 555-0123" placeholder after load; keep ours.
+  new MutationObserver(applyPlaceholders).observe(document.body, { subtree: true, attributes: true, attributeFilter: ["placeholder"] });
+
   document.addEventListener("input", function (e) {
     var f = e.target.closest && e.target.closest(".form-field.field-invalid");
     if (f) f.classList.remove("field-invalid");
