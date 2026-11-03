@@ -2,6 +2,25 @@
 (function () {
   var C = window.SITE_CONFIG || {};
 
+  /* ---------- Email delivery (FormSubmit by default, Web3Forms if a key is set) ---------- */
+  function sendEmail(subject, data) {
+    var url, body;
+    if (C.web3formsKey) {
+      url = "https://api.web3forms.com/submit";
+      body = Object.assign({ access_key: C.web3formsKey, subject: subject, from_name: "magnoliaroofingsc.com" }, data);
+    } else {
+      url = "https://formsubmit.co/ajax/" + encodeURIComponent(C.formEmail);
+      body = Object.assign({ _subject: subject, _template: "table", _captcha: "false" }, data);
+      if (data.Email) body._replyto = data.Email;
+    }
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(body),
+    }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+  window.SiteEmail = sendEmail; // used by reviews.js
+
   /* ---------- Contact form ---------- */
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -24,22 +43,7 @@
     btn.textContent = "SENDING…";
     btn.style.pointerEvents = "none";
 
-    var url, body;
-    if (C.web3formsKey) {
-      url = "https://api.web3forms.com/submit";
-      body = Object.assign({ access_key: C.web3formsKey, subject: "Website inquiry: " + (data.Subject || "") , from_name: "magnoliaroofingsc.com" }, data);
-    } else {
-      url = "https://formsubmit.co/ajax/" + encodeURIComponent(C.formEmail);
-      body = Object.assign({ _subject: "Website inquiry: " + (data.Subject || ""), _template: "table", _captcha: "false" }, data);
-      if (data.Email) body._replyto = data.Email;
-    }
-
-    fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(body),
-    })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    sendEmail("Website inquiry: " + (data.Subject || ""), data)
       .then(function () {
         form.querySelector(".widget-form-inner-wrapper").innerHTML =
           '<p style="color:#fff;font-family:Manrope,sans-serif;font-size:18px;padding:20px 0">' +

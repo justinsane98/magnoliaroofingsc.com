@@ -74,7 +74,28 @@ STRIP = [
     r'<script id="wb_id"[^>]*></script>',
     r'<script[^>]*src="[^"]*scripts/common/hit\.js[^"]*"[^>]*></script>',
     r'<script src="https://cdn\.userway\.org/widget\.js"[^>]*></script>',  # ADA overlay widget — not wanted
+    r'<script[^>]*id="rev-script"[^>]*></script>',  # GoSite review widget (hidden on live site) — replaced by reviews.js
 ]
+
+REVIEWS_API = "https://webapi.gosite.com/api/reviewmanager/reviews/list?widget_id=we0O5pc1y5"
+
+def refresh_reviews():
+    """Snapshot all reviews from GoSite into assets/site/reviews.json (works only while the GoSite account exists)."""
+    import json
+    try:
+        d = json.loads(fetch(REVIEWS_API))
+    except Exception as e:
+        print(f"  ! reviews not refreshed: {e}", file=sys.stderr)
+        return
+    out = [{"name": (r.get("authorName") or "").strip(), "rating": r.get("rating"),
+            "date": (r.get("reviewDate") or "")[:10], "text": (r.get("content") or "").strip(),
+            "source": r.get("siteId")} for r in d.get("reviews", [])]
+    if not out:
+        return
+    out.sort(key=lambda r: r["date"], reverse=True)
+    dest = os.path.join(ROOT, "assets/site/reviews.json")
+    json.dump(out, open(dest, "w"), indent=1, ensure_ascii=False)
+    print(f"reviews: {len(out)}")
 
 # Injected into <head>:
 #  - GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering.
@@ -92,7 +113,7 @@ def process(path, out):
     html = html.replace("https://magnoliaroofssc.com/", NEW + "/").replace('"https://magnoliaroofssc.com"', f'"{NEW}"')
     html = html.replace('href="//magnoliaroofssc.com"', 'href="/"').replace('href="/Home"', 'href="/"')
     html = html.replace("</head>", HEAD_CSS + "</head>", 1)
-    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n'
+    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/reviews.js"></script>\n'
     html = html.replace("</body>", hook + "</body>", 1)
     dest = os.path.join(ROOT, out)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -101,6 +122,7 @@ def process(path, out):
 if __name__ == "__main__":
     for p, o in PAGES.items():
         process(p, o)
+    refresh_reviews()
     for f in ("robots.txt",):
         open(os.path.join(ROOT, f), "w").write(f"User-agent: *\nAllow: /\nSitemap: {NEW}/sitemap.xml\n")
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(
