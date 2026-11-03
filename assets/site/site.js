@@ -35,6 +35,50 @@
   window.addEventListener("resize", syncHeader);
   window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
 
+  /* ---------- Sticky header: pin + shrink after a little scroll ---------- */
+  (function () {
+    var wrap = document.querySelector(".main-header-wrapper"), row = document.querySelector(".header-row-main");
+    if (wrap && row) {
+      // slide the bar up so it sits 10px from the top when pinned
+      var gap = row.getBoundingClientRect().top - wrap.getBoundingClientRect().top;
+      document.documentElement.style.setProperty("--mr-stuck-top", -(Math.max(0, gap - 10)) + "px");
+    }
+    var stuck = null;
+    function onScroll() {
+      var s = window.scrollY > 40;
+      if (s !== stuck) { stuck = s; document.documentElement.classList.toggle("mr-stuck", s); }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ---------- Rounded containers ---------- */
+  // Round the outer corners of each content "card" (one or more side-by-side columns with a
+  // background). Full-width (edge-to-edge) sections stay square.
+  function roundCards() {
+    var vw = document.documentElement.clientWidth;
+    document.querySelectorAll(".content .grid-content").forEach(function (gc) {
+      var cols = [].filter.call(gc.children, function (c) {
+        if (!c.classList.contains("grid-column") || !c.offsetHeight) return false;
+        var cs = getComputedStyle(c);
+        return cs.backgroundColor !== "rgba(0, 0, 0, 0)" || cs.backgroundImage !== "none";
+      });
+      cols.forEach(function (c) { c.classList.remove("mr-round-l", "mr-round-r", "mr-round-t", "mr-round-b"); });
+      if (!cols.length) return;
+      var rs = cols.map(function (c) { return c.getBoundingClientRect(); });
+      var left = Math.min.apply(null, rs.map(function (r) { return r.left; }));
+      var right = Math.max.apply(null, rs.map(function (r) { return r.right; }));
+      if (right - left >= vw * 0.97) return; // edge-to-edge band
+      var stacked = rs.length > 1 && Math.abs(rs[0].left - rs[1].left) < 2;
+      if (cols.length === 1) { cols[0].classList.add("mr-round-l", "mr-round-r"); return; }
+      cols[0].classList.add(stacked ? "mr-round-t" : "mr-round-l");
+      cols[cols.length - 1].classList.add(stacked ? "mr-round-b" : "mr-round-r");
+    });
+  }
+  roundCards();
+  window.addEventListener("load", roundCards);
+  window.addEventListener("resize", roundCards);
+
   /* ---------- Header CTAs: phone number (primary) + Chat (secondary) ---------- */
   ["header-widget-1761842589315", "header-widget-1761842589315-mobile"].forEach(function (id) {
     var w = document.getElementById(id), chat = w && w.querySelector(".gs-chat-btn");
