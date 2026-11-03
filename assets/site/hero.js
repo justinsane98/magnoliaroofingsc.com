@@ -1,5 +1,5 @@
 // Home hero: "The State's Best" 2025 + 2026 winner badges (assets/site/badges/the-states-best-<year>.png).
-// The images include some background; site.css clips them to the badge outline (.mr-badge img).
+// Transparent cutouts: 2026 from the official badge; 2025 = same badge with the 2025 year band.
 (function () {
   var hero = document.querySelector(".mr-hero");
   var h1 = hero && hero.querySelector("h1");
@@ -16,7 +16,7 @@
   BADGES.forEach(function (b, i) {
     var el = document.createElement("div");
     el.className = "mr-badge mr-badge--" + (i ? "right" : "left");
-    el.innerHTML = '<img src="/assets/site/badges/the-states-best-' + b.year + '.png" alt="The State\u2019s Best ' + b.year + ' Winner" width="225" height="231">';
+    el.innerHTML = '<img src="/assets/site/badges/the-states-best-' + b.year + '.png" alt="The State\u2019s Best ' + b.year + ' Winner" width="144" height="142">';
     wrap.appendChild(el);
   });
   var eyebrow = document.createElement("div");

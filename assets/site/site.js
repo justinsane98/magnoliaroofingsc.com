@@ -109,6 +109,31 @@
     if (row) row.classList.add("mr-hero-ctas");
   })();
 
+  /* ---------- Header priority when space runs out ---------- */
+  // Drop the language picker first, then the MESSAGE button; the phone CTA always stays.
+  (function () {
+    var root = document.documentElement, flex = document.querySelector(".header-row-main .flex-header");
+    if (!flex) return;
+    function fits() {
+      if (!flex.offsetParent) return true; // desktop header hidden (phone layout)
+      if (flex.scrollWidth > flex.clientWidth + 1) return false;
+      var lis = flex.querySelectorAll("nav li"), tops = {};
+      [].forEach.call(lis, function (li) { if (li.offsetParent) tops[li.offsetTop] = 1; });
+      return Object.keys(tops).length <= 1; // nav on one line
+    }
+    function fit() {
+      root.classList.remove("mr-hide-flag", "mr-hide-msg");
+      if (!fits()) root.classList.add("mr-hide-flag");
+      if (!fits()) root.classList.add("mr-hide-msg");
+    }
+    var t;
+    function later() { clearTimeout(t); t = setTimeout(fit, 400); } // after the pin/shrink transition
+    window.addEventListener("resize", fit);
+    window.addEventListener("load", fit);
+    window.addEventListener("scroll", later, { passive: true });
+    setTimeout(fit, 0);
+  })();
+
   /* ---------- Language switcher: flag tab hanging off the bottom of the header ---------- */
   // GTranslate's ln.js (deferred, runs after this) renders its language links into the hidden .mr-lang;
   // the flag tab + dropdown just clicks those links.
