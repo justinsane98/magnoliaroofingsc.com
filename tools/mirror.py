@@ -88,6 +88,9 @@ COPY_FIXES = [
     ("Saturday to Sunday: Closed", "Saturday and Sunday: Closed"),
     ("Put that Hammer In the Hands of a Pro", "Put That Hammer in the Hands of a Pro"),
     ("Excellence In What We Do", "Excellence in What We Do"),
+    # "CALL US TODAY" buttons -> the phone number itself; clean dialable tel: link
+    ("CALL US TODAY</span>", "(803) 908-7131</span>"),
+    ('href="tel:(803) 908-7131"', 'href="tel:+18039087131"'),
 ]
 
 REVIEWS_API = "https://webapi.gosite.com/api/reviewmanager/reviews/list?widget_id=we0O5pc1y5"
