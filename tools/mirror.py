@@ -97,11 +97,7 @@ def refresh_reviews():
     json.dump(out, open(dest, "w"), indent=1, ensure_ascii=False)
     print(f"reviews: {len(out)}")
 
-# Injected into <head>:
-#  - GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering.
-#  - "Powered by GoSite" footer badge — site is no longer on GoSite.
-HEAD_CSS = ('<style>.recaptcha-target{display:none!important}'
-            '.widget:has(a[href*="gosite.com"]){display:none!important}</style>\n')
+HEAD_CSS = '<link rel="stylesheet" href="/assets/site/site.css">\n'  # overrides: see assets/site/site.css
 
 def process(path, out):
     print(f"page {path} -> {out}")

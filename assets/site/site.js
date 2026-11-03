@@ -21,6 +21,20 @@
   }
   window.SiteEmail = sendEmail; // used by reviews.js
 
+  /* ---------- Mobile header overlap ---------- */
+  // On mobile/tablet the logo header is absolutely positioned over the first section (hero).
+  // Measure it and expose the height so site.css can pad the hero content below it.
+  var firstRow = document.querySelector(".content .grid-row");
+  if (firstRow) firstRow.classList.add("mr-hero");
+  function syncHeader() {
+    var mh = document.querySelector(".mobile-menu.is-absolute");
+    var h = mh && mh.offsetParent !== null ? mh.offsetHeight : 0;
+    document.documentElement.style.setProperty("--mr-header-h", h + "px");
+  }
+  syncHeader();
+  window.addEventListener("resize", syncHeader);
+  window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
+
   /* ---------- Contact form ---------- */
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

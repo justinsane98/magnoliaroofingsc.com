@@ -1,0 +1,16 @@
+/* Overrides on top of the mirrored GoSite theme. Linked from every page by tools/mirror.py. */
+
+/* GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering. */
+.recaptcha-target { display: none !important; }
+
+/* "Powered by GoSite" footer badge — site is no longer on GoSite. */
+.widget:has(a[href*="gosite.com"]) { display: none !important; }
+
+/* Mobile/tablet: the logo header overlays the first section; push that section's content below it.
+   --mr-header-h is measured by site.js (0 when the overlay header isn't showing). */
+.mr-hero > .grid-content { padding-top: var(--mr-header-h, 0px); }
+
+/* Footer map is sized as a % of width, which leaves a ~70px sliver on phones. */
+@media (max-width: 1024px) {
+  .map-widget .widget-preserving-ratio-outer { padding-bottom: 0 !important; height: 360px; }
+}
