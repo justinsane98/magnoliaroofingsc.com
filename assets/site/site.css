@@ -22,3 +22,19 @@
 .mr-footer-line a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 .mr-footer-line a:hover { opacity: .8; }
 .mr-footer-line .mr-footer-fb { display: inline-flex; text-decoration: none; }
+
+/* Language switcher (GTranslate ln.js renders <a data-gt-lang="en|es"> links into .mr-lang).
+   Show just the language code, "EN | ES", current one bold. */
+.mr-lang { display: flex; align-items: center; gap: 0; font: 600 12px/1 Manrope, sans-serif; letter-spacing: 1px; }
+.mr-lang a { font-size: 0 !important; text-decoration: none; padding: 6px 2px; color: #8a8a8a; }
+.mr-lang a img { display: none !important; }
+.mr-lang a::after { content: attr(data-gt-lang); text-transform: uppercase; font-size: 12px; }
+.mr-lang a + a::before { content: "|"; font-size: 12px; color: #c9c9c9; margin: 0 6px; }
+.mr-lang a.gt-current-lang, .mr-lang a:hover { color: #73213b; }
+.mr-lang a.gt-current-lang::after { font-weight: 800; }
+.mr-lang--desktop { margin-right: 18px; }
+.mr-lang--mobile { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 5;
+  flex-direction: column; gap: 2px; }
+/* stacked on phones so it stays clear of the centered logo */
+.mr-lang--mobile a + a::before { content: none; }
+.mr-lang--mobile a { padding: 4px 2px; }

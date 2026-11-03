@@ -93,6 +93,16 @@ COPY_FIXES = [
     ('href="tel:(803) 908-7131"', 'href="tel:+18039087131"'),
 ]
 
+# Regex edits to the mirrored HTML.
+REGEX_FIXES = [
+    # Nav: drop "Home" (logo links home), "About" (just an in-page jump) and "Recent Projects" (not built yet).
+    (r'<li\s+class="[^"]*">\s*<a class="website-nav-link"[^>]*>\s*(?:Home|HOME|ABOUT|RECENT PROJECTS)\s*</a>\s*</li>', ''),
+    # Language switcher: floating flag widget -> minimal "EN | ES" text links placed in the header by site.js.
+    (r'<div class="gtranslate_wrapper"></div>', ''),
+    (r'"wrapper_selector":"\.gtranslate_wrapper"[^}]*\}', '"wrapper_selector":".mr-lang"'),
+    (r'cdn\.gtranslate\.net/widgets/latest/float\.js', 'cdn.gtranslate.net/widgets/latest/ln.js'),
+]
+
 REVIEWS_API = "https://webapi.gosite.com/api/reviewmanager/reviews/list?widget_id=we0O5pc1y5"
 
 def refresh_reviews():
@@ -126,6 +136,8 @@ def process(path, out):
     html = html.replace('href="//magnoliaroofssc.com"', 'href="/"').replace('href="/Home"', 'href="/"')
     for a, b in COPY_FIXES:
         html = html.replace(a, b)
+    for pat, rep in REGEX_FIXES:
+        html = re.sub(pat, rep, html)
     html = html.replace("</head>", HEAD_CSS + "</head>", 1)
     hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/scrubber.js"></script>\n<script src="/assets/site/reviews.js"></script>\n<script src="/assets/site/gallery.js"></script>\n'
     html = html.replace("</body>", hook + "</body>", 1)

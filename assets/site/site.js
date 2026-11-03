@@ -35,6 +35,23 @@
   window.addEventListener("resize", syncHeader);
   window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
 
+  /* ---------- Language switcher: minimal "EN | ES" in the header ---------- */
+  // GTranslate's ln.js (loaded deferred, after this script) fills every .mr-lang with language links.
+  (function () {
+    var chat = document.getElementById("header-widget-1761842589315");
+    if (chat) {
+      var d = document.createElement("div");
+      d.className = "mr-lang mr-lang--desktop notranslate";
+      chat.parentNode.insertBefore(d, chat);
+    }
+    var bar = document.querySelector(".mobile-menu.is-absolute");
+    if (bar) {
+      var m = document.createElement("div");
+      m.className = "mr-lang mr-lang--mobile notranslate";
+      bar.appendChild(m);
+    }
+  })();
+
   /* ---------- Footer: one left-aligned line (Facebook icon · copyright · privacy) ---------- */
   (function () {
     var cp = [].find.call(document.querySelectorAll(".text-widget-content"), function (e) {
