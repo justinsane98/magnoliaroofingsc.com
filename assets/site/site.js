@@ -66,24 +66,12 @@
     if (f) f.classList.remove("field-invalid");
   }, true);
 
-  /* ---------- Chat ---------- */
-  if (C.tawkPropertyId) {
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://embed.tawk.to/" + C.tawkPropertyId + "/" + (C.tawkWidgetId || "default");
-    s.charset = "UTF-8";
-    s.setAttribute("crossorigin", "*");
-    document.body.appendChild(s);
-  }
-
+  /* ---------- "CHAT NOW!" button: text on mobile, contact form on desktop ---------- */
   document.addEventListener("click", function (e) {
     var btn = e.target.closest && e.target.closest(".gs-chat-btn, [data-chat='true']");
     if (!btn) return;
     e.preventDefault();
     e.stopImmediatePropagation();
-    if (window.Tawk_API && window.Tawk_API.maximize) return window.Tawk_API.maximize();
     if (/Mobi|Android|iPhone/i.test(navigator.userAgent) && C.phone) return (location.href = "sms:" + C.phone);
     location.href = "/#contact";
   }, true);

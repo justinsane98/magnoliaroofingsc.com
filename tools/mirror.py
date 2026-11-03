@@ -47,10 +47,11 @@ def get_asset(url, depth=0):
     dest = os.path.join(ROOT, rel)
     cache[url] = "/" + rel
     try:
-        if not os.path.exists(dest):
-            data = fetch(url)
-            os.makedirs(os.path.dirname(dest), exist_ok=True)
-            open(dest, "wb").write(data)
+        if os.path.exists(dest):
+            return cache[url]  # already mirrored (CSS already rewritten) — don't rewrite twice
+        data = fetch(url)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        open(dest, "wb").write(data)
         if dest.endswith(".css") and depth < 3:
             css = open(dest, encoding="utf-8", errors="replace").read()
             def sub(m):
@@ -72,7 +73,14 @@ STRIP = [
     r'<script id="customAnalytics"[^>]*></script>',
     r'<script id="wb_id"[^>]*></script>',
     r'<script[^>]*src="[^"]*scripts/common/hit\.js[^"]*"[^>]*></script>',
+    r'<script src="https://cdn\.userway\.org/widget\.js"[^>]*></script>',  # ADA overlay widget — not wanted
 ]
+
+# Injected into <head>:
+#  - GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering.
+#  - "Powered by GoSite" footer badge — site is no longer on GoSite.
+HEAD_CSS = ('<style>.recaptcha-target{display:none!important}'
+            '.widget:has(a[href*="gosite.com"]){display:none!important}</style>\n')
 
 def process(path, out):
     print(f"page {path} -> {out}")
@@ -83,8 +91,7 @@ def process(path, out):
     # canonical/og URLs -> new domain; internal absolute links -> relative
     html = html.replace("https://magnoliaroofssc.com/", NEW + "/").replace('"https://magnoliaroofssc.com"', f'"{NEW}"')
     html = html.replace('href="//magnoliaroofssc.com"', 'href="/"').replace('href="/Home"', 'href="/"')
-    # GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering.
-    html = html.replace("</head>", "<style>.recaptcha-target{display:none!important}</style>\n</head>", 1)
+    html = html.replace("</head>", HEAD_CSS + "</head>", 1)
     hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n'
     html = html.replace("</body>", hook + "</body>", 1)
     dest = os.path.join(ROOT, out)

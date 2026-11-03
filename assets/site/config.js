@@ -9,12 +9,6 @@ window.SITE_CONFIG = {
   // and it will be used instead of FormSubmit.
   web3formsKey: "",
 
-  // Live chat via Tawk.to (free, unlimited agents, mobile app). Sign up at https://www.tawk.to, then
-  // Administration → Chat Widget → copy the two IDs from the embed URL:
-  //   https://embed.tawk.to/<propertyId>/<widgetId>
-  // Until set, the "CHAT NOW!" button texts on mobile and scrolls to the contact form on desktop.
-  tawkPropertyId: "",
-  tawkWidgetId: "default",
-
+  // "CHAT NOW!" button texts this number on mobile and scrolls to the contact form on desktop.
   phone: "+18039087131",
 };
