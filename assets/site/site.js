@@ -61,14 +61,21 @@
       var cols = [].filter.call(gc.children, function (c) {
         if (!c.classList.contains("grid-column") || !c.offsetHeight) return false;
         var cs = getComputedStyle(c);
+        // white with content flush to a side edge is page, not a box - e.g. "Connect With Us"
+        if (cs.backgroundColor === "rgb(255, 255, 255)" && cs.backgroundImage === "none" &&
+            (!parseFloat(cs.paddingLeft) || !parseFloat(cs.paddingRight))) return false;
         return cs.backgroundColor !== "rgba(0, 0, 0, 0)" || cs.backgroundImage !== "none";
       });
-      cols.forEach(function (c) { c.classList.remove("mr-round-l", "mr-round-r", "mr-round-t", "mr-round-b"); });
+      cols.forEach(function (c) { c.classList.remove("mr-round-l", "mr-round-r", "mr-round-t", "mr-round-b", "mr-card-row"); });
+      gc.classList.remove("mr-card-row");
       if (!cols.length) return;
       var rs = cols.map(function (c) { return c.getBoundingClientRect(); });
       var left = Math.min.apply(null, rs.map(function (r) { return r.left; }));
       var right = Math.max.apply(null, rs.map(function (r) { return r.right; }));
       if (right - left >= vw * 0.97) return; // edge-to-edge band
+      // Floating card: gets the shared lift shadow (site.css). A lone card column is shadowed on its
+      // own, so content painted beside it in the same row (e.g. "Connect With Us") casts nothing.
+      (cols.length === 1 ? cols[0] : gc).classList.add("mr-card-row");
       var stacked = rs.length > 1 && Math.abs(rs[0].left - rs[1].left) < 2;
       if (cols.length === 1) { cols[0].classList.add("mr-round-l", "mr-round-r"); return; }
       cols[0].classList.add(stacked ? "mr-round-t" : "mr-round-l");

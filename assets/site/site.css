@@ -49,7 +49,7 @@
 .mr-header-ctas { display: flex; align-items: center; flex-wrap: nowrap; gap: 10px; }
 #header-widget-1761842589315-mobile .mr-header-ctas { flex-wrap: wrap; justify-content: center; }
 .mr-header-ctas a { white-space: nowrap !important; }
-.mr-chat-secondary { background-color: #fff !important; color: #73213b !important; box-shadow: inset 0 0 0 2px #73213b; }
+.mr-chat-secondary { background-color: #fff !important; color: #73213b !important; box-shadow: inset 0 0 0 2px rgba(115,33,59,.5); } /* outline at half strength */
 .mr-chat-secondary:hover { background-color: #f4eef0 !important; }
 /* hero secondary (white button) uses the brand burgundy text instead of green */
 .theme-button.gs-chat-btn { color: #73213b !important; }
@@ -89,6 +89,9 @@ html.mr-stuck .mobile-menu.is-absolute { box-shadow: 0 6px 18px rgba(0,0,0,.15);
 .mr-round-b { border-bottom-left-radius: var(--mr-r) !important; border-bottom-right-radius: var(--mr-r) !important; }
 .mr-round-l, .mr-round-r, .mr-round-t, .mr-round-b { overflow: hidden; }
 .mr-card, .mr-photo, .mr-gallery .mr-photo img { border-radius: var(--mr-r); }
+/* Floating cards (marked by site.js) get the same lift as the hero buttons and badges.
+   drop-shadow follows the painted columns, so a row's transparent gaps cast nothing. */
+.mr-card-row { filter: drop-shadow(0 1px 2px rgba(0,0,0,.08)) drop-shadow(0 4px 10px rgba(0,0,0,.10)); } /* quieter than the hero's: on white */
 .map-widget iframe { border-radius: 0; }
 
 /* ---------- Home hero: more punch + "The State's Best" badges (hero.js) ---------- */
@@ -96,13 +99,21 @@ html.mr-stuck .mobile-menu.is-absolute { box-shadow: 0 6px 18px rgba(0,0,0,.15);
 .mr-hero .background-overlay {
   background: linear-gradient(180deg, rgba(25,10,18,.55) 0%, rgba(25,10,18,.22) 38%, rgba(115,33,59,.30) 72%, rgba(232,150,52,.38) 100%) !important;
 }
-.mr-hero h1, .mr-hero p { text-shadow: 0 2px 14px rgba(0,0,0,.45); }
+/* One shadow language for everything floating on the photo: a tight edge for legibility + a soft lift. */
+.mr-hero {
+  --mr-text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 2px 12px rgba(0,0,0,.45);
+  --mr-lift: 0 1px 2px rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.30);
+}
+.mr-hero h1, .mr-hero p, .mr-hero p span { text-shadow: var(--mr-text-shadow); }
+.mr-hero p span { font-weight: 600; } /* tagline: thin type over a busy photo was hard to read */
+.mr-hero p { text-wrap: balance; } /* no lone word on the second line */
 .mr-eyebrow { display: table; margin: 0 auto 16px; font: 800 13px/1 Manrope, sans-serif; letter-spacing: 3px; text-transform: uppercase;
-  color: #f2c14e; background: rgba(20,10,15,.62); padding: 9px 16px; border-radius: 999px; }
-.mr-eyebrow::before, .mr-eyebrow::after { content: ""; display: inline-block; width: 36px; height: 2px; background: #f2c14e;
-  vertical-align: middle; margin: 0 12px; border-radius: 1px; }
+  color: #f2c14e; background: rgba(20,10,15,.62); padding: 9px 16px; border-radius: 999px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6); box-shadow: var(--mr-lift); }
+.mr-hero .theme-button { box-shadow: var(--mr-lift) !important; }
+.mr-hero .theme-button span { text-shadow: none; }
 
-.mr-badge { width: 150px; filter: drop-shadow(0 8px 16px rgba(0,0,0,.45)); }
+.mr-badge { width: 150px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.25)) drop-shadow(0 6px 18px rgba(0,0,0,.30)); }
 .mr-badge img { width: 100%; height: auto; display: block; }
 
 /* wide screens: badges flank the headline */
@@ -120,7 +131,6 @@ html.mr-stuck .mobile-menu.is-absolute { box-shadow: 0 6px 18px rgba(0,0,0,.15);
   .mr-badge { width: 104px; }
   .mr-eyebrow { font-size: 11px; letter-spacing: 2px; }
   .mr-eyebrow-more { display: none; }
-  .mr-eyebrow::before, .mr-eyebrow::after { width: 18px; margin: 0 8px; }
 }
 
 /* Hero CTA pair: centered with a consistent gap at every width */

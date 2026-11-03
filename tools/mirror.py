@@ -91,6 +91,10 @@ COPY_FIXES = [
     # Hero tagline (they're The State's Best winners 2025 + 2026)
     (">Hire a roofing contractor who will take care of every shingle detail<",
      ">Hire South Carolina\u2019s best roofer who will take care of every shingle detail<"),
+    # Contact form button
+    (">SUBMIT MESSAGE</a>", ">SEND</a>"),
+    # "Connect with us" buttons (they go to the contact form)
+    ("CONNECT WITH US</span>", "MESSAGE</span>"),
     # "CALL US TODAY" buttons -> the phone number itself; clean dialable tel: link
     ("CALL US TODAY</span>", "(803) 908-7131</span>"),
     ('href="tel:(803) 908-7131"', 'href="tel:+18039087131"'),
