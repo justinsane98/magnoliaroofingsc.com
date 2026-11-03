@@ -35,6 +35,20 @@
   window.addEventListener("resize", syncHeader);
   window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
 
+  /* ---------- Header CTAs: phone number (primary) + Chat (secondary) ---------- */
+  ["header-widget-1761842589315", "header-widget-1761842589315-mobile"].forEach(function (id) {
+    var w = document.getElementById(id), chat = w && w.querySelector(".gs-chat-btn");
+    if (!chat) return;
+    var phone = chat.cloneNode(true);
+    phone.className = "button-style js-button button-style-custom mr-phone-cta";
+    phone.removeAttribute("data-chat");
+    phone.href = "tel:" + (C.phone || "+18039087131");
+    phone.textContent = "(803) 908-7131";
+    chat.classList.add("mr-chat-secondary");
+    chat.parentNode.insertBefore(phone, chat);
+    chat.parentNode.classList.add("mr-header-ctas");
+  });
+
   /* ---------- Language switcher: flag tab hanging off the bottom of the header ---------- */
   // GTranslate's ln.js (deferred, runs after this) renders its language links into the hidden .mr-lang;
   // the flag tab + dropdown just clicks those links.

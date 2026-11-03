@@ -55,6 +55,16 @@
     document.body.appendChild(ov);
   }
 
+  // Extra photos (assets/site/work.json) are appended after the mirrored GoSite gallery.
+  var extra = [];
+  function start() {
+    fetch("/assets/site/work.json")
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) { extra = list || []; })
+      .catch(function () {})
+      .then(build);
+  }
+
   function build() {
     var heading = [].find.call(document.querySelectorAll("h1,h2,h3"), function (h) {
       return /^Some of Our Work/.test(h.textContent.trim());
@@ -71,6 +81,7 @@
       var u = n.getAttribute("data-slide");
       if (u && urls.indexOf(u) < 0) urls.push(u);
     });
+    extra.forEach(function (u) { if (urls.indexOf(u) < 0) urls.push(u); });
     if (!urls.length) return;
 
     var wrap = el("div", "mr-gallery");
@@ -94,6 +105,6 @@
     slider.init();
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
-  else build();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
 })();

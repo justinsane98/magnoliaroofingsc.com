@@ -21,7 +21,7 @@
   font: 13px/1.5 Manrope, sans-serif; color: #fff; }
 .mr-footer-line a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 .mr-footer-line a:hover { opacity: .8; }
-.mr-footer-line .mr-footer-fb { display: inline-flex; text-decoration: none; }
+.mr-footer-line .mr-footer-fb { display: inline-flex; text-decoration: none; order: 99; margin-left: auto; } /* solo, bottom right */
 
 /* Language switcher: a flag "tab" tacked onto the bottom of the header; click for a dropdown.
    GTranslate's own links live in a hidden .mr-lang (site.js). */
@@ -38,3 +38,13 @@
 .mr-flag-menu li:hover, .mr-flag-menu li:focus { background: #f4eef0; outline: none; }
 .mr-flag-menu li[aria-selected="true"] { font-weight: 700; color: #73213b; }
 .mr-flag-tab--mobile { right: 16px; }
+
+/* CTAs: phone number is primary, chat secondary. Phone numbers never wrap. */
+.mr-phone-cta, a[href^="tel:"].theme-button, a[href^="tel:"].theme-button span { white-space: nowrap !important; }
+.buttonWidget:has(.mr-phone-cta) { width: auto !important; min-width: max-content; }
+.mr-header-ctas { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.mr-header-ctas a { white-space: nowrap !important; }
+.mr-chat-secondary { background-color: #fff !important; color: #73213b !important; box-shadow: inset 0 0 0 2px #73213b; }
+.mr-chat-secondary:hover { background-color: #f4eef0 !important; }
+/* hero secondary (white button) uses the brand burgundy text instead of green */
+.theme-button.gs-chat-btn { color: #73213b !important; }

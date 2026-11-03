@@ -95,8 +95,13 @@ COPY_FIXES = [
 
 # Regex edits to the mirrored HTML.
 REGEX_FIXES = [
-    # Nav: drop "Home" (logo links home), "About" (just an in-page jump) and "Recent Projects" (not built yet).
-    (r'<li\s+class="[^"]*">\s*<a class="website-nav-link"[^>]*>\s*(?:Home|HOME|ABOUT|RECENT PROJECTS)\s*</a>\s*</li>', ''),
+    # Nav: drop "Home" (logo links home), "About" (in-page jump), "Recent Projects" (not built yet), "Contact" (Chat covers it).
+    (r'<li\s+class="[^"]*">\s*<a class="website-nav-link"[^>]*>\s*(?:Home|HOME|ABOUT|RECENT PROJECTS|CONTACT)\s*</a>\s*</li>', ''),
+    # Hero CTAs: primary = phone number, secondary = chat.
+    (r'<a href="/#about"(\s+target="_self"\s+class="theme-button hvr-grow-shadow)', r'<a href="tel:+18039087131"\1 mr-phone-cta'),
+    (r'LEARN MORE</span>', '(803) 908-7131</span>'),
+    (r'<a href="/#contact"(\s+target="_self"\s+class="theme-button hvr-grow-shadow)(")(?=[^>]*>\s*<span[^>]*>\s*CONTACT US)', r'<a href="#chat" data-chat="true"\1 gs-chat-btn\2'),
+    (r'CONTACT US</span>', 'CHAT NOW</span>'),
     # Language switcher: floating flag widget -> minimal "EN | ES" text links placed in the header by site.js.
     (r'<div class="gtranslate_wrapper"></div>', ''),
     (r'"wrapper_selector":"\.gtranslate_wrapper"[^}]*\}', '"wrapper_selector":".mr-lang"'),
