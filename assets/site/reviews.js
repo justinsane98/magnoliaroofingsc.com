@@ -23,7 +23,8 @@
     ".mr-card-text{flex:1;overflow-y:auto;font-size:14px;line-height:1.6;margin:10px 0 14px;padding-right:6px;white-space:pre-line;scrollbar-width:thin}",
     ".mr-card-name{font-family:'PT Serif',serif;font-weight:700;font-size:20px}",
     ".mr-card-meta{font-size:12px;opacity:.8;margin-top:2px}",
-    ".mr-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:22px;min-height:12px}",
+    // Dots sit in a burgundy pill so they stay visible where the section's white bottom curve rises behind them.
+    ".mr-dots{display:flex;width:fit-content;margin:22px auto 0;justify-content:center;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:" + MAROON + ";border:1px solid rgba(255,255,255,.35);box-shadow:0 4px 14px rgba(0,0,0,.25)}",
     ".mr-dot{width:10px;height:10px;border-radius:5px;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s,background .3s,transform .3s}",
     ".mr-dot:hover{background:rgba(255,255,255,.75)}",
     ".mr-dot.on{width:34px;background:#fff}",
