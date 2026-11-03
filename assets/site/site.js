@@ -35,21 +35,91 @@
   window.addEventListener("resize", syncHeader);
   window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
 
-  /* ---------- Language switcher: minimal "EN | ES" in the header ---------- */
-  // GTranslate's ln.js (loaded deferred, after this script) fills every .mr-lang with language links.
+  /* ---------- Language switcher: flag tab hanging off the bottom of the header ---------- */
+  // GTranslate's ln.js (deferred, runs after this) renders its language links into the hidden .mr-lang;
+  // the flag tab + dropdown just clicks those links.
   (function () {
-    var chat = document.getElementById("header-widget-1761842589315");
-    if (chat) {
-      var d = document.createElement("div");
-      d.className = "mr-lang mr-lang--desktop notranslate";
-      chat.parentNode.insertBefore(d, chat);
+    var LANGS = [
+      { code: "en", name: "English", flag: "/assets/site/flags/en-us.svg" },
+      { code: "es", name: "Español", flag: "/assets/site/flags/es-mx.svg" },
+    ];
+    var engine = document.createElement("div");
+    engine.className = "mr-lang notranslate";
+    engine.hidden = true;
+    document.body.appendChild(engine);
+
+    function currentLang() {
+      var a = engine.querySelector("a.gt-current-lang");
+      if (a) return a.getAttribute("data-gt-lang");
+      var m = document.cookie.match(/googtrans=\/[a-z-]+\/([a-z-]+)/);
+      return m ? m[1] : "en";
     }
-    var bar = document.querySelector(".mobile-menu.is-absolute");
-    if (bar) {
-      var m = document.createElement("div");
-      m.className = "mr-lang mr-lang--mobile notranslate";
-      bar.appendChild(m);
+    function langInfo(code) { return LANGS.filter(function (l) { return l.code === code; })[0] || LANGS[0]; }
+
+    var tabs = [];
+    function makeTab(host, cls) {
+      if (!host) return;
+      if (getComputedStyle(host).position === "static") host.style.position = "relative";
+      var tab = document.createElement("div");
+      tab.className = "mr-flag-tab notranslate " + cls;
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "mr-flag-btn";
+      btn.setAttribute("aria-haspopup", "listbox");
+      btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = '<img alt="" width="22" height="22"><span class="mr-flag-caret" aria-hidden="true"></span>';
+      var menu = document.createElement("ul");
+      menu.className = "mr-flag-menu";
+      menu.setAttribute("role", "listbox");
+      menu.hidden = true;
+      LANGS.forEach(function (l) {
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.dataset.lang = l.code;
+        li.tabIndex = 0;
+        li.innerHTML = '<img alt="" width="20" height="20" src="' + l.flag + '"><span>' + l.name + "</span>";
+        function pick() {
+          var link = engine.querySelector('a[data-gt-lang="' + l.code + '"]');
+          if (link) link.click();
+          close();
+          setTimeout(paintAll, 50);
+        }
+        li.addEventListener("click", pick);
+        li.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+        menu.appendChild(li);
+      });
+      function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = menu.hidden;
+        tabs.forEach(function (t) { t.close(); });
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      tab.appendChild(btn);
+      tab.appendChild(menu);
+      host.appendChild(tab);
+      tabs.push({ btn: btn, menu: menu, close: close });
     }
+    function paintAll() {
+      var cur = langInfo(currentLang());
+      tabs.forEach(function (t) {
+        var img = t.btn.querySelector("img");
+        img.src = cur.flag;
+        t.btn.setAttribute("aria-label", "Language: " + cur.name);
+        [].forEach.call(t.menu.children, function (li) { li.setAttribute("aria-selected", String(li.dataset.lang === cur.code)); });
+      });
+    }
+
+    // desktop: the white header box that holds the nav + CHAT NOW button
+    var chat = document.getElementById("header-widget-1761842589315"), box = chat;
+    while (box && box !== document.body && getComputedStyle(box).backgroundColor.replace(/\s/g, "").match(/rgba\(0,0,0,0\)|transparent/)) box = box.parentElement;
+    makeTab(box && box !== document.body ? box : null, "mr-flag-tab--desktop");
+    makeTab(document.querySelector(".mobile-menu.is-absolute"), "mr-flag-tab--mobile");
+    paintAll();
+    window.addEventListener("load", paintAll); // ln.js has marked the current language by now
+    document.addEventListener("click", function () { tabs.forEach(function (t) { t.close(); }); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") tabs.forEach(function (t) { t.close(); }); });
   })();
 
   /* ---------- Footer: one left-aligned line (Facebook icon · copyright · privacy) ---------- */
