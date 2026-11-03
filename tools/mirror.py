@@ -101,7 +101,8 @@ REGEX_FIXES = [
     (r'<a href="/#about"(\s+target="_self"\s+class="theme-button hvr-grow-shadow)', r'<a href="tel:+18039087131"\1 mr-phone-cta'),
     (r'LEARN MORE</span>', '(803) 908-7131</span>'),
     (r'<a href="/#contact"(\s+target="_self"\s+class="theme-button hvr-grow-shadow)(")(?=[^>]*>\s*<span[^>]*>\s*CONTACT US)', r'<a href="#chat" data-chat="true"\1 gs-chat-btn\2'),
-    (r'CONTACT US</span>', 'CHAT NOW</span>'),
+    (r'CONTACT US</span>', 'MESSAGE</span>'),
+    (r'> CHAT NOW!</a>', '> MESSAGE</a>'),  # header + mobile menu
     # Language switcher: floating flag widget -> minimal "EN | ES" text links placed in the header by site.js.
     (r'<div class="gtranslate_wrapper"></div>', ''),
     (r'"wrapper_selector":"\.gtranslate_wrapper"[^}]*\}', '"wrapper_selector":".mr-lang"'),

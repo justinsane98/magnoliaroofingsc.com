@@ -9,6 +9,6 @@ window.SITE_CONFIG = {
   // and it will be used instead of FormSubmit.
   web3formsKey: "",
 
-  // "CHAT NOW!" button texts this number on mobile and scrolls to the contact form on desktop.
+  // "MESSAGE" button texts this number on mobile and scrolls to the contact form on desktop.
   phone: "+18039087131",
 };
