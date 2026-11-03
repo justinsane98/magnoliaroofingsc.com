@@ -17,7 +17,7 @@ Static 1:1 clone of the GoSite site at magnoliaroofssc.com, hosted on GitHub Pag
 | Chat | GoSite Messenger | none — "CHAT NOW!" texts the office on mobile / scrolls to the form on desktop |
 | Privacy popup | loaded from GoSite API | static modal in `site.js` |
 | GoSite analytics/hit tracker | removed | GA4 `G-3KY2TQVQBH` kept |
-| Reviews | 2 static cards (GoSite review widget hidden) | all reviews from `reviews.json`, 3 per page with dot pagination; snapshot refreshed by `tools/mirror.py` while GoSite is active, edit by hand after |
+| Reviews | 2 static cards (GoSite review widget hidden) | all reviews from `reviews.json`, 3 per page with a drag-to-scrub page slider; snapshot refreshed by `tools/mirror.py` while GoSite is active, edit by hand after |
 | Leave Feedback | GoSite | modal: name + star rating + message, emailed with the date via the same service as the contact form |
 | "Powered by GoSite" footer badge | shown | hidden |
 | UserWay accessibility overlay | loaded | removed |
