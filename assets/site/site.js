@@ -255,7 +255,8 @@
     var fields = form.querySelectorAll(".form-field");
     var data = {}, ok = true;
     fields.forEach(function (f) {
-      var el = f.querySelector("input, textarea, select");
+      // Only real fields: skip the hidden reCAPTCHA response (no data-name) and intl-tel-input's hidden phone copy.
+      var el = f.querySelector("[data-name]:not(.phone-input-hidden)");
       if (!el) return;
       var name = el.getAttribute("data-name") || el.name, val = (el.value || "").trim();
       var type = el.getAttribute("data-type");
@@ -264,7 +265,11 @@
       if (bad) ok = false;
       data[name] = val;
     });
-    if (!ok) return;
+    if (!ok) {
+      var first = form.querySelector(".form-field.field-invalid [data-name]:not(.phone-input-hidden)");
+      if (first) first.focus();
+      return;
+    }
 
     var label = btn.textContent;
     btn.textContent = "SENDING…";
