@@ -135,3 +135,7 @@ html.mr-stuck .mr-flag-btn img { width: 24px; height: 18px; }
 /* Header priority as space runs out (site.js measures): drop the flag picker, then MESSAGE; phone stays. */
 html.mr-hide-flag .mr-flag-tab--desktop { display: none; }
 html.mr-hide-msg #header-widget-1761842589315 .mr-chat-secondary { display: none; }
+
+/* Breathing room between the hero tagline and its buttons */
+.mr-hero-ctas { margin-top: 32px !important; }
+@media (max-width: 767px) { .mr-hero-ctas { margin-top: 20px !important; } }
