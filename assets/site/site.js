@@ -35,6 +35,27 @@
   window.addEventListener("resize", syncHeader);
   window.addEventListener("load", syncHeader); // logo image may change the header height once loaded
 
+  /* ---------- Footer: one left-aligned line (Facebook icon · copyright · privacy) ---------- */
+  (function () {
+    var cp = [].find.call(document.querySelectorAll(".text-widget-content"), function (e) {
+      return /Copyright\s*©/.test(e.textContent);
+    });
+    if (!cp) return;
+    var col = cp.closest(".grid-column");
+    if (!col) return;
+    // hide the old rows (social icon pill, copyright, privacy link, hidden GoSite badge)
+    [].forEach.call(col.querySelectorAll(":scope > .widget-row"), function (r) { r.style.display = "none"; });
+
+    var line = document.createElement("div");
+    line.className = "mr-footer-line";
+    line.innerHTML =
+      '<a class="mr-footer-fb" href="https://www.facebook.com/magnoliaroofingsc/" target="_blank" rel="noopener" aria-label="Magnolia Roofing on Facebook">' +
+      '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>' +
+      "<span>Copyright © " + new Date().getFullYear() + ". Magnolia Roofing &amp; Remodeling LLC. All Rights Reserved.</span>" +
+      '<a href="javascript:WebPlatform.Popups.show(1);">Privacy Policy</a>';
+    col.appendChild(line);
+  })();
+
   /* ---------- Contact form ---------- */
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

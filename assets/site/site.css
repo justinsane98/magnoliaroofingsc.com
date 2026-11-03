@@ -14,3 +14,11 @@
 @media (max-width: 1024px) {
   .map-widget .widget-preserving-ratio-outer { padding-bottom: 0 !important; height: 360px; }
 }
+
+/* Footer: single left-aligned line built by site.js */
+.mr-footer-line { width: 100%; max-width: 1164px; margin: 0 auto; padding: 0 16px; box-sizing: border-box;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; text-align: left;
+  font: 13px/1.5 Manrope, sans-serif; color: #fff; }
+.mr-footer-line a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.mr-footer-line a:hover { opacity: .8; }
+.mr-footer-line .mr-footer-fb { display: inline-flex; text-decoration: none; }
