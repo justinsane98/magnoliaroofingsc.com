@@ -1,5 +1,10 @@
 /* Overrides on top of the mirrored GoSite theme. Linked from every page by tools/mirror.py. */
 
+/* One corner radius for every rounded box and button. (Pills like the slider stay pills.) */
+:root { --mr-r: 10px; }
+.theme-button, .button-style, .mr-btn, .widget-form input, .widget-form textarea, .widget-form .iti,
+.mr-modal-box, .mr-flag-menu, .mr-lightbox img { border-radius: var(--mr-r) !important; }
+
 /* GoSite's reCAPTCHA key is bound to their domains; FormSubmit/Web3Forms do their own spam filtering. */
 .recaptcha-target { display: none !important; }
 
@@ -31,7 +36,7 @@
 .mr-flag-caret { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #73213b; }
 .mr-flag-btn[aria-expanded="true"] .mr-flag-caret { transform: rotate(180deg); }
 .mr-flag-menu { position: absolute; top: calc(100% + 6px); right: 0; margin: 0; padding: 6px 0; list-style: none; background: #fff;
-  border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.2); min-width: 140px; }
+  box-shadow: 0 6px 20px rgba(0,0,0,.2); min-width: 140px; }
 .mr-flag-menu li { display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-size: 14px; color: #222; cursor: pointer; }
 .mr-flag-menu li img { width: 24px; height: 18px; border-radius: 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
 .mr-flag-menu li:hover, .mr-flag-menu li:focus { background: #f4eef0; outline: none; }
@@ -60,26 +65,73 @@
 }
 
 /* ---------- Header: compact, rounded, pinned on scroll ---------- */
-.main-header-wrapper { position: fixed !important; transition: top .35s ease; }
-.header-row-main { border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.10); transition: box-shadow .35s ease; }
+.main-header-wrapper { position: fixed !important; transition: top .35s ease, width .35s ease; }
+.header-row-main { border-radius: var(--mr-r); box-shadow: 0 6px 24px rgba(0,0,0,.10); transition: box-shadow .35s ease, border-radius .35s ease; }
 .header-row-main .header-row-space { height: 0 !important; }
-.header-row-main .flex-header { padding: 12px 8px 12px 14px; box-sizing: border-box; }
+.header-row-main .flex-header { width: 100% !important; max-width: 1164px; margin: 0 auto !important; padding: 12px 20px !important; box-sizing: border-box; }
 .main-header-wrapper .theme-logo, .main-header-wrapper .theme-logo a { width: auto !important; height: auto !important; }
 .main-header-wrapper .theme-logo img { height: 62px !important; max-height: none !important; width: auto !important; transition: height .35s ease; }
 .main-header-wrapper .header-widget-container .header-widget:first-child { margin-right: 32px; }
 /* scrolled: slide up to the top edge, tighten, deepen shadow */
-html.mr-stuck .main-header-wrapper { top: var(--mr-stuck-top, -20px); }
+html.mr-stuck .main-header-wrapper { top: var(--mr-stuck-top, -32px); left: 0 !important; right: 0 !important; width: auto !important; max-width: none !important; transform: none !important; margin: 0 !important; padding: 0 !important; }
+html.mr-stuck .header-row-main { border-radius: 0; width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
 html.mr-stuck .header-row-main { box-shadow: 0 10px 30px rgba(0,0,0,.18); }
-html.mr-stuck .main-header-wrapper .theme-logo img { height: 48px !important; }
+html.mr-stuck .main-header-wrapper .theme-logo img { height: 46px !important; }
+html.mr-stuck .header-row-main .flex-header { padding-top: 8px !important; padding-bottom: 8px !important; }
 /* phones: the logo bar pins too */
 .mobile-menu.is-absolute { position: fixed !important; top: 0; left: 0; right: 0; transition: box-shadow .35s ease; }
 html.mr-stuck .mobile-menu.is-absolute { box-shadow: 0 6px 18px rgba(0,0,0,.15); }
 
 /* ---------- Rounded containers ---------- */
-.mr-round-l { border-top-left-radius: 14px !important; border-bottom-left-radius: 14px !important; }
-.mr-round-r { border-top-right-radius: 14px !important; border-bottom-right-radius: 14px !important; }
-.mr-round-t { border-top-left-radius: 14px !important; border-top-right-radius: 14px !important; }
-.mr-round-b { border-bottom-left-radius: 14px !important; border-bottom-right-radius: 14px !important; }
+.mr-round-l { border-top-left-radius: var(--mr-r) !important; border-bottom-left-radius: var(--mr-r) !important; }
+.mr-round-r { border-top-right-radius: var(--mr-r) !important; border-bottom-right-radius: var(--mr-r) !important; }
+.mr-round-t { border-top-left-radius: var(--mr-r) !important; border-top-right-radius: var(--mr-r) !important; }
+.mr-round-b { border-bottom-left-radius: var(--mr-r) !important; border-bottom-right-radius: var(--mr-r) !important; }
 .mr-round-l, .mr-round-r, .mr-round-t, .mr-round-b { overflow: hidden; }
-.mr-card, .mr-photo, .mr-gallery .mr-photo img { border-radius: 14px; }
+.mr-card, .mr-photo, .mr-gallery .mr-photo img { border-radius: var(--mr-r); }
 .map-widget iframe { border-radius: 0; }
+
+/* ---------- Home hero: more punch + "The State's Best" badges (hero.js) ---------- */
+.mr-hero .parallax-bg img { filter: saturate(1.35) contrast(1.12) brightness(1.06); }
+.mr-hero .background-overlay {
+  background: linear-gradient(180deg, rgba(25,10,18,.55) 0%, rgba(25,10,18,.22) 38%, rgba(115,33,59,.30) 72%, rgba(232,150,52,.38) 100%) !important;
+}
+.mr-hero h1, .mr-hero p { text-shadow: 0 2px 14px rgba(0,0,0,.45); }
+.mr-eyebrow { display: table; margin: 0 auto 16px; font: 800 13px/1 Manrope, sans-serif; letter-spacing: 3px; text-transform: uppercase;
+  color: #f2c14e; background: rgba(20,10,15,.62); padding: 9px 16px; border-radius: 999px; }
+.mr-eyebrow::before, .mr-eyebrow::after { content: ""; display: inline-block; width: 36px; height: 2px; background: #f2c14e;
+  vertical-align: middle; margin: 0 12px; border-radius: 1px; }
+
+.mr-badge { width: 150px; aspect-ratio: 150 / 172; padding: 4px; box-sizing: border-box;
+  background: linear-gradient(160deg, #f7d77a, #c8952c 55%, #f2c14e);
+  clip-path: polygon(50% 0, 100% 15%, 100% 75%, 50% 100%, 0 75%, 0 15%);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,.45)); }
+.mr-badge-in { height: 100%; background: #141414; color: #fff; text-align: center;
+  clip-path: polygon(50% 0, 100% 15%, 100% 75%, 50% 100%, 0 75%, 0 15%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding-bottom: 12px; box-sizing: border-box; }
+.mr-badge-loc { font: 700 8px/1 Manrope, sans-serif; letter-spacing: 1.5px; text-transform: uppercase; color: #f2c14e; margin-bottom: 4px; }
+.mr-badge-t1 { font: 700 15px/1 'PT Serif', serif; letter-spacing: .5px; }
+.mr-badge-t2 { font: 900 40px/0.95 Manrope, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+.mr-badge-yr { margin-top: 6px; background: #f2c14e; color: #141414; font: 800 11px/1 Manrope, sans-serif; letter-spacing: 1px;
+  text-transform: uppercase; padding: 5px 8px; border-radius: 3px; }
+
+/* wide screens: badges flank the headline */
+@media (min-width: 1100px) {
+  .mr-hero--home .grid-content { position: relative; }
+  .mr-badges { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: center; pointer-events: none; padding: 0 8px; }
+  .mr-badge--left { transform: rotate(-4deg); }
+  .mr-badge--right { transform: rotate(4deg); }
+}
+/* narrower: a row of smaller badges above the eyebrow */
+@media (max-width: 1099px) {
+  .mr-badges { display: flex; justify-content: center; gap: 14px; margin: 0 0 14px; }
+  .mr-badge { width: 92px; }
+  .mr-badge-loc { font-size: 6px; letter-spacing: 1px; margin-bottom: 2px; }
+  .mr-badge-t1 { font-size: 10px; }
+  .mr-badge-t2 { font-size: 24px; }
+  .mr-badge-yr { font-size: 7.5px; padding: 3px 5px; margin-top: 4px; }
+  .mr-badge-in { padding-bottom: 8px; }
+  .mr-eyebrow { font-size: 11px; letter-spacing: 2px; }
+  .mr-eyebrow-more { display: none; }
+  .mr-eyebrow::before, .mr-eyebrow::after { width: 18px; margin: 0 8px; }
+}

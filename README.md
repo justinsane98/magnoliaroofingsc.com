@@ -10,9 +10,11 @@ Static 1:1 clone of the GoSite site at magnoliaroofssc.com, hosted on GitHub Pag
 - `assets/site/scrubber.js` — shared slider (snap track + burgundy scrubber pill) used by reviews and gallery
 - `assets/site/reviews.js` + `reviews.json` — "What Our Clients Say" reviews (year steps on the scrubber) + Leave Feedback modal
 - `assets/site/gallery.js` — "Some of Our Work" photo slider + lightbox (mirrored GoSite photos + extras listed in `assets/site/work.json`)
+- `assets/site/hero.js` — home hero "The State's Best" 2025/2026 winner badges (CSS-built; swap in official artwork from The State if available)
 - `assets/site/work/` — **placeholder** job photos (public domain/CC0 stock, see `CREDITS.md`) — replace with real Magnolia job photos before launch
 - `tools/mirror.py` `COPY_FIXES` — typo/grammar fixes applied to the mirrored copy
 - `tools/mirror.py` — re-pull from the live GoSite site (`python3 -I tools/mirror.py`). Overwrites the HTML pages.
+  **Re-run it after editing anything in `assets/site/`** — it stamps `?v=<hash>` on those script/style links so browsers pick up changes.
 
 ## Replaced GoSite features (free)
 | Feature | Was | Now |

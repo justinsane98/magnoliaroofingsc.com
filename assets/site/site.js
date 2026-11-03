@@ -28,7 +28,7 @@
   if (firstRow) firstRow.classList.add("mr-hero");
   function syncHeader() {
     var mh = document.querySelector(".mobile-menu.is-absolute");
-    var h = mh && mh.offsetParent !== null ? mh.offsetHeight : 0;
+    var h = mh && getComputedStyle(mh).display !== "none" ? mh.getBoundingClientRect().height : 0; // (fixed elements have no offsetParent)
     document.documentElement.style.setProperty("--mr-header-h", h + "px");
   }
   syncHeader();
@@ -39,9 +39,9 @@
   (function () {
     var wrap = document.querySelector(".main-header-wrapper"), row = document.querySelector(".header-row-main");
     if (wrap && row) {
-      // slide the bar up so it sits 10px from the top when pinned
+      // slide the bar flush to the top edge when pinned
       var gap = row.getBoundingClientRect().top - wrap.getBoundingClientRect().top;
-      document.documentElement.style.setProperty("--mr-stuck-top", -(Math.max(0, gap - 10)) + "px");
+      document.documentElement.style.setProperty("--mr-stuck-top", -Math.max(0, gap) + "px");
     }
     var stuck = null;
     function onScroll() {
@@ -316,7 +316,7 @@
     ov.setAttribute("aria-modal", "true");
     ov.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px";
     var box = document.createElement("div");
-    box.style.cssText = "background:#fff;color:#222;max-width:760px;width:100%;max-height:85vh;overflow:auto;border-radius:8px;padding:32px;position:relative;font-family:Manrope,sans-serif;line-height:1.6";
+    box.style.cssText = "background:#fff;color:#222;max-width:760px;width:100%;max-height:85vh;overflow:auto;border-radius:var(--mr-r,10px);padding:32px;position:relative;font-family:Manrope,sans-serif;line-height:1.6";
     var x = document.createElement("button");
     x.textContent = "✕";
     x.setAttribute("aria-label", "Close");

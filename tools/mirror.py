@@ -88,6 +88,9 @@ COPY_FIXES = [
     ("Saturday to Sunday: Closed", "Saturday and Sunday: Closed"),
     ("Put that Hammer In the Hands of a Pro", "Put That Hammer in the Hands of a Pro"),
     ("Excellence In What We Do", "Excellence in What We Do"),
+    # Hero tagline (they're The State's Best winners 2025 + 2026)
+    (">Hire a roofing contractor who will take care of every shingle detail<",
+     ">Hire South Carolina\u2019s best roofer who will take care of every shingle detail<"),
     # "CALL US TODAY" buttons -> the phone number itself; clean dialable tel: link
     ("CALL US TODAY</span>", "(803) 908-7131</span>"),
     ('href="tel:(803) 908-7131"', 'href="tel:+18039087131"'),
@@ -145,8 +148,14 @@ def process(path, out):
     for pat, rep in REGEX_FIXES:
         html = re.sub(pat, rep, html)
     html = html.replace("</head>", HEAD_CSS + "</head>", 1)
-    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/scrubber.js"></script>\n<script src="/assets/site/reviews.js"></script>\n<script src="/assets/site/gallery.js"></script>\n'
+    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/scrubber.js"></script>\n<script src="/assets/site/reviews.js"></script>\n<script src="/assets/site/gallery.js"></script>\n<script src="/assets/site/hero.js"></script>\n'
     html = html.replace("</body>", hook + "</body>", 1)
+    # cache-bust our own files: /assets/site/x.js -> /assets/site/x.js?v=<content hash>
+    def bust(m):
+        f = os.path.join(ROOT, m.group(1).lstrip("/"))
+        v = hashlib.md5(open(f, "rb").read()).hexdigest()[:8] if os.path.exists(f) else "0"
+        return f'{m.group(1)}?v={v}"'
+    html = re.sub(r'(/assets/site/[\w.-]+\.(?:js|css))"', bust, html)
     dest = os.path.join(ROOT, out)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     open(dest, "w", encoding="utf-8").write(html)
