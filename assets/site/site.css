@@ -25,26 +25,36 @@
 
 /* Language switcher: a flag "tab" tacked onto the bottom of the header; click for a dropdown.
    GTranslate's own links live in a hidden .mr-lang (site.js). */
-.mr-flag-tab { position: absolute; top: 100%; right: 28px; z-index: 50; font-family: Manrope, sans-serif; }
-.mr-flag-btn { display: flex; align-items: center; gap: 5px; background: #fff; border: 0; cursor: pointer;
-  padding: 5px 9px 7px; border-radius: 0 0 8px 8px; box-shadow: 0 4px 8px rgba(0,0,0,.18); }
-.mr-flag-btn img { width: 22px; height: 22px; border-radius: 50%; display: block; }
+.mr-flag-tab { position: relative; z-index: 50; font-family: Manrope, sans-serif; }
+.mr-flag-btn { display: flex; align-items: center; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px 4px; }
+.mr-flag-btn img { width: 28px; height: 21px; border-radius: 3px; object-fit: cover; display: block; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
 .mr-flag-caret { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #73213b; }
 .mr-flag-btn[aria-expanded="true"] .mr-flag-caret { transform: rotate(180deg); }
 .mr-flag-menu { position: absolute; top: calc(100% + 6px); right: 0; margin: 0; padding: 6px 0; list-style: none; background: #fff;
   border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.2); min-width: 140px; }
 .mr-flag-menu li { display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-size: 14px; color: #222; cursor: pointer; }
-.mr-flag-menu li img { width: 20px; height: 20px; border-radius: 50%; }
+.mr-flag-menu li img { width: 24px; height: 18px; border-radius: 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
 .mr-flag-menu li:hover, .mr-flag-menu li:focus { background: #f4eef0; outline: none; }
 .mr-flag-menu li[aria-selected="true"] { font-weight: 700; color: #73213b; }
-.mr-flag-tab--mobile { right: 16px; }
+.mr-flag-tab--mobile { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
 
 /* CTAs: phone number is primary, chat secondary. Phone numbers never wrap. */
 .mr-phone-cta, a[href^="tel:"].theme-button, a[href^="tel:"].theme-button span { white-space: nowrap !important; }
 .buttonWidget:has(.mr-phone-cta) { width: auto !important; min-width: max-content; }
-.mr-header-ctas { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.mr-header-ctas { display: flex; align-items: center; flex-wrap: nowrap; gap: 10px; }
+#header-widget-1761842589315-mobile .mr-header-ctas { flex-wrap: wrap; justify-content: center; }
 .mr-header-ctas a { white-space: nowrap !important; }
 .mr-chat-secondary { background-color: #fff !important; color: #73213b !important; box-shadow: inset 0 0 0 2px #73213b; }
 .mr-chat-secondary:hover { background-color: #f4eef0 !important; }
 /* hero secondary (white button) uses the brand burgundy text instead of green */
 .theme-button.gs-chat-btn { color: #73213b !important; }
+
+/* Footer element is taller than its green row; paint it green so no white strip shows underneath. */
+.page-footer { background-color: rgb(0, 107, 70); }
+
+/* Hero CTA pair stays side by side on phones (secondary left, primary right). */
+@media (max-width: 767px) {
+  .mr-hero-ctas { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center; gap: 10px; }
+  .mr-hero-ctas > .widget { width: auto !important; margin: 0 !important; flex: 0 0 auto; }
+  .mr-hero-ctas .theme-button { padding: 14px 18px !important; }
+}

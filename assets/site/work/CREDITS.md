@@ -2,12 +2,11 @@
 
 Temporary stand-ins until Magnolia supplies real job photos. All are public domain or CC0 (no attribution required),
 sourced from Wikimedia Commons. Replace the files and the list in `work.json`; delete this folder when done.
+No metal-roof photos (by request).
 
 - `placeholder-01.jpg` — On base housing gets new shingles for roofs (5566725).jpg (public domain) — https://commons.wikimedia.org/wiki/File:On_base_housing_gets_new_shingles_for_roofs_(5566725).jpg
 - `placeholder-02.jpg` — On base housing gets new shingles for roofs (5566726).jpg (public domain) — https://commons.wikimedia.org/wiki/File:On_base_housing_gets_new_shingles_for_roofs_(5566726).jpg
 - `placeholder-03.jpg` — FEMA - 44364 - Roof repair workers in Oklahoma.jpg (public domain) — https://commons.wikimedia.org/wiki/File:FEMA_-_44364_-_Roof_repair_workers_in_Oklahoma.jpg
-- `placeholder-04.jpg` — Standing seam metal roof low pitch roof-2.jpg (cc0) — https://commons.wikimedia.org/wiki/File:Standing_seam_metal_roof_low_pitch_roof-2.jpg
-- `placeholder-05.jpg` — Standing seam metal roof low pitch roof-3.jpg (cc0) — https://commons.wikimedia.org/wiki/File:Standing_seam_metal_roof_low_pitch_roof-3.jpg
 - `placeholder-06.jpg` — UglyShinglesMichigan3.JPG (public domain) — https://commons.wikimedia.org/wiki/File:UglyShinglesMichigan3.JPG
 - `placeholder-07.jpg` — FEMA - 44633 - Roofer working on a home in Oklahoma.jpg (public domain) — https://commons.wikimedia.org/wiki/File:FEMA_-_44633_-_Roofer_working_on_a_home_in_Oklahoma.jpg
 - `placeholder-08.jpg` — FEMA - 44634 - Roofer working on a home in Oklahoma.jpg (public domain) — https://commons.wikimedia.org/wiki/File:FEMA_-_44634_-_Roofer_working_on_a_home_in_Oklahoma.jpg

@@ -45,9 +45,25 @@
     phone.href = "tel:" + (C.phone || "+18039087131");
     phone.textContent = "(803) 908-7131";
     chat.classList.add("mr-chat-secondary");
-    chat.parentNode.insertBefore(phone, chat);
+    chat.parentNode.insertBefore(phone, chat.nextSibling); // primary always on the right
     chat.parentNode.classList.add("mr-header-ctas");
   });
+
+  /* ---------- Hero CTAs: secondary (chat) left, primary (phone) right ---------- */
+  (function () {
+    var hero = document.querySelector(".mr-hero");
+    var phone = hero && hero.querySelector("a.theme-button.mr-phone-cta"), chat = hero && hero.querySelector("a.theme-button.gs-chat-btn");
+    if (!phone || !chat) return;
+    if (!(phone.compareDocumentPosition(chat) & Node.DOCUMENT_POSITION_PRECEDING)) {
+      var ph = document.createComment("p"), ch = document.createComment("c");
+      phone.replaceWith(ph); chat.replaceWith(ch);
+      ph.replaceWith(chat); ch.replaceWith(phone);
+    }
+    // keep the pair on one row on phones too (primary stays on the right)
+    var a = chat.closest(".widget"), b = phone.closest(".widget"), row = a;
+    while (row && !row.contains(b)) row = row.parentElement;
+    if (row) row.classList.add("mr-hero-ctas");
+  })();
 
   /* ---------- Language switcher: flag tab hanging off the bottom of the header ---------- */
   // GTranslate's ln.js (deferred, runs after this) renders its language links into the hidden .mr-lang;
@@ -81,7 +97,7 @@
       btn.className = "mr-flag-btn";
       btn.setAttribute("aria-haspopup", "listbox");
       btn.setAttribute("aria-expanded", "false");
-      btn.innerHTML = '<img alt="" width="22" height="22"><span class="mr-flag-caret" aria-hidden="true"></span>';
+      btn.innerHTML = '<img alt="" width="28" height="21"><span class="mr-flag-caret" aria-hidden="true"></span>';
       var menu = document.createElement("ul");
       menu.className = "mr-flag-menu";
       menu.setAttribute("role", "listbox");
@@ -91,7 +107,7 @@
         li.setAttribute("role", "option");
         li.dataset.lang = l.code;
         li.tabIndex = 0;
-        li.innerHTML = '<img alt="" width="20" height="20" src="' + l.flag + '"><span>' + l.name + "</span>";
+        li.innerHTML = '<img alt="" width="24" height="18" src="' + l.flag + '"><span>' + l.name + "</span>";
         function pick() {
           var link = engine.querySelector('a[data-gt-lang="' + l.code + '"]');
           if (link) link.click();
@@ -125,10 +141,9 @@
       });
     }
 
-    // desktop: the white header box that holds the nav + CHAT NOW button
-    var chat = document.getElementById("header-widget-1761842589315"), box = chat;
-    while (box && box !== document.body && getComputedStyle(box).backgroundColor.replace(/\s/g, "").match(/rgba\(0,0,0,0\)|transparent/)) box = box.parentElement;
-    makeTab(box && box !== document.body ? box : null, "mr-flag-tab--desktop");
+    // desktop: last item in the header, after the CTAs
+    var ctas = document.querySelector("#header-widget-1761842589315 .mr-header-ctas");
+    makeTab(ctas, "mr-flag-tab--desktop");
     makeTab(document.querySelector(".mobile-menu.is-absolute"), "mr-flag-tab--mobile");
     paintAll();
     window.addEventListener("load", paintAll); // ln.js has marked the current language by now
