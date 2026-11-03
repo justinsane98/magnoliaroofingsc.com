@@ -7,7 +7,10 @@ Static 1:1 clone of the GoSite site at magnoliaroofssc.com, hosted on GitHub Pag
 - `assets/<host>/…` — locally mirrored images, CSS, fonts, and GoSite platform JS (keeps layout/menus/galleries working)
 - `assets/site/config.js` — **edit this**: form recipient email, optional Web3Forms key, phone for the chat button
 - `assets/site/site.js` — replaces GoSite features: contact form, chat button, privacy popup
-- `assets/site/reviews.js` + `reviews.json` — "What Our Clients Say" scrolling reviews + Leave Feedback modal
+- `assets/site/scrubber.js` — shared slider (snap track + burgundy scrubber pill) used by reviews and gallery
+- `assets/site/reviews.js` + `reviews.json` — "What Our Clients Say" reviews (year steps on the scrubber) + Leave Feedback modal
+- `assets/site/gallery.js` — "Some of Our Work" photo slider + lightbox (photos taken from the mirrored GoSite gallery)
+- `tools/mirror.py` `COPY_FIXES` — typo/grammar fixes applied to the mirrored copy
 - `tools/mirror.py` — re-pull from the live GoSite site (`python3 -I tools/mirror.py`). Overwrites the HTML pages.
 
 ## Replaced GoSite features (free)
@@ -17,7 +20,7 @@ Static 1:1 clone of the GoSite site at magnoliaroofssc.com, hosted on GitHub Pag
 | Chat | GoSite Messenger | none — "CHAT NOW!" texts the office on mobile / scrolls to the form on desktop |
 | Privacy popup | loaded from GoSite API | static modal in `site.js` |
 | GoSite analytics/hit tracker | removed | GA4 `G-3KY2TQVQBH` kept |
-| Reviews | 2 static cards (GoSite review widget hidden) | all reviews from `reviews.json`, 3 per page with a drag-to-scrub page slider; snapshot refreshed by `tools/mirror.py` while GoSite is active, edit by hand after |
+| Reviews | 2 static cards (GoSite review widget hidden) | all reviews from `reviews.json`, 3 per page, scrubber with "x–y of 81" and year steps; snapshot refreshed by `tools/mirror.py` while GoSite is active, edit by hand after |
 | Leave Feedback | GoSite | modal: name + star rating + message, emailed with the date via the same service as the contact form |
 | "Powered by GoSite" footer badge | shown | hidden |
 | UserWay accessibility overlay | loaded | removed |

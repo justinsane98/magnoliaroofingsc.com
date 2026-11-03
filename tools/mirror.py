@@ -77,6 +77,19 @@ STRIP = [
     r'<script[^>]*id="rev-script"[^>]*></script>',  # GoSite review widget (hidden on live site) — replaced by reviews.js
 ]
 
+# Copy fixes applied to the mirrored HTML (typos/grammar on the GoSite source).
+COPY_FIXES = [
+    (">Some of Our Works<", ">Some of Our Work<"),
+    ("earn your trust-we'll", "earn your trust\u2014we'll"),
+    ("roof problem-we have", "roof problem\u2014we have"),
+    ("dedicated to you-we know", "dedicated to you\u2014we know"),
+    ("roof repair services contact us today.", "roof repair services. Contact us today."),
+    (">Servicing the following areas:", ">Serving the following areas:"),
+    ("Saturday to Sunday: Closed", "Saturday and Sunday: Closed"),
+    ("Put that Hammer In the Hands of a Pro", "Put That Hammer in the Hands of a Pro"),
+    ("Excellence In What We Do", "Excellence in What We Do"),
+]
+
 REVIEWS_API = "https://webapi.gosite.com/api/reviewmanager/reviews/list?widget_id=we0O5pc1y5"
 
 def refresh_reviews():
@@ -108,8 +121,10 @@ def process(path, out):
     # canonical/og URLs -> new domain; internal absolute links -> relative
     html = html.replace("https://magnoliaroofssc.com/", NEW + "/").replace('"https://magnoliaroofssc.com"', f'"{NEW}"')
     html = html.replace('href="//magnoliaroofssc.com"', 'href="/"').replace('href="/Home"', 'href="/"')
+    for a, b in COPY_FIXES:
+        html = html.replace(a, b)
     html = html.replace("</head>", HEAD_CSS + "</head>", 1)
-    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/reviews.js"></script>\n'
+    hook = '<script src="/assets/site/config.js"></script>\n<script src="/assets/site/site.js"></script>\n<script src="/assets/site/scrubber.js"></script>\n<script src="/assets/site/reviews.js"></script>\n<script src="/assets/site/gallery.js"></script>\n'
     html = html.replace("</body>", hook + "</body>", 1)
     dest = os.path.join(ROOT, out)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
