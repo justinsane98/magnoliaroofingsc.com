@@ -8,25 +8,33 @@
   var css = document.createElement("style");
   css.textContent = [
     ".mr-reviews{position:relative;z-index:2;max-width:1164px;margin:0 auto;padding:0 16px;box-sizing:border-box;font-family:Manrope,sans-serif;color:#fff}",
-    ".mr-reviews-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px}",
-    ".mr-reviews-summary{font-size:15px;letter-spacing:.3px}",
-    ".mr-reviews-summary b{font-family:'PT Serif',serif;font-size:22px;margin-right:6px}",
+    ".mr-reviews-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 22px}",
+    ".mr-reviews-summary{display:flex;align-items:center;gap:14px;flex-wrap:wrap}",
+    ".mr-score{font-family:'PT Serif',serif;font-size:48px;font-weight:700;line-height:1}",
+    ".mr-score-stars{font-size:30px;line-height:1;color:#f5b301;letter-spacing:3px}",
+    ".mr-score-count{font-size:15px;opacity:.9;margin-top:6px}",
     ".mr-stars{color:#f5b301;letter-spacing:2px}",
-    ".mr-reviews-actions{display:flex;gap:8px;align-items:center}",
     ".mr-btn{font:700 14px/1 Manrope,sans-serif;letter-spacing:1px;border:0;border-radius:5px;padding:13px 22px;cursor:pointer;background:#fff;color:" + BUTTON + "}",
-    ".mr-arrow{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:transparent;color:#fff;font-size:18px;cursor:pointer}",
-    ".mr-arrow:hover,.mr-btn:hover{opacity:.85}",
-    ".mr-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.5) transparent}",
-    ".mr-card{flex:0 0 calc((100% - 40px)/3);min-width:270px;box-sizing:border-box;scroll-snap-align:start;background:" + MAROON + ";border:1px solid rgba(255,255,255,.35);padding:26px 28px;display:flex;flex-direction:column;height:300px}",
+    ".mr-btn:hover{opacity:.85}",
+    ".mr-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}",
+    ".mr-track::-webkit-scrollbar{display:none}",
+    ".mr-card{flex:0 0 calc((100% - 40px)/3);box-sizing:border-box;scroll-snap-align:none;background:" + MAROON + ";border:1px solid rgba(255,255,255,.35);padding:26px 28px;display:flex;flex-direction:column;height:300px}",
+    ".mr-card:nth-child(3n+1){scroll-snap-align:start}",
     ".mr-card-text{flex:1;overflow-y:auto;font-size:14px;line-height:1.6;margin:10px 0 14px;padding-right:6px;white-space:pre-line;scrollbar-width:thin}",
     ".mr-card-name{font-family:'PT Serif',serif;font-weight:700;font-size:20px}",
     ".mr-card-meta{font-size:12px;opacity:.8;margin-top:2px}",
-    "@media (max-width:640px){.mr-card{flex-basis:85%}.mr-arrow{display:none}}",
+    ".mr-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:22px;min-height:12px}",
+    ".mr-dot{width:10px;height:10px;border-radius:5px;border:0;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s,background .3s,transform .3s}",
+    ".mr-dot:hover{background:rgba(255,255,255,.75)}",
+    ".mr-dot.on{width:34px;background:#fff}",
+    ".mr-dot.sm{transform:scale(.7)}.mr-dot.xs{transform:scale(.45)}",
+    "@media (max-width:767px){.mr-card{flex-basis:100%;scroll-snap-align:start!important}.mr-score{font-size:40px}.mr-score-stars{font-size:24px}}",
     // modal
     ".mr-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px}",
     ".mr-modal-box{background:#fff;color:#222;width:100%;max-width:420px;border-radius:8px;padding:30px;position:relative;font-family:Manrope,sans-serif;box-sizing:border-box}",
     ".mr-modal-box h3{font-family:'PT Serif',serif;font-size:24px;margin:0 0 18px;color:" + BUTTON + "}",
     ".mr-modal-box label{display:block;font-size:14px;margin:0 0 6px}",
+    ".mr-modal-box textarea{width:100%;box-sizing:border-box;border:1px solid #c9c9c9;border-radius:5px;padding:11px;font:15px Manrope,sans-serif;margin-bottom:18px;height:110px;resize:vertical}",
     ".mr-modal-box input{width:100%;box-sizing:border-box;border:1px solid #c9c9c9;border-radius:5px;padding:11px;font:15px Manrope,sans-serif;margin-bottom:18px}",
     ".mr-pick{display:flex;gap:4px;margin-bottom:22px}",
     ".mr-pick button{background:none;border:0;padding:0 2px;font-size:34px;line-height:1;cursor:pointer;color:#ccc}",
@@ -82,6 +90,11 @@
     function paint(n) { btns.forEach(function (b, i) { b.classList.toggle("on", i < n); }); }
     box.appendChild(pick);
 
+    box.appendChild(el("label", null, "Message"));
+    var msg = el("textarea");
+    msg.placeholder = "Tell us about your experience…";
+    box.appendChild(msg);
+
     var err = el("div", "mr-err", "Please enter your name and pick a star rating.");
     box.appendChild(err);
     var send = el("button", "mr-btn", "SUBMIT FEEDBACK");
@@ -101,7 +114,7 @@
       send.textContent = "SENDING…";
       var date = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
       window.SiteEmail("Website feedback: " + rating + " star" + (rating > 1 ? "s" : "") + " from " + n,
-        { Name: n, Rating: stars(rating) + " (" + rating + "/5)", Date: date })
+        { Name: n, Rating: stars(rating) + " (" + rating + "/5)", Message: msg.value.trim() || "(none)", Date: date })
         .then(function () {
           box.innerHTML = "";
           box.appendChild(close);
@@ -136,21 +149,15 @@
     var bar = el("div", "mr-reviews-bar");
     var sum = el("div", "mr-reviews-summary");
     var avg = reviews.reduce(function (s, r) { return s + r.rating; }, 0) / reviews.length;
-    sum.appendChild(el("b", null, avg.toFixed(1)));
-    sum.appendChild(el("span", "mr-stars", stars(Math.round(avg))));
-    sum.appendChild(document.createTextNode("  Based on " + reviews.length + " reviews"));
+    sum.appendChild(el("div", "mr-score", avg.toFixed(1)));
+    var right = el("div");
+    right.appendChild(el("div", "mr-score-stars", stars(Math.round(avg))));
+    right.appendChild(el("div", "mr-score-count", "Based on " + reviews.length + " reviews"));
+    sum.appendChild(right);
     bar.appendChild(sum);
-
-    var actions = el("div", "mr-reviews-actions");
-    var prev = el("button", "mr-arrow", "‹"), next = el("button", "mr-arrow", "›");
-    prev.setAttribute("aria-label", "Previous reviews");
-    next.setAttribute("aria-label", "Next reviews");
     var fb = el("button", "mr-btn", "LEAVE FEEDBACK");
     fb.addEventListener("click", openFeedback);
-    actions.appendChild(prev);
-    actions.appendChild(next);
-    actions.appendChild(fb);
-    bar.appendChild(actions);
+    bar.appendChild(fb);
     wrap.appendChild(bar);
 
     var track = el("div", "mr-track");
@@ -166,12 +173,52 @@
     });
     wrap.appendChild(track);
 
-    function page(dir) { track.scrollBy({ left: dir * track.clientWidth, behavior: "smooth" }); }
-    prev.addEventListener("click", function () { page(-1); });
-    next.addEventListener("click", function () { page(1); });
+    // Pagination dots: active page is a wide bar; long lists show a sliding window with shrinking edge dots.
+    var dots = el("div", "mr-dots");
+    dots.setAttribute("role", "tablist");
+    wrap.appendChild(dots);
+    var MAX_DOTS = 9;
+
+    function perPage() {
+      var card = track.firstChild;
+      return card ? Math.max(1, Math.round((track.clientWidth + 20) / (card.offsetWidth + 20))) : 1;
+    }
+    function pages() { return Math.ceil(reviews.length / perPage()); }
+    function current() {
+      var card = track.firstChild, step = (card.offsetWidth + 20) * perPage();
+      return Math.min(pages() - 1, Math.round(track.scrollLeft / step));
+    }
+    function go(p) {
+      var card = track.children[p * perPage()];
+      if (card) track.scrollTo({ left: card.offsetLeft - track.firstChild.offsetLeft, behavior: "smooth" });
+    }
+    function renderDots() {
+      var n = pages(), cur = current();
+      var start = Math.max(0, Math.min(cur - Math.floor(MAX_DOTS / 2), n - MAX_DOTS)), end = Math.min(n, start + MAX_DOTS);
+      dots.innerHTML = "";
+      for (var i = start; i < end; i++) {
+        var d = el("button", "mr-dot");
+        d.type = "button";
+        d.setAttribute("aria-label", "Reviews page " + (i + 1) + " of " + n);
+        if (i === cur) { d.classList.add("on"); d.setAttribute("aria-current", "true"); }
+        // edge dots shrink when there are more pages beyond the window
+        if ((i === start && start > 0) || (i === end - 1 && end < n)) d.classList.add("xs");
+        else if ((i === start + 1 && start > 0) || (i === end - 2 && end < n)) d.classList.add("sm");
+        d.addEventListener("click", go.bind(null, i));
+        dots.appendChild(d);
+      }
+    }
+    var t;
+    track.addEventListener("scroll", function () { clearTimeout(t); t = setTimeout(renderDots, 60); });
+    window.addEventListener("resize", renderDots);
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(Math.min(pages() - 1, current() + 1)); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(Math.max(0, current() - 1)); }
+    });
 
     row.style.display = "none";
     row.parentNode.insertBefore(wrap, row);
+    renderDots();
   }
 
   fetch("/assets/site/reviews.json")
