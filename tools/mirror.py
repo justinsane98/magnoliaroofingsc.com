@@ -98,8 +98,8 @@ COPY_FIXES = [
 
 # Regex edits to the mirrored HTML.
 REGEX_FIXES = [
-    # Nav: drop "Home" (logo links home), "About" (in-page jump), "Recent Projects" (not built yet), "Contact" (Chat covers it).
-    (r'<li\s+class="[^"]*">\s*<a class="website-nav-link"[^>]*>\s*(?:Home|HOME|ABOUT|RECENT PROJECTS|CONTACT)\s*</a>\s*</li>', ''),
+    # Nav: drop "About" (in-page jump), "Recent Projects" (not built yet), "Contact" (Chat covers it).
+    (r'<li\s+class="[^"]*">\s*<a class="website-nav-link"[^>]*>\s*(?:ABOUT|RECENT PROJECTS|CONTACT)\s*</a>\s*</li>', ''),
     # Hero CTAs: primary = phone number, secondary = chat.
     (r'<a href="/#about"(\s+target="_self"\s+class="theme-button hvr-grow-shadow)', r'<a href="tel:+18039087131"\1 mr-phone-cta'),
     (r'LEARN MORE</span>', '(803) 908-7131</span>'),
