@@ -1,0 +1,189 @@
+{
+ "_notes": "Coverage tiers for the service-areas map. tier: core (red: residential + every other service; the Midlands, Orangeburg, Aiken, Bamberg, Dorchester, Colleton, Beaufort) | state (pink: commercial, government and real estate). jobs: completed jobs in the county, null until Joe supplies real numbers (shown only when set). Don't guess.",
+ "counties": {
+  "Abbeville": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Aiken": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Allendale": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Anderson": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Bamberg": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Barnwell": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Beaufort": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Berkeley": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Calhoun": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Charleston": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Cherokee": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Chester": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Chesterfield": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Clarendon": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Colleton": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Darlington": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Dillon": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Dorchester": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Edgefield": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Fairfield": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Florence": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Georgetown": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Greenville": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Greenwood": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Hampton": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Horry": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Jasper": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Kershaw": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Lancaster": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Laurens": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Lee": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Lexington": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Marion": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Marlboro": {
+   "tier": "state",
+   "jobs": null
+  },
+  "McCormick": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Newberry": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Oconee": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Orangeburg": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Pickens": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Richland": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Saluda": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Spartanburg": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Sumter": {
+   "tier": "core",
+   "jobs": null
+  },
+  "Union": {
+   "tier": "state",
+   "jobs": null
+  },
+  "Williamsburg": {
+   "tier": "state",
+   "jobs": null
+  },
+  "York": {
+   "tier": "state",
+   "jobs": null
+  }
+ }
+}

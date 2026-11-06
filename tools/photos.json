@@ -1,0 +1,309 @@
+{
+ "flat_coated": {
+  "src": "/assets/site/fb/flat_coated.jpg",
+  "alt": "White restoration coating on a low-slope roof",
+  "from": "fb-09.jpg"
+ },
+ "flat_before": {
+  "src": "/assets/site/fb/flat_before.jpg",
+  "alt": "Low-slope roof before restoration",
+  "from": "fb-10.jpg"
+ },
+ "flat_membrane": {
+  "src": "/assets/site/fb/flat_membrane.jpg",
+  "alt": "Low-slope membrane and new shingle roof",
+  "from": "fb-05.jpg"
+ },
+ "crew_tearoff": {
+  "src": "/assets/site/fb/crew_tearoff.jpg",
+  "alt": "Magnolia crew installing underlayment on a tear-off",
+  "from": "fb-42.jpg"
+ },
+ "crew_tearoff2": {
+  "src": "/assets/site/fb/crew_tearoff2.jpg",
+  "alt": "Magnolia crew installing new shingles",
+  "from": "fb-43.jpg"
+ },
+ "crew_ridge": {
+  "src": "/assets/site/fb/crew_ridge.jpg",
+  "alt": "Magnolia roofer working on a ridge",
+  "from": "fb-35.jpg"
+ },
+ "tree_damage": {
+  "src": "/assets/site/fb/tree_damage.jpg",
+  "alt": "Tree fallen on a shingle roof after a storm",
+  "from": "fb-08.jpg"
+ },
+ "storm_house": {
+  "src": "/assets/site/fb/storm_house.jpg",
+  "alt": "House with roof torn open by a fallen tree",
+  "from": "fb2-198-2562304897430645.jpg"
+ },
+ "storm_marked": {
+  "src": "/assets/site/fb/storm_marked.jpg",
+  "alt": "Storm-damaged shingles marked for an insurance adjuster",
+  "from": "fb-25.jpg"
+ },
+ "worn_shingles": {
+  "src": "/assets/site/fb/worn_shingles.jpg",
+  "alt": "Worn shingles with missing tabs",
+  "from": "fb-17.jpg"
+ },
+ "rot_deck": {
+  "src": "/assets/site/fb/rot_deck.jpg",
+  "alt": "Rotted roof decking found during a repair",
+  "from": "fb2-035-1632238261938873.jpg"
+ },
+ "deck_new": {
+  "src": "/assets/site/fb/deck_new.jpg",
+  "alt": "New decking installed over a rotted section",
+  "from": "fb2-034-1632238268605539.jpg"
+ },
+ "chimney_flash": {
+  "src": "/assets/site/fb/chimney_flash.jpg",
+  "alt": "Chimney flashing on a shingle roof",
+  "from": "fb-44.jpg"
+ },
+ "flashing_new": {
+  "src": "/assets/site/fb/flashing_new.jpg",
+  "alt": "New step and counter flashing at a chimney",
+  "from": "fb-45.jpg"
+ },
+ "siding": {
+  "src": "/assets/site/fb/siding.jpg",
+  "alt": "Two-story home before and after new roof and exterior work",
+  "from": "fb2-149-645296553966387.jpg"
+ },
+ "house_before": {
+  "src": "/assets/site/fb/house_before.jpg",
+  "alt": "Home before roof replacement",
+  "from": "fb2-205-2562292354098566.jpg"
+ },
+ "house_during": {
+  "src": "/assets/site/fb/house_during.jpg",
+  "alt": "Tear-off in progress with tarps protecting the yard",
+  "from": "fb2-206-2562292324098569.jpg"
+ },
+ "house_after": {
+  "src": "/assets/site/fb/house_after.jpg",
+  "alt": "Same home after roof replacement",
+  "from": "fb2-207-2562292294098572.jpg"
+ },
+ "house_after2": {
+  "src": "/assets/site/fb/house_after2.jpg",
+  "alt": "Drone view of a finished roof replacement",
+  "from": "fb2-016-1656267609535938.jpg"
+ },
+ "ba_drone_1": {
+  "src": "/assets/site/fb/ba_drone_1.jpg",
+  "alt": "Before and after drone view of a roof replacement",
+  "from": "fb2-063-1566672665162100.jpg"
+ },
+ "ba_drone_2": {
+  "src": "/assets/site/fb/ba_drone_2.jpg",
+  "alt": "Before and after drone view of a roof replacement",
+  "from": "fb2-064-1566672621828771.jpg"
+ },
+ "roof_new_1": {
+  "src": "/assets/site/fb/roof_new_1.jpg",
+  "alt": "New architectural shingle roof, drone view",
+  "from": "fb2-021-1656267342869298.jpg"
+ },
+ "roof_new_2": {
+  "src": "/assets/site/fb/roof_new_2.jpg",
+  "alt": "New roof on a brick two-story home",
+  "from": "fb2-050-1571619968000703.jpg"
+ },
+ "roof_new_3": {
+  "src": "/assets/site/fb/roof_new_3.jpg",
+  "alt": "New roof on a brick and stone home",
+  "from": "fb2-099-1238378187991551.jpg"
+ },
+ "roof_new_4": {
+  "src": "/assets/site/fb/roof_new_4.jpg",
+  "alt": "New roof on a brick ranch",
+  "from": "fb2-129-1212619987234038.jpg"
+ },
+ "roof_new_5": {
+  "src": "/assets/site/fb/roof_new_5.jpg",
+  "alt": "New roof, drone view",
+  "from": "fb2-041-1597180382111328.jpg"
+ },
+ "roof_new_6": {
+  "src": "/assets/site/fb/roof_new_6.jpg",
+  "alt": "New roof on a brick home",
+  "from": "fb2-114-1224315522731151.jpg"
+ },
+ "roof_new_7": {
+  "src": "/assets/site/fb/roof_new_7.jpg",
+  "alt": "New roof on a brick home",
+  "from": "fb2-145-937128664783173.jpg"
+ },
+ "roof_new_8": {
+  "src": "/assets/site/fb/roof_new_8.jpg",
+  "alt": "New roof on a cottage-style home",
+  "from": "fb2-123-1214190837076953.jpg"
+ },
+ "multifamily": {
+  "src": "/assets/site/fb/multifamily.jpg",
+  "alt": "New roofs on a row of attached homes",
+  "from": "fb2-171-2890654261262372.jpg"
+ },
+ "team_award": {
+  "src": "/assets/site/fb/team_award.jpg",
+  "alt": "The Magnolia team at the Central Carolina Realtors Association awards",
+  "from": "fb2-083-1413319737164061.jpg"
+ },
+ "realtor_award": {
+  "src": "/assets/site/fb/realtor_award.jpg",
+  "alt": "2025 Affiliate of the Year award from the Central Carolina Realtors Association",
+  "from": "fb2-084-1413319670497401.jpg"
+ },
+ "realtor_affiliate": {
+  "src": "/assets/site/fb/realtor_affiliate.jpg",
+  "alt": "Central Carolina Realtors Association 2025 Affiliate of the Year: Magnolia Roofing",
+  "from": "fb2-082-1413319767164058.jpg"
+ },
+ "realtor_gala": {
+  "src": "/assets/site/fb/realtor_gala.jpg",
+  "alt": "Magnolia as a sponsor of the Central Carolina Realtors Association 2024 gala",
+  "from": "fb2-131-1211150960714274.jpg"
+ },
+ "community_hero": {
+  "src": "/assets/site/fb/community_hero.jpg",
+  "alt": "The Magnolia team at their tent at a community golf tournament",
+  "from": "fb2-008-1663763235453042.jpg"
+ },
+ "fireflies_wall": {
+  "src": "/assets/site/fb/fireflies_wall.jpg",
+  "alt": "Magnolia sign on the outfield wall at Segra Park",
+  "from": "fb2-094-1255404479622255.jpg"
+ },
+ "fireflies_park": {
+  "src": "/assets/site/fb/fireflies_park.jpg",
+  "alt": "Magnolia signage at a Columbia Fireflies game",
+  "from": "fb2-089-1327721129057256.jpg"
+ },
+ "fireflies_logo": {
+  "src": "/assets/site/fb/fireflies_logo.jpg",
+  "alt": "Columbia Fireflies and Magnolia Roofing",
+  "from": "fb2-095-1255404446288925.jpg"
+ },
+ "golf_tent": {
+  "src": "/assets/site/fb/golf_tent.jpg",
+  "alt": "Magnolia tent and grill at a golf tournament",
+  "from": "fb2-002-1663763462119686.jpg"
+ },
+ "golf_hole": {
+  "src": "/assets/site/fb/golf_hole.jpg",
+  "alt": "Hole sponsored by Magnolia Roofing",
+  "from": "fb2-003-1663763435453022.jpg"
+ },
+ "golf_nail": {
+  "src": "/assets/site/fb/golf_nail.jpg",
+  "alt": "Nail-driving contest at the Magnolia tent",
+  "from": "fb2-000-1663763522119680.jpg"
+ },
+ "veteran_roof": {
+  "src": "/assets/site/fb/veteran_roof.jpg",
+  "alt": "Magnolia giving away a roof to a deserving military veteran",
+  "from": "fb2-076-1543853647444002.jpg"
+ },
+ "veterans_expo": {
+  "src": "/assets/site/fb/veterans_expo.jpg",
+  "alt": "Magnolia booth at the Veterans Expo",
+  "from": "fb2-079-1530036735492360.jpg"
+ },
+ "habitat": {
+  "src": "/assets/site/fb/habitat.jpg",
+  "alt": "Brew & Build craft beer festival for Central SC Habitat for Humanity, sponsored by Magnolia",
+  "from": "fb2-124-1212811083881595.jpg"
+ },
+ "team_tent": {
+  "src": "/assets/site/fb/team_tent.jpg",
+  "alt": "Magnolia team at an outdoor community event",
+  "from": "fb2-115-1214569507039086.jpg"
+ },
+ "special_olympics": {
+  "src": "/assets/site/fb/special_olympics.jpg",
+  "alt": "Special Olympics South Carolina ornament",
+  "from": "fb2-226-2438863916441411.jpg"
+ },
+ "ornament": {
+  "src": "/assets/site/fb/ornament.jpg",
+  "alt": "Magnolia Roofing wooden ornament",
+  "from": "fb-01.jpg"
+ },
+ "owner_truck": {
+  "src": "/assets/site/fb/owner_truck.jpg",
+  "alt": "Magnolia in Our Town magazine",
+  "from": "fb2-080-1476709574158410.jpg"
+ },
+ "placeholder_1": {
+  "src": "/assets/site/fb/placeholder.svg",
+  "alt": "Photo needed"
+ },
+ "placeholder_2": {
+  "src": "/assets/site/fb/placeholder.svg",
+  "alt": "Photo needed"
+ },
+ "placeholder_3": {
+  "src": "/assets/site/fb/placeholder.svg",
+  "alt": "Photo needed"
+ },
+ "ccra_gala": {
+  "src": "/assets/site/fb/ccra_gala.jpg",
+  "alt": "The Magnolia team at the CCRA 2025 Circle of Excellence Awards",
+  "from": "fb2-130-1211150994047604.jpg"
+ },
+ "states_best": {
+  "src": "/assets/site/fb/states_best.jpg",
+  "alt": "Back-to-back The State's Best roofer, 2025 and 2026",
+  "from": "fb2-023-1647979357031430.jpg"
+ },
+ "hero_commercial": {
+  "src": "/assets/site/fb/hero_commercial.jpg",
+  "alt": "",
+  "from": "fb2-106-1238368277992542.jpg"
+ },
+ "hero_government": {
+  "src": "/assets/site/fb/hero_government.jpg",
+  "alt": "Freshly coated white flat roof with a brick parapet",
+  "from": "fb-09.jpg (cropped 2.4:1, upscaled to 1600px)"
+ },
+ "hero_about": {
+  "src": "/assets/site/fb/hero_about.jpg",
+  "alt": "",
+  "from": "fb2-005"
+ },
+ "hero_residential": {
+  "src": "/assets/site/fb/hero_residential.jpg",
+  "alt": "",
+  "from": "fb2-029-1634787961683903.jpg"
+ },
+ "hero_real_estate": {
+  "src": "/assets/site/fb/hero_real_estate.jpg",
+  "alt": "",
+  "from": "fb2-016-1656267609535938.jpg"
+ },
+ "hero_case_office": {
+  "src": "/assets/site/fb/hero_case_office.jpg",
+  "alt": "",
+  "from": "fb2-105-1238368337992536.jpg"
+ },
+ "hero_case_county": {
+  "src": "/assets/site/fb/hero_case_county.jpg",
+  "alt": "",
+  "from": "fb2-158-3137379353256527.jpg"
+ },
+ "hero_case_closing": {
+  "src": "/assets/site/fb/hero_case_closing.jpg",
+  "alt": "",
+  "from": "fb2-012-1659952165834149.jpg"
+ },
+ "hero_areas": {
+  "src": "/assets/site/fb/hero_areas.jpg",
+  "alt": "",
+  "from": "fb2-021-1656267342869298.jpg"
+ }
+}

@@ -1,0 +1,2133 @@
+{
+ "_notes": "Facts below were confirmed from the listed sources (mostly Wikipedia, plus local news and official sites). Empty fields mean nothing could be confirmed; don't fill them with guesses. 'areas' for small towns sometimes lists nearby communities or historic districts rather than subdivisions, because subdivision names could only be found on real-estate listing sites.",
+ "places": [
+  {
+   "name": "Columbia",
+   "type": "town",
+   "county": "Richland (county seat; portions extend into Lexington and Kershaw)",
+   "zips": [
+    "29201",
+    "29203",
+    "29204",
+    "29205",
+    "29206",
+    "29209",
+    "29210",
+    "29223",
+    "29229"
+   ],
+   "areas": [
+    "Five Points",
+    "Shandon / Old Shandon",
+    "Forest Hills",
+    "Melrose Heights (Historic Melrose)",
+    "Wales Garden",
+    "Elmwood Park",
+    "Cottontown/Bellevue",
+    "Waverly",
+    "Rosewood",
+    "Earlewood",
+    "Congaree Vista",
+    "University Hill",
+    "Granby Mill Village",
+    "BullStreet District"
+   ],
+   "landmarks": [
+    "South Carolina State House",
+    "University of South Carolina / Williams-Brice Stadium",
+    "Riverbanks Zoo and Garden",
+    "Congaree National Park (Richland County)",
+    "Fort Jackson",
+    "Gervais Street Bridge / Three Rivers Greenway",
+    "I-20, I-26, I-77, I-126"
+   ],
+   "known_for": [
+    "South Carolina State Fair, a 12-day fair each October at the State Fairgrounds on Rosewood Drive",
+    "Soda City Market, a weekly Saturday market on Main Street"
+   ],
+   "housing": "Early-1900s historic neighborhoods: Old Shandon dates to 1893, and Forest Hills was established in 1925 on the former Wade Hampton III estate and is on the National Register. Mill villages (Granby, Cottontown area) grew around textile mills in the late 1800s and early 1900s. Suburban growth came after WWII.",
+   "weather": "October 2015 historic flood (remnants of Hurricane Joaquin) caused widespread damage across the metro, including dam failures along Gills Creek. Record high of 113F at USC on June 29, 2012.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Columbia,_South_Carolina",
+    "https://www.historiccolumbia.org/tours/online-tours",
+    "https://www.homes.com/neighborhood-search/columbia-sc/29205/",
+    "https://www.scstatefair.org/?p=21974",
+    "https://www.gillscreekwatershed.org/resources/Documents/2015%20Flood%20what%20happened%201st%20update.pdf"
+   ]
+  },
+  {
+   "name": "West Columbia",
+   "type": "town",
+   "county": "Lexington",
+   "zips": [
+    "29169",
+    "29170",
+    "29172"
+   ],
+   "areas": [
+    "New Brookland Historic District (downtown/State Street and mill village)",
+    "Saluda Factory Historic District",
+    "Aretasville (historic Columbia Duck Mill village)"
+   ],
+   "landmarks": [
+    "Saluda River and Congaree River",
+    "Cayce-West Columbia Riverwalk (part of the Three Rivers Greenway)",
+    "Riverbanks Botanical Garden (north side of town, near the Saluda)",
+    "Gervais Street Bridge",
+    "State Street downtown",
+    "Airport High School / Brookland-Cayce High School",
+    "SC 302 (Airport Blvd), I-26"
+   ],
+   "known_for": [
+    "Originally the mill town of Brookland/New Brookland, built around the Columbia Duck Mill (1894), and renamed West Columbia in the 1930s"
+   ],
+   "housing": "Historic core is an 1890s-era mill village: workers' housing around the Columbia Duck Mill, now in the New Brookland Historic District (NRHP 1978). Housing units grew from 6,436 (2000) to 9,068 (2020).",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/West_Columbia,_South_Carolina",
+    "https://en.wikipedia.org/wiki/New_Brookland_Historic_District",
+    "https://www.scencyclopedia.org/sce/?p=12225",
+    "https://homes.com/local-guide/west-columbia-sc"
+   ]
+  },
+  {
+   "name": "Cayce",
+   "type": "town",
+   "county": "Lexington (small portion in Richland)",
+   "zips": [
+    "29033",
+    "29169",
+    "29170",
+    "29171",
+    "29172"
+   ],
+   "areas": [
+    "Historic town center on the west bank of the Congaree",
+    "Granby (former county seat and ghost town, within city area)",
+    "Congaree Creek area"
+   ],
+   "landmarks": [
+    "Congaree River",
+    "Cayce Riverwalk (paved trail shared with West Columbia)",
+    "Congaree Creek Heritage Preserve",
+    "Guignard Brick Works (NRHP)",
+    "Cayce Historical Museum",
+    "Brookland-Cayce High School",
+    "Columbia Metropolitan Airport (just west)",
+    "I-26, I-77, US 321, SC 2"
+   ],
+   "known_for": [
+    "Headquarters of Dominion Energy South Carolina",
+    "City motto 'Time for Life'"
+   ],
+   "housing": "",
+   "weather": "The Riverwalk park sometimes floods when the Congaree exceeds flood stage.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cayce,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Irmo",
+   "type": "town",
+   "county": "Lexington and Richland",
+   "zips": [
+    "29063"
+   ],
+   "areas": [
+    "Ballentine",
+    "Friarsgate (Old and New)",
+    "Seven Oaks",
+    "St. Andrews",
+    "Harbison",
+    "Dutch Fork"
+   ],
+   "landmarks": [
+    "Lake Murray / Lake Murray Dam",
+    "Harbison Boulevard",
+    "St. Andrews Road",
+    "Harbison State Forest",
+    "Irmo High School and Dutch Fork High School (Lexington-Richland School District 5)",
+    "I-26"
+   ],
+   "known_for": [
+    "The Okra Strut festival, started in 1973 as a library fundraiser, with a parade, street dance and arts and crafts",
+    "Motto: 'Gateway to Lake Murray and Home of the Okra Strut'"
+   ],
+   "housing": "No true downtown; the town is made up of clusters of suburban neighborhoods. Friarsgate is an established neighborhood, and many New Friarsgate listings show no HOA (per real-estate listings).",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Irmo,_South_Carolina",
+    "https://www.sroa.com/blog/local-guide/where-to-live-in-irmo-sc",
+    "https://www.huntllc.com/subdivisions/view/friarsgate",
+    "https://apartments.com/local-guide/irmo-seven-oaks-columbia-sc",
+    "https://en.wikipedia.org/wiki/Richland_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Lexington_County,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Chapin",
+   "type": "town",
+   "county": "Lexington (northern corner)",
+   "zips": [
+    "29036"
+   ],
+   "areas": [
+    "Downtown Chapin (Chapin Commercial Historic District)",
+    "Piney Woods area",
+    "Lake Murray's northern shore"
+   ],
+   "landmarks": [
+    "Lake Murray",
+    "Dreher Island State Park (nearby, in Newberry County)",
+    "Chapin High School and Spring Hill High School",
+    "Robinson-Hiller House (NRHP)",
+    "I-26"
+   ],
+   "known_for": [
+    "Chapin Labor Day Festival: three days starting the Saturday before Labor Day, with a parade, carnival and car show",
+    "Called the 'Capital of Lake Murray'"
+   ],
+   "housing": "Lake-area community; building Lake Murray (1920s-30s) displaced many Chapin farm families. Housing units in town limits rose from 261 (2000) to 658 (2010).",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chapin,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Dreher_Island_State_Park",
+    "https://en.wikipedia.org/wiki/Newberry_County,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Lexington",
+   "type": "town",
+   "county": "Lexington (county seat)",
+   "zips": [
+    "29071",
+    "29072",
+    "29073"
+   ],
+   "areas": [
+    "Downtown Lexington / Main St",
+    "Gibson Pond area",
+    "Red Bank",
+    "Oak Grove",
+    "White Knoll",
+    "Pine Ridge",
+    "Lake Murray shoreline"
+   ],
+   "landmarks": [
+    "Lake Murray and the Saluda (Lake Murray) Dam",
+    "Gibson Pond Park",
+    "Virginia Hilton Park",
+    "Icehouse Amphitheater",
+    "Lexington County Baseball Stadium (Blowfish)",
+    "Lexington, River Bluff and White Knoll High Schools",
+    "I-20, US 1 (Augusta Hwy), US 378, SC 6 (Lake Dr)"
+   ],
+   "known_for": [
+    "Town motto 'Town of Progress', the fastest-growing area in the Midlands",
+    "Where South Carolina's 'move over law' originated"
+   ],
+   "housing": "Mostly newer stock. Population grew from 3,289 (1990) to 23,568 (2020), and about 3,200 new homes were built in town limits after 2005. Many downtown brick buildings date from after the 1894 and 1916 fires.",
+   "weather": "F3 tornado on Aug 16, 1994 (remnants of Tropical Storm Beryl): 40+ injuries and $50M damage, plus six other tornadoes in the county. 2015 Joaquin flooding destroyed the Gibson Pond dam and caused the Old Mill dam to fail. A severe storm brought large hail and wind damage to Lexington and Red Bank (WACH, around May 2021; year not stated on the page).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lexington,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Lexington_County,_South_Carolina",
+    "https://wach.com/news/local/large-hail-wind-damage-severe-storms-midlands-monday"
+   ]
+  },
+  {
+   "name": "Blythewood",
+   "type": "town",
+   "county": "Richland (partly Fairfield)",
+   "zips": [
+    "29016"
+   ],
+   "areas": [
+    "Downtown Blythewood / Doko Meadows Park area",
+    "Blythewood Rd / I-77 corridor"
+   ],
+   "landmarks": [
+    "Doko Meadows Park",
+    "George P. Hoffman House (1855, now town hall, NRHP)",
+    "Scout Motors plant site off I-77",
+    "Blythewood High School and Westwood High School",
+    "I-77 Exit 27 (Blythewood Rd) and Exit 24 (US 21)"
+   ],
+   "known_for": [
+    "Scout Motors' ~$2B EV assembly plant (about 1,600-acre site, groundbreaking Feb 2024)",
+    "Town July Fourth fireworks and the Chamber's Ribfest at Doko Meadows Park"
+   ],
+   "housing": "A fast-growing, mostly new town: population went from 170 (2000) to 4,772 (2020), about 7,233 estimated in 2025.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Blythewood,_South_Carolina",
+    "https://www.blythewoodonline.com/category/events/page/14",
+    "https://tradeandindustrydev.com/region/south-carolina/news/sc-scout-motors-select-blythewood-production-site-31482",
+    "https://www.autoblog.com/2024/02/15/scout-motors-breaks-ground-on-new-2-billion-plant-in-south-carolina/"
+   ]
+  },
+  {
+   "name": "Elgin",
+   "type": "town",
+   "county": "Kershaw (small part in Richland)",
+   "zips": [
+    "29045"
+   ],
+   "areas": [
+    "Main Street (US 1)",
+    "White Pond",
+    "West Wateree area",
+    "Pontiac (just west, Richland County)"
+   ],
+   "landmarks": [
+    "White Pond, a 66-acre natural Sandhills lake",
+    "Lugoff-Elgin High School and Middle School",
+    "Blaney Elementary",
+    "I-20 Exit 87",
+    "US 1 and SC 12"
+   ],
+   "known_for": [
+    "The Catfish Stomp, Elgin's annual Christmas parade on Main Street",
+    "Formerly named Blaney (incorporated 1907); residents voted to rename it Elgin in 1962"
+   ],
+   "housing": "",
+   "weather": "NWS confirmed a brief EF-1 tornado (about 90 mph) near Pontiac, west-southwest of Elgin, on Jan 27, 2024. The Kershaw County earthquake swarm in 2021-22 had a largest quake of M3.6.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elgin,_Kershaw_County,_South_Carolina",
+    "https://www.wach.com/weather/skywach-weather-blog/pontiac-south-carolina-a-brief-ef-1-tornado-confirmed-near-elgin-with-90-mph-winds"
+   ]
+  },
+  {
+   "name": "Lugoff",
+   "type": "town",
+   "county": "Kershaw (unincorporated CDP)",
+   "zips": [
+    "29078"
+   ],
+   "areas": [],
+   "landmarks": [
+    "Wateree River (2.5 mi east)",
+    "Lugoff-Elgin High School",
+    "Lugoff Elementary, Wateree Elementary, Doby's Mill Elementary",
+    "I-20, US 1, US 601, SC 34"
+   ],
+   "known_for": [
+    "'Lights of Lugoff' Christmas Parade (Wikipedia mention, no citation)"
+   ],
+   "housing": "",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lugoff,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Camden",
+   "type": "town",
+   "county": "Kershaw (county seat)",
+   "zips": [
+    "29020",
+    "29021"
+   ],
+   "areas": [
+    "Historic downtown / Broad St",
+    "East Camden",
+    "Knights Hill",
+    "Dusty Bend",
+    "Windsor Heights",
+    "White Gardens",
+    "Arrowwood",
+    "Sunnyhill"
+   ],
+   "landmarks": [
+    "Springdale Race Course",
+    "National Steeplechase Museum",
+    "Historic Camden Revolutionary War Site / Kershaw House",
+    "Camden Battlefield",
+    "Camden High School and Camden Military Academy",
+    "US 1 (DeKalb St), US 521 (Broad St), US 601, I-20"
+   ],
+   "known_for": [
+    "The Carolina Cup steeplechase at Springdale Race Course, held since 1930 in late March or early April",
+    "Revolutionary War Field Days (each November since 1970) and Irish Fest Camden (March, since 2017)"
+   ],
+   "housing": "One of the state's oldest towns, with Revolutionary-era sites. Starting in the mid-1880s it was a winter resort for wealthy northern families, which left estates and older homes.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Camden,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Kershaw_County,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Forest Acres",
+   "type": "town",
+   "county": "Richland",
+   "zips": [
+    "29206",
+    "29204"
+   ],
+   "areas": [
+    "Forest Lake / Forest Lake Club area",
+    "Trenholm Plaza area",
+    "Former Richland Mall site (Forest Dr & Beltline Blvd)",
+    "Overcreek / Rockyford Lake area",
+    "Gills Creek corridor"
+   ],
+   "landmarks": [
+    "Forest Drive",
+    "Beltline Boulevard",
+    "Forest Lake and Forest Lake Club (golf, developed 1920s)",
+    "Trenholm Plaza",
+    "A.C. Flora High School and Richland Northeast High School"
+   ],
+   "known_for": [
+    "Richland Mall (opened 1961) being torn down for a large mixed-use redevelopment",
+    "Named for developer Cooper's Forest Land Company, also the source of the Forest Drive and Forest Lake names"
+   ],
+   "housing": "Lake-and-golf neighborhood development started in the 1920s (Forest Lake Club, lots on Quinine Hill by 1929). Housing units stayed roughly flat: 5,232 (2000) and 5,452 (2020).",
+   "weather": "October 2015 flood: Overcreek and Upper and Lower Rockyford lake dams failed, and Forest Lake dam was overtopped but held. At least 170-180 Forest Acres homes were damaged.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Forest_Acres,_South_Carolina",
+    "https://www.richlandcountysc.gov/Portals/0/Departments/Conservation/Commission/Docs/Upper%20Richland%20Appendices.pdf",
+    "https://en.wikipedia.org/wiki/Richland_Mall_(South_Carolina)",
+    "https://en.wikipedia.org/wiki/Overcreek_Dam",
+    "https://www.gillscreekwatershed.org/resources/Documents/2015%20Flood%20what%20happened%201st%20update.pdf",
+    "https://www.masc.sc/node/1409"
+   ]
+  },
+  {
+   "name": "Richland County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Columbia",
+    "Forest Acres",
+    "Blythewood",
+    "Irmo (part)",
+    "Arcadia Lakes",
+    "Eastover",
+    "Dentsville",
+    "St. Andrews",
+    "Hopkins",
+    "Gadsden",
+    "Olympia",
+    "Woodfield"
+   ],
+   "landmarks": [
+    "Congaree National Park",
+    "Harbison State Forest",
+    "Sesquicentennial State Park",
+    "Fort Jackson",
+    "Riverbanks Zoo and Garden",
+    "I-20, I-26, I-77, US 1, US 21, US 76"
+   ],
+   "known_for": [
+    "South Carolina State Fair (October, Columbia)",
+    "Home of the State House and USC"
+   ],
+   "housing": "2020: 182,408 housing units, 59.4% owner-occupied.",
+   "weather": "October 2015 historic flood; multiple dam failures in the Gills Creek watershed (Arcadia Lakes, Forest Acres). EF-1 tornado near Pontiac/Elgin on Jan 27, 2024.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Richland_County,_South_Carolina",
+    "https://www.gillscreekwatershed.org/resources/Documents/2015%20Flood%20what%20happened%201st%20update.pdf"
+   ]
+  },
+  {
+   "name": "Lexington County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Lexington",
+    "West Columbia",
+    "Cayce",
+    "Irmo (most)",
+    "Chapin",
+    "Batesburg-Leesville",
+    "Gilbert",
+    "Pelion",
+    "Swansea",
+    "Springdale",
+    "Pine Ridge",
+    "South Congaree",
+    "Seven Oaks",
+    "Red Bank",
+    "Oak Grove"
+   ],
+   "landmarks": [
+    "Lake Murray",
+    "Saluda Shoals Park",
+    "Riverbanks Botanical Garden",
+    "Peachtree Rock Heritage Preserve",
+    "Columbiana Centre",
+    "I-20, I-26, I-77, US 1, US 378"
+   ],
+   "known_for": [
+    "Lexington County Peach Festival in Gilbert, held July 4 for 65+ years (2026 status conflicting in reports)",
+    "Lake Murray"
+   ],
+   "housing": "Fast growth: 262,391 (2010) to 293,991 (2020) people. 2020: 127,887 housing units, 75.8% owner-occupied. Urbanization is concentrated in the eastern and northeastern parts of the county.",
+   "weather": "Aug 16, 1994: F3 tornado plus six others from the remnants of Tropical Storm Beryl. Oct 2015: Joaquin flood dam failures in Lexington.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lexington_County,_South_Carolina",
+    "https://www.scetv.org/stories/2025/gilbert-sc-hosts-its-65th-annual-lexington-county-peach-festival-friday",
+    "https://en.wikipedia.org/wiki/Lexington,_South_Carolina"
+   ]
+  },
+  {
+   "name": "Kershaw County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Camden",
+    "Lugoff",
+    "Elgin",
+    "Bethune",
+    "Boykin",
+    "East Camden",
+    "Cassatt",
+    "Liberty Hill",
+    "Westville",
+    "DeKalb"
+   ],
+   "landmarks": [
+    "Lake Wateree",
+    "Wateree River",
+    "Goodale State Park",
+    "Camden Battlefield and Longleaf Pine Preserve",
+    "Springdale Race Course",
+    "I-20, US 1, US 521, US 601"
+   ],
+   "known_for": [
+    "Carolina Cup steeplechase in Camden",
+    "Revolutionary War history (Battle of Camden, 1780)"
+   ],
+   "housing": "2020: 28,874 housing units, 79.1% owner-occupied.",
+   "weather": "Jan 11, 2020: NWS confirmed a high-end EF-2 tornado (about 130 mph) that heavily damaged North Central High School. Earthquake swarm Dec 2021-Dec 2022 (80+ quakes, largest M3.6).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kershaw_County,_South_Carolina",
+    "https://wach.com/news/local/severe-weather-leaves-high-school-damaged-in-kershaw-county",
+    "https://mesonet.agron.iastate.edu/api/1/nwstext/202001122340-KCAE-NOUS42-PNSCAE"
+   ]
+  },
+  {
+   "name": "Fairfield County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Winnsboro",
+    "Ridgeway",
+    "Jenkinsville",
+    "Blythewood (part)",
+    "Winnsboro Mills",
+    "Great Falls Lake area",
+    "Monticello",
+    "Mitford"
+   ],
+   "landmarks": [
+    "Lake Wateree State Park",
+    "Lake Monticello / Monticello Reservoir",
+    "Winnsboro Town Clock",
+    "Fairfield County Courthouse (1823, Robert Mills)",
+    "South Carolina Railroad Museum",
+    "I-77, US 21, US 321"
+   ],
+   "known_for": [
+    "Pig on the Ridge, a BBQ festival in downtown Ridgeway in early November (SC Barbecue Association-sanctioned, 25+ years)",
+    "V.C. Summer Nuclear Station"
+   ],
+   "housing": "2020: 10,838 housing units, 74.0% owner-occupied. Lake Wateree and Lake Monticello shorelines.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fairfield_County,_South_Carolina",
+    "https://www.blythewoodonline.com/?p=58459",
+    "https://www.abccolumbia.com/?p=604340"
+   ]
+  },
+  {
+   "name": "Newberry County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Newberry",
+    "Prosperity",
+    "Little Mountain",
+    "Pomaria",
+    "Peak",
+    "Silverstreet",
+    "Whitmire",
+    "Helena",
+    "Chappells"
+   ],
+   "landmarks": [
+    "Newberry Opera House (built 1881)",
+    "Newberry College (1856)",
+    "Dreher Island State Park",
+    "Lake Murray",
+    "Parr Shoals Reservoir / Broad River",
+    "I-26, US 76, US 176"
+   ],
+   "known_for": [
+    "Newberry Oktoberfest downtown since 2002, drawing about 30,000 people",
+    "Newberry Opera House"
+   ],
+   "housing": "2020: 18,213 housing units, 72.9% owner-occupied; Lake Murray shoreline.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Newberry_County,_South_Carolina",
+    "https://www.newberryobserver.com/news/35429/a-look-back-at-the-first-newberry-oktoberfest",
+    "https://www.newberrycounty.gov/node/2272"
+   ]
+  },
+  {
+   "name": "Saluda County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Saluda",
+    "Ridge Spring",
+    "Ward",
+    "Batesburg-Leesville (part)",
+    "Monetta (part)",
+    "Mount Willing",
+    "Chappells"
+   ],
+   "landmarks": [
+    "Lake Murray",
+    "Saluda River",
+    "Saluda Theatre",
+    "Saluda County Museum",
+    "Sumter National Forest (part)",
+    "US 1, US 178, US 378"
+   ],
+   "known_for": [
+    "Birthplace of Alamo defenders William B. Travis (1809) and James Bonham (1807)",
+    "Ridge Spring Harvest Festival (Oct)"
+   ],
+   "housing": "2020: 9,267 housing units, 75.2% owner-occupied; rural, with Lake Murray shoreline.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Saluda_County,_South_Carolina",
+    "https://www.hmdb.org/m.asp?m=13112",
+    "https://discoversouthcarolina.com/articles/visit-the-saluda-county-museum",
+    "https://destination-bbq.com/event/ridge-spring-harvest-festival-scba/"
+   ]
+  },
+  {
+   "name": "Calhoun County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "St. Matthews",
+    "Cameron",
+    "Fort Motte",
+    "Sandy Run",
+    "Lone Star",
+    "Creston"
+   ],
+   "landmarks": [
+    "Lake Marion",
+    "Congaree River",
+    "Congaree Bluffs Heritage Preserve",
+    "Fort Motte Battle Site",
+    "Calhoun County Courthouse",
+    "I-26, US 21, US 176, US 601"
+   ],
+   "known_for": [
+    "Purple Martin Festival in St. Matthews each April since 1973, with a parade on Bridge Street"
+   ],
+   "housing": "2020: 7,024 housing units, 79.6% owner-occupied; rural.",
+   "weather": "April 13, 2020: an EF3 tornado (about 140 mph) tracked from Barnwell through Orangeburg into Calhoun County (NWS Columbia).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Calhoun_County,_South_Carolina",
+    "https://calhouncountylibrary.blogspot.com/2022/04/purple-martin-parade-and-festival.html",
+    "https://www.santeecoopercountry.org/?p=6087",
+    "https://www.weather.gov/cae/04132020_tornadoOutbreak.html"
+   ]
+  },
+  {
+   "name": "Sumter County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Sumter",
+    "Mayesville",
+    "Pinewood",
+    "Rembert",
+    "Dalzell",
+    "Wedgefield",
+    "Stateburg",
+    "Shiloh",
+    "Oswego"
+   ],
+   "landmarks": [
+    "Shaw Air Force Base",
+    "Swan Lake Iris Gardens",
+    "Poinsett State Park",
+    "Manchester State Forest",
+    "Lake Marion",
+    "US 15, US 76, US 378, US 521"
+   ],
+   "known_for": [
+    "Sumter Iris Festival at Swan Lake Iris Gardens each May (since about 1940), billed as SC's oldest continuous festival",
+    "Named a World War II Heritage City by the NPS (2024)"
+   ],
+   "housing": "2020: 46,753 housing units, 65.7% owner-occupied.",
+   "weather": "Hurricane Hugo, Sept 22, 1989: Shaw AFB recorded a 109 mph gust, damage in Sumter was estimated at $95M, and residents went nearly three weeks without power.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sumter_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Swan_Lake_Iris_Gardens",
+    "https://www.wistv.com/2026/05/16/south-carolinas-longest-running-festival-returns-with-patriotic-theme/",
+    "https://issuu.com/graphix_chic/docs/hugo_2019",
+    "https://en.wikipedia.org/wiki/Hurricane_Hugo"
+   ]
+  },
+  {
+   "name": "Orangeburg County",
+   "type": "county",
+   "county": "",
+   "zips": [],
+   "areas": [
+    "Orangeburg",
+    "Santee",
+    "Holly Hill",
+    "Elloree",
+    "North",
+    "Branchville",
+    "Bowman",
+    "Eutawville",
+    "Neeses",
+    "Norway",
+    "Springfield"
+   ],
+   "landmarks": [
+    "Edisto Memorial Gardens",
+    "South Carolina State University and Claflin University",
+    "Lake Marion / Santee State Park",
+    "Edisto River",
+    "I-26, I-95, US 301, US 601"
+   ],
+   "known_for": [
+    "Orangeburg Festival of Roses at Edisto Memorial Gardens, the weekend before Mother's Day (since 1972)",
+    "Two HBCUs (SC State, Claflin)"
+   ],
+   "housing": "2020: 41,197 housing units, 68.8% owner-occupied.",
+   "weather": "April 13, 2020 tornado outbreak: EF3 tornadoes crossed the county and killed two people near Neeses. The county reported 14 homes destroyed and 17 with major damage. NWS counted 23 tornadoes statewide that day.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Orangeburg_County,_South_Carolina",
+    "https://www.orangeburg.sc.us/node/47",
+    "https://www.weather.gov/cae/04132020_tornadoOutbreak.html",
+    "https://www.wistv.com/2020/04/17/nws-tornadoes-hit-sc-april-least-were-ef",
+    "https://www.wistv.com/2020/04/13/couple-killed-early-morning-storm-orangeburg-county-identified"
+   ]
+  },
+  {
+   "name": "Abbeville County",
+   "type": "county",
+   "county": "",
+   "seat": "Abbeville",
+   "zips": [],
+   "areas": [
+    "Abbeville",
+    "Calhoun Falls",
+    "Donalds",
+    "Due West",
+    "Lowndesville",
+    "Honea Path (part)",
+    "Ware Shoals (part)",
+    "Antreville",
+    "Lake Secession"
+   ],
+   "landmarks": [
+    "Calhoun Falls State Park",
+    "Long Cane Scenic Area",
+    "Cedar Springs Historic District",
+    "Sumter National Forest (part)",
+    "McCalla Wildlife Management Area",
+    "US 178, SC 20, SC 28, SC 71, SC 72, SC 81"
+   ],
+   "known_for": [
+    "Erskine College in Due West",
+    "The Treaty of DeWitt's Corner with the Cherokee was signed at Dewitt's Corner, now Due West"
+   ],
+   "housing": "The 2020 Census counted 11,540 housing units in the county; 77.2% of occupied units were owner-occupied.",
+   "weather": "On March 28, 1984, during the 1984 Carolinas tornado outbreak, a downburst damaged or destroyed 18 homes and injured 24 people in Anderson and Abbeville counties, and a tornado north of West View crushed several mobile homes.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Abbeville_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/1984_Carolinas_tornado_outbreak"
+   ]
+  },
+  {
+   "name": "Anderson County",
+   "type": "county",
+   "county": "",
+   "seat": "Anderson",
+   "zips": [],
+   "areas": [
+    "Anderson",
+    "Belton",
+    "Williamston",
+    "Pendleton",
+    "Iva",
+    "Pelzer",
+    "Starr",
+    "Honea Path",
+    "Powdersville",
+    "Piedmont (part)",
+    "Clemson (part)",
+    "Easley (part)"
+   ],
+   "landmarks": [
+    "Lake Hartwell",
+    "Sadlers Creek State Park",
+    "Broyles Recreation Area",
+    "Fant's Grove Wildlife Management Area",
+    "I-85, US 29, US 76, US 178, SC 24, SC 28, SC 81"
+   ],
+   "known_for": [
+    "Lake Hartwell, a U.S. Army Corps of Engineers lake with nearly 1,000 miles of shoreline",
+    "Anderson University"
+   ],
+   "housing": "The 2020 Census counted 89,123 housing units in the county; 73.2% of occupied units were owner-occupied.",
+   "weather": "Hurricane Helene's winds on September 27, 2024 gusted to 72 mph in Anderson, and deaths in Anderson County were blamed on trees falling on residences.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anderson_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene",
+    "https://www.southcarolinapublicradio.org/sc-news/2024-09-27/helene-blamed-for-multiple-deaths-in-south-carolina-most-upstate"
+   ]
+  },
+  {
+   "name": "Cherokee County",
+   "type": "county",
+   "county": "",
+   "seat": "Gaffney",
+   "zips": [],
+   "areas": [
+    "Gaffney",
+    "Blacksburg",
+    "Chesnee (part)",
+    "Smyrna (part)",
+    "Cherokee Falls",
+    "East Gaffney",
+    "Grassy Pond",
+    "Thicketty",
+    "Draytonville",
+    "Kings Creek"
+   ],
+   "landmarks": [
+    "Cowpens National Battlefield",
+    "Kings Mountain National Military Park (part)",
+    "The Peachoid",
+    "Cherokee Speedway",
+    "Magness-Humphries House",
+    "I-85, US 29, US 221, SC 5, SC 11, SC 18"
+   ],
+   "known_for": [
+    "Three national park units within its boundaries: Cowpens National Battlefield, Kings Mountain National Military Park and the Overmountain Victory National Historic Trail",
+    "Limestone University in Gaffney"
+   ],
+   "housing": "The 2020 Census counted 24,713 housing units in the county; 68.6% of occupied units were owner-occupied.",
+   "weather": "On October 23, 2017, an EF2 tornado with estimated 120 mph winds touched down about 5 miles west-northwest of Gaffney; county officials reported 57 homes with at least minor damage, three with major damage and one destroyed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cherokee_County,_South_Carolina",
+    "https://digital-release.wspa.com/?p=53331",
+    "https://digital-release.wspa.com/?p=53584"
+   ]
+  },
+  {
+   "name": "Chester County",
+   "type": "county",
+   "county": "",
+   "seat": "Chester",
+   "zips": [],
+   "areas": [
+    "Chester",
+    "Great Falls",
+    "Fort Lawn",
+    "Richburg",
+    "Lowrys",
+    "Eureka Mill",
+    "Gayle Mill",
+    "Blackstock",
+    "Edgemoor",
+    "Lando",
+    "Leeds"
+   ],
+   "landmarks": [
+    "Landsford Canal State Park",
+    "Chester State Park",
+    "Sumter National Forest (part)",
+    "Landsford Canal Forest Legacy Area",
+    "I-77, US 21, US 321, SC 9, SC 72, SC 97"
+   ],
+   "known_for": [
+    "Timber production, with several sawmills in and near the county",
+    "E & J Gallo Winery is among the county's largest employers"
+   ],
+   "housing": "The 2020 Census counted 14,601 housing units in the county; 74.3% of occupied units were owner-occupied.",
+   "weather": "On May 5, 2020, an EF2 tornado tracked from about 7 miles west of Great Falls across I-77 into Great Falls, where a house on Republic Street was destroyed by a fallen tree (NWS Columbia).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chester_County,_South_Carolina",
+    "https://www.weather.gov/cae/05052020_tornado.html"
+   ]
+  },
+  {
+   "name": "Edgefield County",
+   "type": "county",
+   "county": "",
+   "seat": "Edgefield",
+   "zips": [],
+   "areas": [
+    "Edgefield",
+    "Johnston",
+    "Trenton",
+    "Murphys Estates"
+   ],
+   "landmarks": [
+    "Sumter National Forest (part)",
+    "Stevens Creek Heritage Preserve (part)",
+    "Savannah River",
+    "US 25, US 378, SC 19, SC 23, SC 121"
+   ],
+   "known_for": [
+    "Alkaline-glazed stoneware pottery made from local clay in Edgefield and Pottersville",
+    "Headquarters of the National Wild Turkey Federation in Edgefield"
+   ],
+   "housing": "The 2020 Census counted 11,022 housing units in the county; 77.9% of occupied units were owner-occupied.",
+   "weather": "On March 15, 2008, an EF2 tornado tracked from east-northeast of McCormick through Edgefield County to southwest of Monetta, severely damaging a house and a mobile home along its path and causing minor damage to several others.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Edgefield_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Edgefield,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Tornado_outbreak_of_March_14%E2%80%9315,_2008"
+   ]
+  },
+  {
+   "name": "Greenville County",
+   "type": "county",
+   "county": "",
+   "seat": "Greenville",
+   "zips": [],
+   "areas": [
+    "Greenville",
+    "Greer",
+    "Mauldin",
+    "Simpsonville",
+    "Fountain Inn",
+    "Travelers Rest",
+    "Taylors",
+    "Berea",
+    "Five Forks",
+    "Wade Hampton",
+    "Tigerville",
+    "Piedmont (part)"
+   ],
+   "landmarks": [
+    "Falls Park on the Reedy",
+    "Paris Mountain State Park",
+    "Caesars Head State Park",
+    "Jones Gap State Park",
+    "Poinsett Bridge Heritage Preserve",
+    "Greenville Zoo",
+    "I-85, I-185, I-385, US 25, US 29, US 123, US 276"
+   ],
+   "known_for": [
+    "Most populous county in South Carolina (525,534 at the 2020 census)",
+    "Greenville County School District, the largest school system in South Carolina"
+   ],
+   "housing": "The 2020 Census counted 226,215 housing units in the county; 66.4% of occupied units were owner-occupied.",
+   "weather": "Hurricane Helene struck the Upstate on September 27, 2024; six deaths were recorded in Greenville County, most involving fallen trees.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Greenville_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene",
+    "https://www.southcarolinapublicradio.org/sc-news/2024-09-27/helene-blamed-for-multiple-deaths-in-south-carolina-most-upstate"
+   ]
+  },
+  {
+   "name": "Greenwood County",
+   "type": "county",
+   "county": "",
+   "seat": "Greenwood",
+   "zips": [],
+   "areas": [
+    "Greenwood",
+    "Ninety Six",
+    "Hodges",
+    "Troy",
+    "Ware Shoals",
+    "Bradley",
+    "Cokesbury",
+    "Coronaca",
+    "Promised Land",
+    "Phoenix",
+    "Verdery"
+   ],
+   "landmarks": [
+    "Lake Greenwood",
+    "Lake Greenwood State Park",
+    "Ninety Six National Historic Site",
+    "Long Cane Scenic Area",
+    "Sumter National Forest (part)",
+    "US 25, US 178, US 221, SC 34, SC 72, SC 246"
+   ],
+   "known_for": [
+    "Fujifilm's North American research, manufacturing and distribution operations",
+    "Greenwood Genetic Center and Lander University"
+   ],
+   "housing": "The 2020 Census counted 31,323 housing units in the county; 65.3% of occupied units were owner-occupied.",
+   "weather": "On April 10, 2009, an EF1 tornado with estimated 110 mph winds crossed the west and south sides of Greenwood; the NWS reported serious damage from trees falling on structures and some roofs severely stripped.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Greenwood_County,_South_Carolina",
+    "https://www.weather.gov/gsp/2009GreenwoodTornadoPNS"
+   ]
+  },
+  {
+   "name": "Laurens County",
+   "type": "county",
+   "county": "",
+   "seat": "Laurens",
+   "zips": [],
+   "areas": [
+    "Laurens",
+    "Clinton",
+    "Gray Court",
+    "Cross Hill",
+    "Waterloo",
+    "Fountain Inn (part)",
+    "Ware Shoals (part)",
+    "Joanna",
+    "Mountville",
+    "Princeton",
+    "Watts Mills",
+    "Hickory Tavern"
+   ],
+   "landmarks": [
+    "Musgrove Mill State Historic Site",
+    "Lake Rabon Park",
+    "Laurens County Park",
+    "Clinton Reservoir Tract",
+    "Sumter National Forest (part)",
+    "I-26, I-385, US 25, US 76, US 221, SC 72"
+   ],
+   "known_for": [
+    "Presbyterian College in Clinton, founded in 1880",
+    "Large employers include Shaw Industries, CeramTec and Sterilite"
+   ],
+   "housing": "The 2020 Census counted 31,276 housing units in the county; 71.8% of occupied units were owner-occupied.",
+   "weather": "On March 28, 1984, an F2 tornado moved from west of Laurens through Wattsville, destroying 19 mobile homes and damaging or destroying five public buildings Hurricane Helene on September 27, 2024 caused three deaths in Laurens County and downed trees on the Presbyterian College campus.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Laurens_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/1984_Carolinas_tornado_outbreak",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene"
+   ]
+  },
+  {
+   "name": "McCormick County",
+   "type": "county",
+   "county": "",
+   "seat": "McCormick",
+   "zips": [],
+   "areas": [
+    "McCormick",
+    "Parksville",
+    "Plum Branch",
+    "Clarks Hill",
+    "Modoc",
+    "Mount Carmel",
+    "Willington"
+   ],
+   "landmarks": [
+    "Hickory Knob State Resort Park",
+    "Baker Creek State Park",
+    "Hamilton Branch State Recreation Area",
+    "Sumter National Forest - Long Cane Ranger District",
+    "Savannah Lakes Beach",
+    "US 221, US 378, SC 10, SC 28, SC 81"
+   ],
+   "known_for": [
+    "Smallest county in South Carolina by land area",
+    "South Carolina Governor's School for Agriculture at John de la Howe"
+   ],
+   "housing": "The 2020 Census counted 5,380 housing units in the county; 81.3% of occupied units were owner-occupied.",
+   "weather": "On March 15, 2008, an EF2 tornado touched down east-northeast of McCormick and tracked about 33 miles toward Monetta, severely damaging a house and a mobile home and splitting another mobile home with a fallen tree.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/McCormick_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Tornado_outbreak_of_March_14%E2%80%9315,_2008"
+   ]
+  },
+  {
+   "name": "Oconee County",
+   "type": "county",
+   "county": "",
+   "seat": "Walhalla",
+   "zips": [],
+   "areas": [
+    "Walhalla",
+    "Seneca",
+    "Westminster",
+    "Salem",
+    "West Union",
+    "Fair Play",
+    "Keowee Key",
+    "Newry",
+    "Tamassee",
+    "Utica",
+    "Mountain Rest",
+    "Townville (part)"
+   ],
+   "landmarks": [
+    "Lake Keowee",
+    "Lake Jocassee",
+    "Lake Hartwell",
+    "Oconee State Park",
+    "Devils Fork State Park",
+    "Oconee Station State Historic Site",
+    "I-85, US 76, US 123, SC 11, SC 28, SC 59"
+   ],
+   "known_for": [
+    "Oconee Nuclear Station on Lake Keowee",
+    "Southern end of SC 11, the Cherokee Foothills National Scenic Highway"
+   ],
+   "housing": "The 2020 Census counted 40,788 housing units in the county; 75.0% of occupied units were owner-occupied.",
+   "weather": "On April 13, 2020, an EF3 tornado tracked about 17 miles from south-southeast of Westminster through Seneca to west of Central, killing one person and injuring five.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Oconee_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/List_of_tornadoes_in_the_2020_Easter_tornado_outbreak"
+   ]
+  },
+  {
+   "name": "Pickens County",
+   "type": "county",
+   "county": "",
+   "seat": "Pickens",
+   "zips": [],
+   "areas": [
+    "Pickens",
+    "Easley",
+    "Clemson",
+    "Liberty",
+    "Central",
+    "Norris",
+    "Six Mile",
+    "Dacusville",
+    "Arial",
+    "Cateechee",
+    "Pumpkintown",
+    "Rocky Bottom"
+   ],
+   "landmarks": [
+    "Table Rock State Park",
+    "Sassafras Mountain",
+    "Keowee-Toxaway State Park",
+    "Hagood Mill Historic Site",
+    "Jocassee Gorges Wilderness Area",
+    "Pinnacle Mountain",
+    "US 76, US 123, US 178, SC 8, SC 11, SC 93, SC 183"
+   ],
+   "known_for": [
+    "Clemson University",
+    "Sassafras Mountain, the highest natural point in South Carolina (3,560 ft)"
+   ],
+   "housing": "The 2020 Census counted 56,385 housing units in the county; 66.9% of occupied units were owner-occupied.",
+   "weather": "On April 13, 2020, the EF3 Seneca tornado ended west of Central in Pickens County, and an EF2 tornado south of Pumpkintown destroyed two mobile homes and injured three people.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pickens_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/List_of_tornadoes_in_the_2020_Easter_tornado_outbreak"
+   ]
+  },
+  {
+   "name": "Spartanburg County",
+   "type": "county",
+   "county": "",
+   "seat": "Spartanburg",
+   "zips": [],
+   "areas": [
+    "Spartanburg",
+    "Boiling Springs",
+    "Duncan",
+    "Lyman",
+    "Wellford",
+    "Inman",
+    "Landrum",
+    "Woodruff",
+    "Cowpens",
+    "Pacolet",
+    "Chesnee",
+    "Greer (part)"
+   ],
+   "landmarks": [
+    "Croft State Park",
+    "Hatcher Garden and Woodland Preserve",
+    "Tyger River Park",
+    "Lake Cooley Park",
+    "Daniel Morgan Monument",
+    "I-26, I-85, I-585, US 29, US 176, US 221"
+   ],
+   "known_for": [
+    "BMW, Michelin, Adidas and Siemens are among the county's largest employers"
+   ],
+   "housing": "The 2020 Census counted 137,009 housing units in the county; 70.6% of occupied units were owner-occupied.",
+   "weather": "Hurricane Helene struck the Upstate on September 27, 2024; six deaths were recorded in Spartanburg County, several of them from trees falling on residences.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Spartanburg_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene",
+    "https://www.southcarolinapublicradio.org/sc-news/2024-09-27/helene-blamed-for-multiple-deaths-in-south-carolina-most-upstate"
+   ]
+  },
+  {
+   "name": "Union County",
+   "type": "county",
+   "county": "",
+   "seat": "Union",
+   "zips": [],
+   "areas": [
+    "Union",
+    "Jonesville",
+    "Carlisle",
+    "Lockhart",
+    "Buffalo",
+    "Monarch Mill",
+    "Cross Keys",
+    "Santuc",
+    "Pinckney",
+    "Fish Dam"
+   ],
+   "landmarks": [
+    "Rose Hill Plantation State Historic Site",
+    "Sumter National Forest - Enoree Ranger District",
+    "Thurmond Tract Wildlife Management Area",
+    "US 176, SC 9, SC 18, SC 49, SC 72, SC 215"
+   ],
+   "known_for": [
+    "University of South Carolina Union, opened in 1965",
+    "Rose Hill, home of governor William Henry Gist"
+   ],
+   "housing": "The 2020 Census counted 13,451 housing units in the county; 69.4% of occupied units were owner-occupied.",
+   "weather": "On April 3, 2017, an EF1 tornado with estimated 100 mph winds struck about 6 miles north of Whitmire, overturning a mobile home and killing one person (NWS Greenville-Spartanburg).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Union_County,_South_Carolina",
+    "https://www.weather.gov/gsp/20170403_Tornadoes"
+   ]
+  },
+  {
+   "name": "York County",
+   "type": "county",
+   "county": "",
+   "seat": "York",
+   "zips": [],
+   "areas": [
+    "York",
+    "Rock Hill",
+    "Fort Mill",
+    "Tega Cay",
+    "Clover",
+    "Lake Wylie",
+    "Hickory Grove",
+    "McConnells",
+    "Sharon",
+    "Smyrna",
+    "Catawba",
+    "Newport"
+   ],
+   "landmarks": [
+    "Lake Wylie",
+    "Kings Mountain State Park",
+    "Kings Mountain National Military Park (part)",
+    "Historic Brattonsville",
+    "Anne Springs Close Greenway",
+    "Museum of York County",
+    "I-77, US 21, US 321, SC 5, SC 49, SC 72, SC 161"
+   ],
+   "known_for": [
+    "Winthrop University, York Technical College and Clinton College in Rock Hill",
+    "Catawba Reservation"
+   ],
+   "housing": "The 2020 Census counted 114,656 housing units in the county; 72.4% of occupied units were owner-occupied.",
+   "weather": "On November 16, 2011, a tornado struck a rural area about five miles southwest of Rock Hill, killing three people and heavily damaging or destroying seven residences.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/York_County,_South_Carolina",
+    "https://www.wfae.org/local-news/2011-11-17/charlotte-observer-killer-twisters-claim-5-in-carolinas"
+   ]
+  },
+  {
+   "name": "Chesterfield County",
+   "type": "county",
+   "county": "",
+   "seat": "Chesterfield",
+   "zips": [],
+   "areas": [
+    "Chesterfield",
+    "Cheraw (part)",
+    "Jefferson",
+    "McBee",
+    "Mount Croghan",
+    "Pageland",
+    "Patrick",
+    "Ruby",
+    "Cash",
+    "Angelus",
+    "Middendorf",
+    "Minden"
+   ],
+   "landmarks": [
+    "Cheraw State Park",
+    "Carolina Sandhills National Wildlife Refuge",
+    "Sand Hills State Forest",
+    "Lake Robinson",
+    "Great Pee Dee River",
+    "US 1, US 52, US 601, SC 9, SC 102, SC 151"
+   ],
+   "known_for": [
+    "Pageland hosts the annual Pageland Watermelon Festival, held each July since 1951.",
+    "Northeastern Technical College has branches in Pageland and Cheraw."
+   ],
+   "housing": "The 2020 Census counted 20,408 housing units in the county; 72.7% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Florence in September 2018, the Pee Dee River crested at 46.51 ft at Cheraw and three nearby dams failed, flooding Cheraw and the town of Chesterfield A total of 226 homes in the county were damaged and 2 were destroyed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chesterfield_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Pageland,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Florence"
+   ]
+  },
+  {
+   "name": "Clarendon County",
+   "type": "county",
+   "county": "",
+   "seat": "Manning",
+   "zips": [],
+   "areas": [
+    "Manning",
+    "Paxville",
+    "Summerton",
+    "Turbeville",
+    "Alcolu",
+    "Foreston",
+    "North Santee",
+    "Wyboo",
+    "Davis Station",
+    "Gable",
+    "New Zion",
+    "Rimini"
+   ],
+   "landmarks": [
+    "Lake Marion",
+    "Santee National Wildlife Refuge",
+    "Brown v. Board of Education National Historical Park",
+    "Santee Indian Mound and Fort Watson",
+    "Woods Bay State Park (part)",
+    "I-95, US 15, US 52, US 301, US 521, US 378"
+   ],
+   "known_for": [
+    "Lake Marion, completed in 1941, hosts professional bass fishing tournaments.",
+    "The county was the site of the Briggs v. Elliott school segregation case, one of the five cases combined into Brown v. Board of Education."
+   ],
+   "housing": "The 2020 Census counted 15,816 housing units in the county; 74.4% of occupied units were owner-occupied.",
+   "weather": "On April 5, 2022, an EF2 tornado with estimated peak winds of 115 mph struck Manning Two newer homes suffered significant damage, and several homes near Manchester Drive lost shingles.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Clarendon_County,_South_Carolina",
+    "https://mesonet.agron.iastate.edu/api/1/nwstext/202204070231-KCAE-NOUS42-PNSCAE"
+   ]
+  },
+  {
+   "name": "Darlington County",
+   "type": "county",
+   "county": "",
+   "seat": "Darlington",
+   "zips": [],
+   "areas": [
+    "Darlington",
+    "Hartsville",
+    "Lamar",
+    "Society Hill",
+    "Dovesville",
+    "Lydia",
+    "North Hartsville",
+    "Pine Ridge",
+    "Clyde",
+    "Mont Clare",
+    "Una (part)"
+   ],
+   "landmarks": [
+    "Darlington Raceway",
+    "Kalmia Gardens",
+    "Lake Robinson",
+    "Great Pee Dee River",
+    "Lynches River",
+    "I-20, I-95, US 15, US 52, US 401"
+   ],
+   "known_for": [
+    "Darlington Raceway hosts the annual NASCAR Southern 500 on Labor Day weekend.",
+    "Coker University and Sonoco are among the county's largest employers."
+   ],
+   "housing": "The 2020 Census counted 29,379 housing units in the county; 70.3% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Florence in September 2018, 21 homes in Darlington County received severe flood damage and another home was destroyed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Darlington_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Darlington,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Florence"
+   ]
+  },
+  {
+   "name": "Dillon County",
+   "type": "county",
+   "county": "",
+   "seat": "Dillon",
+   "zips": [],
+   "areas": [
+    "Dillon",
+    "Lake View",
+    "Latta",
+    "Floydale",
+    "Hamer",
+    "Little Rock",
+    "Newtown",
+    "South of the Border"
+   ],
+   "landmarks": [
+    "Little Pee Dee State Park",
+    "Dillon County Museum",
+    "South of the Border",
+    "Dillon Motor Speedway",
+    "Little Pee Dee River",
+    "I-95, US 301, US 501, SC 9, SC 34"
+   ],
+   "known_for": [
+    "South of the Border, a roadside attraction on I-95.",
+    "Perdue Farms and McLeod Health are among the county's largest employers."
+   ],
+   "housing": "The 2020 Census counted 12,779 housing units in the county; 66.9% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Florence in September 2018, approximately 400 homes in Dillon County were flooded.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dillon_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Florence"
+   ]
+  },
+  {
+   "name": "Florence County",
+   "type": "county",
+   "county": "",
+   "seat": "Florence",
+   "zips": [],
+   "areas": [
+    "Florence",
+    "Johnsonville",
+    "Lake City",
+    "Coward",
+    "Olanta",
+    "Pamplico",
+    "Quinby",
+    "Scranton",
+    "Timmonsville",
+    "Effingham",
+    "Mars Bluff",
+    "Cartersville"
+   ],
+   "landmarks": [
+    "Lynches River County Park",
+    "Moore Farms Botanical Garden (part)",
+    "Woods Bay State Park (part)",
+    "Great Pee Dee River",
+    "I-20, I-95, US 52, US 76, US 301, US 378"
+   ],
+   "known_for": [
+    "Lake City hosts the ArtFields festival.",
+    "Francis Marion University and McLeod Health are among the county's largest employers."
+   ],
+   "housing": "The 2020 Census counted 60,594 housing units in the county; 65.7% of occupied units were owner-occupied.",
+   "weather": "On July 2, 2013, an EF1 tornado that formed 2 miles east of Quinby destroyed 10 mobile homes and caused major damage to 2 other homes; one home in the Battery Park subdivision lost about 30 percent of its roof structure.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Florence_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Lake_City,_South_Carolina",
+    "https://www.dnr.sc.gov/climate/sco/ClimateData/2013_tornado_stats.php"
+   ]
+  },
+  {
+   "name": "Georgetown County",
+   "type": "county",
+   "county": "",
+   "seat": "Georgetown",
+   "zips": [],
+   "areas": [
+    "Georgetown",
+    "Andrews (part)",
+    "Pawleys Island",
+    "Murrells Inlet",
+    "Litchfield Beach",
+    "DeBordieu Colony",
+    "Garden City (part)",
+    "Dunbar",
+    "Plantersville",
+    "Sampit",
+    "Sandy Island",
+    "Hopewell (part)"
+   ],
+   "landmarks": [
+    "Brookgreen Gardens",
+    "Huntington Beach State Park",
+    "Hobcaw Barony",
+    "Tom Yawkey Wildlife Center Heritage Preserve",
+    "Winyah Bay",
+    "US 17, US 521, US 701, SC 41, SC 51"
+   ],
+   "known_for": [
+    "The city of Georgetown, founded in colonial times, is a port for shrimp boats.",
+    "International Paper is among the county's largest employers."
+   ],
+   "housing": "The 2020 Census counted 35,916 housing units in the county; 78.7% of occupied units were owner-occupied.",
+   "weather": "Hurricane Hugo (September 21–22, 1989) destroyed 150 homes on the Georgetown waterfront and caused major damage to 350 more; only a few beachfront homes on Pawleys Island withstood the storm Hurricane Ian made landfall near Georgetown on September 30, 2022.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Georgetown_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Hugo",
+    "https://en.wikipedia.org/wiki/Hurricane_Ian"
+   ]
+  },
+  {
+   "name": "Horry County",
+   "type": "county",
+   "county": "",
+   "seat": "Conway",
+   "zips": [],
+   "areas": [
+    "Conway",
+    "Myrtle Beach",
+    "North Myrtle Beach",
+    "Loris",
+    "Atlantic Beach",
+    "Aynor",
+    "Briarcliffe Acres",
+    "Surfside Beach",
+    "Carolina Forest",
+    "Little River",
+    "Socastee",
+    "Garden City (part)"
+   ],
+   "landmarks": [
+    "Myrtle Beach State Park",
+    "Waccamaw River",
+    "Lewis Ocean Bay Heritage Preserve",
+    "Horry County Museum",
+    "Waccamaw National Wildlife Refuge (part)",
+    "US 17, US 501, US 701, US 76, US 378, SC 22, SC 31"
+   ],
+   "known_for": [
+    "Loris hosts the annual Loris Bog-off on the third weekend in October.",
+    "Coastal Carolina University is among the county's largest employers."
+   ],
+   "housing": "The 2020 Census counted 203,702 housing units in the county; 73.9% of occupied units were owner-occupied.",
+   "weather": "Hurricane Hugo (September 21–22, 1989) caused about $944 million in damage in Horry County Hurricane Hazel (October 15, 1954) destroyed about 80 percent of waterfront dwellings in Myrtle Beach.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Horry_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Loris,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Hugo",
+    "https://en.wikipedia.org/wiki/Hurricane_Hazel"
+   ]
+  },
+  {
+   "name": "Lancaster County",
+   "type": "county",
+   "county": "",
+   "seat": "Lancaster",
+   "zips": [],
+   "areas": [
+    "Lancaster",
+    "Heath Springs",
+    "Kershaw",
+    "Van Wyck",
+    "Indian Land",
+    "Buford",
+    "Elgin",
+    "Irwin",
+    "Springdale",
+    "Tradesville",
+    "Unity",
+    "Taxahaw"
+   ],
+   "landmarks": [
+    "Andrew Jackson State Park",
+    "Landsford Canal State Park",
+    "Forty Acre Rock Heritage Preserve",
+    "Hanging Rock Battleground",
+    "Catawba River",
+    "US 521, US 601, SC 5, SC 9, SC 160"
+   ],
+   "known_for": [
+    "The county is part of the Charlotte-Concord-Gastonia, NC-SC Metropolitan Statistical Area."
+   ],
+   "housing": "The 2020 Census counted 41,030 housing units in the county; 78.7% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Florence in September 2018, flash flooding left roads in Lancaster County impassable, and winds downed about 20 trees in the Lancaster area, one of which fell onto a home.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lancaster_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Florence"
+   ]
+  },
+  {
+   "name": "Lee County",
+   "type": "county",
+   "county": "",
+   "seat": "Bishopville",
+   "zips": [],
+   "areas": [
+    "Bishopville",
+    "Lynchburg",
+    "Ashwood",
+    "Browntown",
+    "Elliott",
+    "Manville",
+    "St. Charles",
+    "Wisacky",
+    "Alcot",
+    "Lucknow",
+    "Spring Hill",
+    "Una (part)"
+   ],
+   "landmarks": [
+    "South Carolina Cotton Museum",
+    "Pearl Fryar's Topiary Garden",
+    "Lee State Natural Area",
+    "Lynches River",
+    "I-20, US 15, US 76, US 401"
+   ],
+   "known_for": [
+    "Lee County has historically been a leader in cotton production in the state and is home to the South Carolina Cotton Museum.",
+    "Pearl Fryar's Topiary Garden in Bishopville."
+   ],
+   "housing": "The 2020 Census counted 7,549 housing units in the county; 71.3% of occupied units were owner-occupied.",
+   "weather": "On March 15, 2008, an EF1 tornado tracked from near Ashwood to Lynchburg, damaging several homes, mobile homes and a church.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lee_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Bishopville,_South_Carolina",
+    "https://www.dnr.sc.gov/climate/sco/ClimateData/2008_tornado_stats.php"
+   ]
+  },
+  {
+   "name": "Marion County",
+   "type": "county",
+   "county": "",
+   "seat": "Marion",
+   "zips": [],
+   "areas": [
+    "Marion",
+    "Mullins",
+    "Nichols",
+    "Sellers",
+    "Centenary",
+    "Daviston",
+    "Rains",
+    "Zion",
+    "Brittons Neck",
+    "Gresham",
+    "Friendship",
+    "Temperance Hill"
+   ],
+   "landmarks": [
+    "Little Pee Dee Heritage Preserve",
+    "Waccamaw National Wildlife Refuge (part)",
+    "Great Pee Dee River",
+    "Lumber River",
+    "US 76, US 301, US 378, US 501, SC 41"
+   ],
+   "known_for": [
+    "Mullins holds the Golden Leaf Festival, a tobacco festival started in the late 1920s.",
+    "The county is named for Revolutionary War general Francis Marion."
+   ],
+   "housing": "The 2020 Census counted 14,253 housing units in the county; 68.9% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Florence in September 2018, flooding damaged about 150 homes in Nichols that had been rebuilt after Hurricane Matthew, and at least one home there suffered roof damage; Brittons Neck and Gresham also flooded.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Marion_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Mullins,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Florence"
+   ]
+  },
+  {
+   "name": "Marlboro County",
+   "type": "county",
+   "county": "",
+   "seat": "Bennettsville",
+   "zips": [],
+   "areas": [
+    "Bennettsville",
+    "Cheraw (part)",
+    "Blenheim",
+    "Clio",
+    "McColl",
+    "Tatum",
+    "Wallace"
+   ],
+   "landmarks": [
+    "Lake Paul Wallace Wildlife Management Area",
+    "Lake Wallace",
+    "Great Pee Dee River",
+    "Little Pee Dee River",
+    "I-95, US 1, US 15, SC 9, SC 38"
+   ],
+   "known_for": [
+    "The Pee Dee Indian Tribe's seat of government has operated on tribal land in the county since 1976."
+   ],
+   "housing": "The 2020 Census counted 12,029 housing units in the county; 66.3% of occupied units were owner-occupied.",
+   "weather": "On March 28, 1984, F4 tornadoes touched down near Bennettsville and McColl during the Carolinas tornado outbreak; Bennettsville was among the hardest-hit communities.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Marlboro_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/1984_Carolinas_tornado_outbreak"
+   ]
+  },
+  {
+   "name": "Williamsburg County",
+   "type": "county",
+   "county": "",
+   "seat": "Kingstree",
+   "zips": [],
+   "areas": [
+    "Kingstree",
+    "Andrews (part)",
+    "Greeleyville",
+    "Hemingway",
+    "Lane",
+    "Stuckey",
+    "Cades",
+    "Gourdin",
+    "Hebron",
+    "Indiantown",
+    "Salters",
+    "Trio"
+   ],
+   "landmarks": [
+    "Wee Tee State Forest (part)",
+    "Moore Farms Botanical Garden (part)",
+    "Black River",
+    "Santee River",
+    "US 52, US 378, US 521, SC 41, SC 51"
+   ],
+   "known_for": [
+    "Kingstree holds a \"Pig Pickin'\" barbecue festival every fall; Hemingway hosts the annual Bar-B-Q Shag Festival in the spring.",
+    "Williamsburg Technical College is among the county's top employers."
+   ],
+   "housing": "The 2020 Census counted 14,737 housing units in the county; 74.5% of occupied units were owner-occupied.",
+   "weather": "On March 15, 2008, an EF1 tornado that tracked from near Trio damaged 35 homes in Williamsburg County, 7 of them with major damage, and completely destroyed 5.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Williamsburg_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Kingstree,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hemingway,_South_Carolina",
+    "https://www.dnr.sc.gov/climate/sco/ClimateData/2008_tornado_stats.php"
+   ]
+  },
+  {
+   "name": "Aiken County",
+   "type": "county",
+   "county": "",
+   "seat": "Aiken",
+   "zips": [],
+   "areas": [
+    "Aiken",
+    "North Augusta (part)",
+    "New Ellenton",
+    "Burnettown",
+    "Jackson",
+    "Wagener",
+    "Salley",
+    "Windsor",
+    "Monetta (part)",
+    "Graniteville",
+    "Beech Island",
+    "Clearwater"
+   ],
+   "landmarks": [
+    "Aiken State Park",
+    "Hitchcock Woods",
+    "Redcliffe Plantation State Historic Site",
+    "Whitney Field (polo field)",
+    "Savannah River",
+    "I-20, I-520, US 1, US 25, US 78, US 278"
+   ],
+   "known_for": [
+    "The Savannah River Site, a federal nuclear materials facility established in the 1950s, lies partly in the county.",
+    "University of South Carolina Aiken and Aiken Technical College are located in the county."
+   ],
+   "housing": "At the 2020 census the county had 76,923 housing units; 73.2% of occupied units were owner-occupied.",
+   "weather": "Hurricane Helene in late September 2024 brought estimated wind gusts of 80–100 mph to Aiken County; the National Weather Service reported 35 homes destroyed and 1,288 others damaged, with many structures hit by falling trees.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Aiken_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Aiken,_South_Carolina",
+    "https://www.weather.gov/media/cae/TropicalEventSummary/PSHCAE_2024AL09_Helene_ImpactNarratives(1).pdf",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene"
+   ]
+  },
+  {
+   "name": "Allendale County",
+   "type": "county",
+   "county": "",
+   "seat": "Allendale",
+   "zips": [],
+   "areas": [
+    "Allendale",
+    "Fairfax",
+    "Sycamore",
+    "Ulmer",
+    "Appleton",
+    "Martin"
+   ],
+   "landmarks": [
+    "Topper Site (archaeological excavation)",
+    "Savannah River",
+    "Salkehatchie River",
+    "Coosawhatchie River",
+    "US 278, US 301, US 321, SC 3, SC 125"
+   ],
+   "known_for": [
+    "University of South Carolina Salkehatchie (USC Salk) is located in the town of Allendale.",
+    "The Topper Site, an archaeological excavation worked by University of South Carolina archaeologists since 1999, is in the county."
+   ],
+   "housing": "At the 2020 census the county had 4,040 housing units; 64.4% of occupied units were owner-occupied.",
+   "weather": "On April 5, 2022, two EF3 tornadoes struck Allendale County; one (peak winds 160 mph) tracked into Bamberg and Orangeburg counties and left a home with its roof completely gone, and the other (137 mph) destroyed several mobile homes between Milbury and Sycamore.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Allendale_County,_South_Carolina",
+    "https://www.weather.gov/chs/TornadoOutbreak_April2022"
+   ]
+  },
+  {
+   "name": "Bamberg County",
+   "type": "county",
+   "county": "",
+   "seat": "Bamberg",
+   "zips": [],
+   "areas": [
+    "Bamberg",
+    "Denmark",
+    "Ehrhardt",
+    "Govan",
+    "Olar"
+   ],
+   "landmarks": [
+    "Rivers Bridge State Park",
+    "Cathedral Bay Heritage Preserve",
+    "Edisto River",
+    "Salkehatchie River",
+    "US 21, US 78, US 301, US 321, US 601"
+   ],
+   "known_for": [
+    "Voorhees University, a historically black university founded in the late 19th century, and Denmark Technical College are among the county's largest employers."
+   ],
+   "housing": "At the 2020 census the county had 6,558 housing units; 68.5% of occupied units were owner-occupied.",
+   "weather": "On April 5, 2022, an EF3 tornado with peak winds of 160 mph tracked from Allendale County through Bamberg County into Orangeburg County Hurricane Helene in late September 2024 brought estimated gusts of 70–80 mph and damaged 29 homes in the county, according to the National Weather Service.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bamberg_County,_South_Carolina",
+    "https://www.weather.gov/chs/TornadoOutbreak_April2022",
+    "https://www.weather.gov/media/cae/TropicalEventSummary/PSHCAE_2024AL09_Helene_ImpactNarratives(1).pdf",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene"
+   ]
+  },
+  {
+   "name": "Barnwell County",
+   "type": "county",
+   "county": "",
+   "seat": "Barnwell",
+   "zips": [],
+   "areas": [
+    "Barnwell",
+    "Blackville",
+    "Williston",
+    "Elko",
+    "Hilda",
+    "Kline",
+    "Snelling"
+   ],
+   "landmarks": [
+    "Barnwell State Park",
+    "Long Branch Bay Heritage Preserve",
+    "Salkehatchie River",
+    "Savannah River",
+    "US 78, US 278, SC 3, SC 64, SC 70"
+   ],
+   "known_for": [
+    "Part of the Savannah River Site lies in the county.",
+    "The city of Barnwell holds an annual two-day Sundial Festival at the Barnwell Circle."
+   ],
+   "housing": "At the 2020 census the county had 9,854 housing units; 69.8% of occupied units were owner-occupied.",
+   "weather": "Hurricane Helene in late September 2024 brought estimated wind gusts of 80–90 mph to Barnwell County; the National Weather Service reported 1 home destroyed and 20 others damaged.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Barnwell_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Barnwell,_South_Carolina",
+    "https://www.weather.gov/media/cae/TropicalEventSummary/PSHCAE_2024AL09_Helene_ImpactNarratives(1).pdf",
+    "https://en.wikipedia.org/wiki/Hurricane_Helene"
+   ]
+  },
+  {
+   "name": "Beaufort County",
+   "type": "county",
+   "county": "",
+   "seat": "Beaufort",
+   "zips": [],
+   "areas": [
+    "Beaufort",
+    "Hilton Head Island",
+    "Bluffton",
+    "Port Royal",
+    "Yemassee (part)",
+    "Hardeeville (part)",
+    "Burton",
+    "Lady's Island",
+    "Saint Helena Island",
+    "Shell Point",
+    "Fripp Island",
+    "Daufuskie Island"
+   ],
+   "landmarks": [
+    "Hunting Island State Park",
+    "Reconstruction Era National Historical Park",
+    "Pinckney Island National Wildlife Refuge",
+    "Old Sheldon Church Ruins",
+    "Spanish Moss Trail",
+    "US 17, US 21, US 278, SC 46, SC 170"
+   ],
+   "known_for": [
+    "Marine Corps Recruit Depot Parris Island and Marine Corps Air Station Beaufort are in the county.",
+    "The city of Beaufort holds the Water Festival in mid-July and the Shrimp Festival in early October."
+   ],
+   "housing": "At the 2020 census the county had 98,068 housing units; 74.7% of occupied units were owner-occupied.",
+   "weather": "During Hurricane Matthew on October 8, 2016, damage in Beaufort County was most severe on the sea islands south and east of Beaufort, including Hilton Head, Fripp and Dataw islands and Hunting Island State Park, where the National Weather Service said tree and home damage implied winds of at least 100 mph.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Beaufort_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina",
+    "https://www.weather.gov/ilm/Matthew",
+    "https://www.weather.gov/chs/HurricaneMatthew-Oct2016"
+   ]
+  },
+  {
+   "name": "Berkeley County",
+   "type": "county",
+   "county": "",
+   "seat": "Moncks Corner",
+   "zips": [],
+   "areas": [
+    "Moncks Corner",
+    "Goose Creek",
+    "Hanahan",
+    "North Charleston (part)",
+    "Summerville (part)",
+    "Charleston (part)",
+    "Bonneau",
+    "Jamestown",
+    "St. Stephen",
+    "Ladson (part)",
+    "Pinopolis",
+    "Huger"
+   ],
+   "landmarks": [
+    "Francis Marion National Forest (part)",
+    "Lake Moultrie",
+    "Lake Marion",
+    "Cypress Gardens",
+    "Old Santee Canal Park",
+    "I-26, I-526, US 17 Alt, US 52, US 176"
+   ],
+   "known_for": [
+    "As of April 2024, the county's largest employers include Volvo Cars, Nucor and Blackbaud."
+   ],
+   "housing": "At the 2020 census the county had 93,623 housing units; 71.7% of occupied units were owner-occupied.",
+   "weather": "On April 13, 2020, an EF3 tornado with peak winds of 145 mph struck northern Berkeley County near Cordesville, destroying a mobile home, significantly damaging several homes along Old Fort Road and Dennis Boulevard, and injuring six people Hurricane Hugo in September 1989 killed eight people in the county, the most of any county in the Carolinas.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Berkeley_County,_South_Carolina",
+    "https://www.weather.gov/chs/04132020DamageSurveys",
+    "https://en.wikipedia.org/wiki/Hurricane_Hugo"
+   ]
+  },
+  {
+   "name": "Charleston County",
+   "type": "county",
+   "county": "",
+   "seat": "Charleston",
+   "zips": [],
+   "areas": [
+    "Charleston (part)",
+    "North Charleston (part)",
+    "Mount Pleasant",
+    "Summerville (part)",
+    "Ladson (part)",
+    "James Island",
+    "Johns Island",
+    "Isle of Palms",
+    "Sullivan's Island",
+    "Folly Beach",
+    "Kiawah Island",
+    "McClellanville"
+   ],
+   "landmarks": [
+    "Fort Sumter and Fort Moultrie National Historical Park",
+    "Charles Towne Landing State Historic Site",
+    "Angel Oak",
+    "Magnolia Plantation and Gardens",
+    "Cape Romain National Wildlife Refuge",
+    "I-26, I-526, US 17, US 52, US 78"
+   ],
+   "known_for": [
+    "Spoleto Festival USA, founded in 1977, is held in Charleston each late spring.",
+    "The Medical University of South Carolina, the state's first school of medicine, is in Charleston."
+   ],
+   "housing": "At the 2020 census the county had 201,884 housing units; 60.7% of occupied units were owner-occupied.",
+   "weather": "Hurricane Hugo made landfall at Sullivan's Island early on September 22, 1989; its surge overtopped the Battery and an estimated 80 percent of roofs in the city of Charleston were damaged Hurricane Matthew made its final landfall near McClellanville on October 8, 2016.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charleston_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Charleston,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hurricane_Hugo",
+    "https://en.wikipedia.org/wiki/Hurricane_Matthew"
+   ]
+  },
+  {
+   "name": "Colleton County",
+   "type": "county",
+   "county": "",
+   "seat": "Walterboro",
+   "zips": [],
+   "areas": [
+    "Walterboro",
+    "Cottageville",
+    "Edisto Beach",
+    "Lodge",
+    "Smoaks",
+    "Williams",
+    "Islandton",
+    "Jacksonboro",
+    "Green Pond",
+    "Round O",
+    "Ruffin",
+    "Canadys"
+   ],
+   "landmarks": [
+    "Colleton State Park",
+    "Tuskegee Airmen Memorial",
+    "Ernest F. Hollings ACE Basin National Wildlife Refuge (part)",
+    "Edisto River",
+    "Ashepoo River",
+    "I-95, US 15, US 17, US 21, US 601"
+   ],
+   "known_for": [
+    "More than 500 Tuskegee Airmen trained at Walterboro Army Airfield between April 1944 and October 1945."
+   ],
+   "housing": "At the 2020 census the county had 19,824 housing units; 73.5% of occupied units were owner-occupied.",
+   "weather": "On April 13, 2020, an EF1 tornado (110 mph) caused minor damage to hundreds of residences in Walterboro and damaged or destroyed most hangars at Lowcountry Regional Airport, and an EF2 tornado (125 mph) at Edisto Beach tore portions or large sections of roofs off six homes.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Colleton_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Walterboro,_South_Carolina",
+    "https://www.weather.gov/chs/04132020DamageSurveys"
+   ]
+  },
+  {
+   "name": "Dorchester County",
+   "type": "county",
+   "county": "",
+   "seat": "St. George",
+   "zips": [],
+   "areas": [
+    "St. George",
+    "Summerville (part)",
+    "North Charleston (part)",
+    "Ladson (part)",
+    "Harleyville",
+    "Reevesville",
+    "Ridgeville",
+    "Lincolnville (part)",
+    "Grover",
+    "Knightsville"
+   ],
+   "landmarks": [
+    "Middleton Place",
+    "Colonial Dorchester State Historic Site",
+    "Givhans Ferry State Park (part)",
+    "Four Hole Swamp",
+    "Ashley River",
+    "I-26, I-95, US 15, US 17 Alt, US 78, US 178"
+   ],
+   "known_for": [
+    "Summerville's annual Flowertown Festival, held since 1972, draws about 200,000 visitors over three days.",
+    "As of April 2024, the county's largest employers include Bosch and KION Group."
+   ],
+   "housing": "At the 2020 census the county had 64,608 housing units; 73.2% of occupied units were owner-occupied.",
+   "weather": "Tropical Storm Debby in August 2024 dropped 10 to 20 inches of rain on Dorchester County; the Ashley River set a record crest on August 11, and most ground-level homes along the Edisto River near Givhans Ferry had water entering the structure.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dorchester_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Summerville,_South_Carolina",
+    "https://www.weather.gov/media/chs/TropicalEventSummary/PSHCHS_2024AL04_Debby_ImpactNarratives.pdf"
+   ]
+  },
+  {
+   "name": "Hampton County",
+   "type": "county",
+   "county": "",
+   "seat": "Hampton",
+   "zips": [],
+   "areas": [
+    "Hampton",
+    "Varnville",
+    "Estill",
+    "Brunson",
+    "Yemassee (part)",
+    "Furman",
+    "Gifford",
+    "Luray",
+    "Scotia",
+    "Crocketville",
+    "Early Branch",
+    "Nixville"
+   ],
+   "landmarks": [
+    "Lake Warren State Park",
+    "Webb Wildlife Center",
+    "Palachucola Wildlife Management Area",
+    "Savannah River",
+    "Salkehatchie River",
+    "I-95, US 17 Alt, US 278, US 321, US 601"
+   ],
+   "known_for": [
+    "The Hampton County Watermelon Festival has been held each June since 1939; as of 2015 it was South Carolina's longest continually running festival."
+   ],
+   "housing": "At the 2020 census the county had 8,584 housing units; 73.6% of occupied units were owner-occupied.",
+   "weather": "On April 13, 2020, an EF4 tornado with peak winds of 175 mph tracked about 24 miles across Hampton County from near Scotia to near Fechtig, killing five people, injuring 60 and destroying at least six residences.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hampton_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Hampton,_South_Carolina",
+    "https://www.weather.gov/chs/04132020DamageSurveys"
+   ]
+  },
+  {
+   "name": "Jasper County",
+   "type": "county",
+   "county": "",
+   "seat": "Ridgeland",
+   "zips": [],
+   "areas": [
+    "Ridgeland",
+    "Hardeeville (part)",
+    "Coosawhatchie",
+    "Gillisonville",
+    "Grahamville",
+    "Levy",
+    "Okatie",
+    "Pineland",
+    "Pocotaligo",
+    "Point South",
+    "Robertville",
+    "Tillman"
+   ],
+   "landmarks": [
+    "Savannah National Wildlife Refuge (part)",
+    "Tillman Sand Ridge Heritage Preserve",
+    "Old House Plantation",
+    "Savannah River",
+    "Okatee River",
+    "I-95, US 17, US 278, US 321, SC 170"
+   ],
+   "known_for": [
+    "The county was formed in 1912 from parts of Hampton and Beaufort counties and is part of the Hilton Head Island-Bluffton-Port Royal metropolitan area."
+   ],
+   "housing": "At the 2020 census the county had 12,862 housing units; 71.7% of occupied units were owner-occupied.",
+   "weather": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jasper_County,_South_Carolina",
+    "https://en.wikipedia.org/wiki/Ridgeland,_South_Carolina"
+   ]
+  }
+ ]
+}

@@ -89,7 +89,7 @@
   /* ---------- Header CTAs: phone number (primary) + Chat (secondary) ---------- */
   ["header-widget-1761842589315", "header-widget-1761842589315-mobile"].forEach(function (id) {
     var w = document.getElementById(id), chat = w && w.querySelector(".gs-chat-btn");
-    if (!chat) return;
+    if (!chat || w.querySelector(".mr-phone-cta")) return; // phone button is in the HTML now (no layout shift); this is a fallback
     var phone = chat.cloneNode(true);
     phone.className = "button-style js-button button-style-custom mr-phone-cta";
     phone.removeAttribute("data-chat");
@@ -99,6 +99,19 @@
     chat.parentNode.insertBefore(phone, chat.nextSibling); // primary always on the right
     chat.parentNode.classList.add("mr-header-ctas");
   });
+
+  /* ---------- Mobile/tablet top bar: phone CTA top right ---------- */
+  (function () {
+    var bar = document.querySelector(".mobile-menu.is-absolute");
+    if (!bar) return;
+    if (getComputedStyle(bar).position === "static") bar.style.position = "relative";
+    var a = document.createElement("a");
+    a.className = "mr-bar-call";
+    a.href = "tel:" + (C.phone || "+18039087131");
+    a.setAttribute("aria-label", "Call (803) 908-7131");
+    a.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>(803) 908-7131</span>';
+    bar.appendChild(a);
+  })();
 
   /* ---------- Hero CTAs: secondary (chat) left, primary (phone) right ---------- */
   (function () {
@@ -117,7 +130,7 @@
   })();
 
   /* ---------- Header priority when space runs out ---------- */
-  // Drop the language picker first, then the MESSAGE button; the phone CTA always stays.
+  // Drop the MESSAGE button when space runs out; the phone CTA always stays. (Language picker lives in the footer.)
   (function () {
     var root = document.documentElement, flex = document.querySelector(".header-row-main .flex-header");
     if (!flex) return;
@@ -217,10 +230,19 @@
       });
     }
 
-    // desktop: last item in the header, after the CTAs
+    // desktop: in the footer line, right of the Facebook icon (the footer script moves it there)
     var ctas = document.querySelector("#header-widget-1761842589315 .mr-header-ctas");
     makeTab(ctas, "mr-flag-tab--desktop");
-    makeTab(document.querySelector(".mobile-menu.is-absolute"), "mr-flag-tab--mobile");
+    // mobile/tablet: last item in the slide-out menu, side by side with the Facebook icon
+    var drawer = document.querySelector(".mobile-header-wrapper");
+    if (drawer) {
+      var row = document.createElement("div");
+      row.className = "mr-drawer-social";
+      row.innerHTML = '<a class="mr-drawer-fb" href="https://www.facebook.com/magnoliaroofingsc/" target="_blank" rel="noopener" aria-label="Magnolia Roofing on Facebook">' +
+        '<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>';
+      drawer.appendChild(row);
+      makeTab(row, "mr-flag-tab--drawer");
+    }
     paintAll();
     window.addEventListener("load", paintAll); // ln.js has marked the current language by now
     document.addEventListener("click", function () { tabs.forEach(function (t) { t.close(); }); });
@@ -246,6 +268,8 @@
       "<span>Copyright © " + new Date().getFullYear() + ". Magnolia Roofing &amp; Remodeling LLC. All Rights Reserved.</span>" +
       '<a href="javascript:WebPlatform.Popups.show(1);">Privacy Policy</a>';
     col.appendChild(line);
+    var flag = document.querySelector(".mr-flag-tab--desktop");
+    if (flag) line.appendChild(flag); // language picker sits right of the Facebook icon (desktop)
   })();
 
   /* ---------- Contact form ---------- */
@@ -380,4 +404,68 @@
     e.stopImmediatePropagation();
     showPrivacy();
   }, true);
+  /* ---------- Mobile/tablet menu: full-screen takeover (replaces GoSite's push drawer) ---------- */
+  (function () {
+    var burger = document.querySelector(".mobile-burger");
+    if (!burger) return;
+    var logo = document.querySelector(".mobile-menu-logo img");
+    var tel = "tel:" + (C.phone || "+18039087131");
+    var links = [].map.call(document.querySelectorAll(".header-row-main nav a.website-nav-link"), function (a) {
+      var on = a.closest("li").classList.contains("active");
+      return '<a class="mr-menu-link' + (on ? " is-active" : "") + '" href="' + a.getAttribute("href") + '"' + (on ? ' aria-current="page"' : "") + ">" + a.textContent.trim() + "</a>";
+    }).join("");
+    var m = document.createElement("div");
+    m.className = "mr-menu";
+    m.id = "mr-menu";
+    m.setAttribute("role", "dialog");
+    m.setAttribute("aria-modal", "true");
+    m.setAttribute("aria-label", "Menu");
+    m.innerHTML =
+      '<div class="mr-menu-top"><a href="/" class="mr-menu-logo" aria-label="Magnolia Roofing home">' + (logo ? '<img src="' + logo.getAttribute("src") + '" alt="">' : "") + "</a>" +
+      '<button type="button" class="mr-menu-close" aria-label="Close menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button></div>' +
+      '<nav class="mr-menu-body" aria-label="Main">' + links +
+      '<div class="mr-menu-ctas">' +
+      '<a href="#chat" data-chat="true" class="gs-chat-btn mr-menu-btn mr-menu-btn--sec"><span class="mr-msg-long">SEND A MESSAGE</span><span class="mr-msg-short">MESSAGE</span></a>' +
+      '<a href="' + tel + '" class="mr-menu-btn mr-menu-btn--pri">(803) 908-7131</a></div></nav>' +
+      '<div class="mr-menu-foot"></div>';
+    document.body.appendChild(m);
+    var closeBtn = m.querySelector(".mr-menu-close");
+    burger.setAttribute("aria-controls", "mr-menu");
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", "Open menu");
+    burger.setAttribute("role", "button");
+    burger.tabIndex = 0;
+
+    function open(byKey) {
+      var social = document.querySelector(".mr-drawer-social"); // built by the language block
+      if (social && social.parentNode !== m.lastChild) m.lastChild.appendChild(social);
+      document.documentElement.classList.add("mr-menu-open");
+      m.classList.add("is-open");
+      burger.setAttribute("aria-expanded", "true");
+      if (byKey) setTimeout(function () { closeBtn.focus(); }, 50); // no focus ring after a tap
+    }
+    function close(refocus) {
+      if (!m.classList.contains("is-open")) return;
+      document.documentElement.classList.remove("mr-menu-open");
+      m.classList.remove("is-open");
+      burger.setAttribute("aria-expanded", "false");
+      if (refocus) burger.focus();
+    }
+    // capture on window so GoSite's own burger handler never runs
+    ["click", "touchend"].forEach(function (ev) {
+      window.addEventListener(ev, function (e) {
+        if (!e.target.closest || !e.target.closest(".mobile-burger")) return;
+        e.preventDefault(); e.stopImmediatePropagation();
+        open(); // touchend's preventDefault cancels the click on phones, so open on either
+      }, true);
+    });
+    burger.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(true); } });
+    closeBtn.addEventListener("click", function () { close(true); });
+    // any link/button in the menu closes it (window capture: runs before the MESSAGE handler stops the event)
+    window.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest(".mr-menu a") && !e.target.closest(".mr-flag-tab--drawer")) close(false);
+    }, true);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(true); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1024) close(false); });
+  })();
 })();

@@ -55,7 +55,7 @@
     document.body.appendChild(ov);
   }
 
-  // Extra photos (assets/site/work.json) are appended after the mirrored GoSite gallery.
+  // assets/site/work.json lists the photos in display order (mirrored GoSite photos not in it go last).
   var extra = [];
   function start() {
     fetch("/assets/site/work.json")
@@ -81,7 +81,9 @@
       var u = n.getAttribute("data-slide");
       if (u && urls.indexOf(u) < 0) urls.push(u);
     });
-    extra.forEach(function (u) { if (urls.indexOf(u) < 0) urls.push(u); });
+    // work.json sets the display order (it can list mirrored photos too); anything it leaves out goes last
+    var rest = urls.filter(function (u) { return extra.indexOf(u) < 0; });
+    urls = extra.slice().concat(rest);
     if (!urls.length) return;
 
     var wrap = el("div", "mr-gallery");

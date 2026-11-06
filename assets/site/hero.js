@@ -3,7 +3,7 @@
 (function () {
   var hero = document.querySelector(".mr-hero");
   var h1 = hero && hero.querySelector("h1");
-  if (!h1 || !/Reroof/i.test(h1.textContent)) return; // home page hero only
+  if (!h1 || !(/^\/(index\.html)?$/.test(location.pathname) || document.documentElement.hasAttribute("data-hero-motion"))) return; // home + its motion preview // home page hero only
 
   var BADGES = [
     { year: "2025" },
