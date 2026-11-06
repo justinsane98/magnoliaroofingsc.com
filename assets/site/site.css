@@ -267,3 +267,4 @@ a.mr-inline-call { display: inline-block; font: 700 14px/1 Manrope, sans-serif; 
 @media (min-width: 1100px) and (max-width: 1599px) { .grid-column.mr-joe { background-position: 70% 85% !important; } }
 /* stacked layout (<1100px): Joe photo box twice as tall (1:1 instead of 2:1) */
 @media (max-width: 1099px) { .grid-column.mr-joe { padding-top: 100% !important; background-position: 72% 60% !important; } }
+.mr-eyebrow[hidden] { display: none !important; }

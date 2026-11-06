@@ -21,7 +21,7 @@
   });
   var eyebrow = document.createElement("div");
   eyebrow.className = "mr-eyebrow";
-  eyebrow.innerHTML = 'Back-to-Back Winner<span class="mr-eyebrow-more"> · The State’s Best</span>';
+  eyebrow.hidden = true; // no hero eyebrow text; kept as the anchor the narrow-screen badges sit above
 
   var row = h1.closest(".widget-row") || h1.parentNode;
   row.parentNode.insertBefore(eyebrow, row);
