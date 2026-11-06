@@ -161,7 +161,6 @@ html.mr-hide-msg #header-widget-1761842589315 .mr-chat-secondary { display: none
 .mr-footer-line .mr-flag-tab--desktop { order: 100; margin-left: 4px; z-index: 10000; }
 .mr-footer-line .mr-flag-caret { border-top-color: #fff; }
 .mr-footer-line .mr-flag-menu { top: auto; bottom: calc(100% + 6px); }
-@media (max-width: 1024px) { .mr-footer-line .mr-flag-tab--desktop { display: none; } }
 
 /* Mobile/tablet (<=1024px): phone CTA top right of the bar; language picker last in the slide-out menu, next to Facebook */
 .mr-bar-call { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 5; display: inline-flex; align-items: center; gap: 8px;
@@ -268,3 +267,6 @@ a.mr-inline-call { display: inline-block; font: 700 14px/1 Manrope, sans-serif; 
 /* stacked layout (<1100px): Joe photo box twice as tall (1:1 instead of 2:1) */
 @media (max-width: 1099px) { .grid-column.mr-joe { padding-top: 100% !important; background-position: 72% 60% !important; } }
 .mr-eyebrow[hidden] { display: none !important; }
+/* language picker lives in the footer at every width (not in the mobile menu) */
+.mr-flag-tab--drawer { display: none !important; }
+.mr-footer-line .mr-flag-tab--desktop { display: inline-flex !important; }
