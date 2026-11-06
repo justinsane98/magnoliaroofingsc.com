@@ -1,5 +1,5 @@
 // Home hero: "The State's Best" 2025 + 2026 winner badges (assets/site/badges/the-states-best-<year>.png).
-// Transparent cutouts: 2026 from the official badge; 2025 = same badge with the 2025 year band.
+// Transparent cutouts: 2025 is the source of truth; 2026 = the 2025 badge with the year digit redrawn (same colors and lettering).
 (function () {
   var hero = document.querySelector(".mr-hero");
   var h1 = hero && hero.querySelector("h1");
