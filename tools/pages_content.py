@@ -72,7 +72,12 @@ def steps(items):
     return '<div class="steps">' + "".join(f"<div><h3>{h}</h3><p>{p}</p></div>" for h, p in items) + "</div>"
 
 
+AREA_Q = re.compile(r"\b(areas?|where do you (work|bid)|cover)\b", re.I)
+
+
 def faq(items):
+    """House rule: the service-area question always comes first."""
+    items = sorted(items, key=lambda qa: 0 if AREA_Q.search(qa[0]) else 1)  # stable: others keep their order
     return "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in items)
 
 
@@ -459,7 +464,7 @@ def real_estate():
 
 def about():
     people = [
-        {"img": "ccra_gala", "h": "Joe Nettles", "sym": "Owner", "p": "Born and raised in the Lowcountry, Joe went to the University of South Carolina and has called the Midlands home for more than two decades. He's been roofing for decades and started Magnolia in 2018. " + F("Confirm which person in this photo is Joe.")},
+        {"img": "ccra_gala", "h": "Joe Nettles", "sym": "Owner", "p": "Born and raised in the Lowcountry, Joe graduated from the University of South Carolina and has called the Midlands home for more than two decades. He's been roofing for decades and started Magnolia in 2018. " + F("Confirm which person in this photo is Joe.")},
         {"img": "placeholder_1", "h": "Lauren", "sym": F("role"), "p": F("One or two lines about Lauren")},
         {"img": "placeholder_2", "h": "Doug", "sym": F("role"), "p": F("One or two lines about Doug")},
         {"img": "placeholder_3", "h": "Teirnan", "sym": F("role"), "p": F("One or two lines about Teirnan")},
@@ -475,7 +480,7 @@ def about():
     body = [
         sec(f'<div class="split"><div>{head("Locally and family owned", "South Carolina roofers, not storm chasers")}'
             f'<p>Magnolia Roofing &amp; Remodeling is a locally and family-owned roofing company in Columbia, SC, started by Joe Nettles in 2018.</p>'
-            "<p>Joe was born and raised in the Lowcountry, went to the University of South Carolina and has called the Midlands home for more than two decades. He'd been roofing for decades before he started his own company.</p>"
+            "<p>Joe was born and raised in the Lowcountry, graduated from the University of South Carolina and has called the Midlands home for more than two decades. He'd been roofing for decades before he started his own company.</p>"
             "<p>We're based on St. Andrews Road and work across South Carolina on homes, businesses, churches and public buildings.</p>"
             "<p>Most of our work comes from referrals: neighbors, Realtors and repeat customers. Over 130 reviews say the same things. We answer the phone, we tell the truth about what a roof needs, and the owners come back to check the work.</p>"
             "<p>As our 2026 award post put it, the recognition belongs to the whole Magnolia family: the crews, the team behind the scenes, the Realtors and partners who put their names behind ours, and every homeowner who trusted us with their home.</p>"

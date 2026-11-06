@@ -252,3 +252,16 @@ a.theme-button[href="/about/"]:hover, .mr-modal .mr-btn:hover {
 #iconsection-widget-1761848955072 .icon-header-wrapper { align-items: center !important; }
 #iconsection-widget-1761848955072 .icon-header-wrapper > .icon { margin-top: 0; }
 a.mr-inline-call { display: inline-block; font: 700 14px/1 Manrope, sans-serif; letter-spacing: 1px; padding: 14px 24px; border-radius: 10px; color: #fff !important; text-decoration: none; white-space: nowrap; }
+
+/* Home "Why South Carolina calls Magnolia": local roots first, then a short proof checklist */
+.mr-why p.mr-why-lead { color: #fff; font: 400 18px/1.6 Manrope, sans-serif; margin: 0 0 18px; text-align: left; }
+.text-widget-content ul.mr-why-list { list-style: none !important; padding: 0 !important; margin: 0 0 6px !important; }
+.text-widget-content ul.mr-why-list li { list-style: none !important; position: relative; padding: 0 0 0 32px !important; margin: 0 0 12px !important; color: rgba(255,255,255,.88); font: 400 16px/1.5 Manrope, sans-serif; text-align: left; }
+.text-widget-content ul.mr-why-list li::marker { content: none; }
+.text-widget-content ul.mr-why-list li::before { content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%;
+  background: #006b46 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") center/14px no-repeat; }
+.mr-why-list b { color: #fff; font-weight: 700; }
+/* "Why South Carolina" photo of Joe: full figure on desktop, face + truck logo on short phone strips */
+/* wide boxes (phones, tablets, big desktops): keep his face; squarish box (laptops 1100–1599px): full figure */
+.grid-column.mr-joe { background-position: 70% 18% !important; }
+@media (min-width: 1100px) and (max-width: 1599px) { .grid-column.mr-joe { background-position: 70% 85% !important; } }
