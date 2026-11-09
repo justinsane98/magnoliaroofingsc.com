@@ -130,8 +130,12 @@ def main():
     de = s3.index('"', di + len('data-parallax="'))
     s3 = s3[:di] + 'data-parallax="/assets/site/hero-motion/shot-1.jpg' + s3[de:]
     te = s3.index(">", de) + 1
-    pick = ('\n<script id="mr-hero-pick">(function(){var k=+document.documentElement.getAttribute("data-hero-shot")||0,e=document.currentScript.parentElement;'
-            'e.setAttribute("data-parallax","/assets/site/hero-motion/shot-"+(k+1)+".jpg");})();</script>')
+    # the inline style still painted GoSite's banner_Image for a moment before the shot replaced it: drop it and
+    # set the background to the chosen (already preloaded) shot instead, so the first photo painted is the one that stays
+    s3 = s3[:de] + re.sub(r"\s*background-image:\s*url\('[^']*banner_Image[^']*'\);?", "", s3[de:te], count=1) + s3[te:]
+    te = s3.index(">", de) + 1
+    pick = ('\n<script id="mr-hero-pick">(function(){var k=+document.documentElement.getAttribute("data-hero-shot")||0,e=document.currentScript.parentElement,'
+            'u="/assets/site/hero-motion/shot-"+(k+1)+".jpg";e.setAttribute("data-parallax",u);e.style.backgroundImage="url(\'"+u+"\')";})();</script>')
     s3 = s3[:te] + pick + s3[te:]
     # the opening shot is the LCP image: choose it in <head> and preload it, so it is requested at once instead of
     # after the platform JS and hero-motion.js (it used to start ~3.7 s in on a slow phone). High priority: the

@@ -21,7 +21,8 @@ and attribute selectors are always kept, and @font-face/@keyframes/@page and
 every other at-rule body are kept verbatim; @keyframes are dropped only when
 no kept rule and no page/script names them.
 """
-import hashlib, os, re, sys
+import hashlib, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHEETS = [
@@ -214,14 +215,53 @@ def html_files():
                 yield os.path.join(d, f)
 
 
+def purged_paths():
+    """The current trimmed copies (one per sheet), if any."""
+    out = []
+    for rel in SHEETS:
+        base = os.path.join(ROOT, rel[:-4])
+        d = os.path.dirname(base)
+        out += [os.path.join(d, f) for f in os.listdir(d)
+                if re.fullmatch(re.escape(os.path.basename(base)) + r"\.p[0-9a-f]{8}\.css", f)]
+    return out
+
+
+def use_icon_subsets(outs):
+    """Point Font Awesome @font-face at the X.subset.woff2 copies (tools/subset_icons.py), but only
+    where the subset was made for a codepoint list that still covers every icon the site references."""
+    import subset_icons
+    need = subset_icons.needed(outs.values())
+    fa = subset_icons.FA_DIR
+    swaps = {}
+    for f in sorted(os.listdir(fa)):
+        m = re.fullmatch(r"(.+)\.subset\.json", f)
+        if not m or not os.path.exists(os.path.join(fa, m.group(1) + ".subset.woff2")):
+            continue
+        have = set(json.load(open(os.path.join(fa, f))))
+        if need <= have:
+            v = hashlib.md5(open(os.path.join(fa, m.group(1) + ".subset.woff2"), "rb").read()).hexdigest()[:8]
+            swaps[m.group(1) + ".woff2"] = f"{m.group(1)}.subset.woff2?v={v}"
+        else:
+            print(f"purge: {m.group(1)} subset is stale (missing {len(need - have)} icons); using the full font")
+    for k in outs:
+        for full, sub in swaps.items():
+            outs[k] = re.sub(r"(/fontawesome-v6/)" + re.escape(full) + r"(?=[)\"'])", r"\g<1>" + sub, outs[k])
+    if swaps:
+        print(f"purge: {len(swaps)} icon fonts -> subsets")
+
+
 def main():
     words, prefixes = corpus()
-    renames = {}
+    renames, outs, sizes = {}, {}, {}
     for rel in SHEETS:
-        src = os.path.join(ROOT, rel)
-        css = open(src, encoding="utf-8").read()
+        css = open(os.path.join(ROOT, rel), encoding="utf-8").read()
         stats = {"rules": 0, "dropped": 0}
-        out = drop_unused_keyframes(purge(css, words, prefixes, stats), words)
+        outs[rel] = drop_unused_keyframes(purge(css, words, prefixes, stats), words)
+        print(f"purge: {os.path.basename(rel)} {len(css)//1024} KB -> {len(outs[rel])//1024} KB "
+              f"({stats['dropped']}/{stats['rules']} rules dropped)")
+    use_icon_subsets(outs)
+    for rel, out in outs.items():
+        src = os.path.join(ROOT, rel)
         h = hashlib.md5(out.encode()).hexdigest()[:8]
         base = rel[:-4]
         dst_rel = f"{base}.p{h}.css"
@@ -231,8 +271,6 @@ def main():
                 os.remove(full)
         open(os.path.join(ROOT, dst_rel), "w", encoding="utf-8").write(out)
         renames[base] = dst_rel
-        print(f"purge: {os.path.basename(rel)} {len(css)//1024} KB -> {len(out)//1024} KB "
-              f"({stats['dropped']}/{stats['rules']} rules dropped)")
     changed = 0
     for p in html_files():
         if "/services/_shell.html" in p:

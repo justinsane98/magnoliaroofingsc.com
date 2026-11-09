@@ -12,7 +12,8 @@ Visual output is meant to be identical; only bytes change:
       X-card.webp   home router cards (1100 wide; cards are <= ~520 CSS px)
       X-thumb.webp  gallery strip     (1100 wide; slides are <= ~370 CSS px, ~735 on one-up tablets)
       site logo     .webp at 720 wide (header caps it at ~240 CSS px)
-  * CSS: tools/purge_css.py writes trimmed copies of the GoSite stylesheets.
+  * CSS: tools/purge_css.py writes trimmed copies of the GoSite stylesheets;
+    tools/subset_icons.py cuts Font Awesome down to the icons in use.
   * HTML: local image URLs point at the .webp; the Google Maps iframe lazy-loads;
     the RealWork Labs plugin loads after the page has loaded; the platform-JS
     preload hint is dropped (the script is at the end of <body> and was competing
@@ -152,6 +153,12 @@ def rewrite_html(path):
     gi = t.find('class="grid-row', ci) if ci >= 0 else -1
     if gi >= 0 and "mr-hero" not in t[gi:gi + 60]:
         t = t[:gi] + 'class="grid-row mr-hero' + t[gi + len('class="grid-row'):]
+    # Google Analytics library (~65 KB gz): fetch it after the page has loaded so it doesn't compete with the hero
+    # photo. The inline gtag() queue right below still records the pageview with its real timestamp.
+    t = re.sub(r'<script src="https://www\.googletagmanager\.com/gtag/js\?id=([\w-]+)" async=""></script>',
+               lambda m: ('<script>/* mr:perf gtag after load */(function(){function go(){var s=document.createElement("script");'
+                          's.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=' + m.group(1) + '";document.head.appendChild(s);}'
+                          'if(document.readyState==="complete")go();else window.addEventListener("load",go);})();</script>'), t)
     # RealWork Labs plugin (~290 KB JS): start it after the page has loaded
     if "mr:perf deferred" not in t:
         t = RWL_OLD.sub(RWL_NEW, t, count=1)
@@ -183,6 +190,13 @@ def main(images=True):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import purge_css  # trimmed copies of the render-blocking GoSite stylesheets
     purge_css.main()
+    if images:
+        try:
+            import subset_icons  # Font Awesome subsets for the icons in use (needs fontTools)
+            subset_icons.main()
+            purge_css.main()     # again, so the trimmed CSS points at the fresh subsets
+        except ImportError:
+            print("perf: fontTools not available, skipping icon subsets", file=sys.stderr)
 
 
 if __name__ == "__main__":

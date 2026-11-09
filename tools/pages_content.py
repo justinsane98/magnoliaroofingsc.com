@@ -281,7 +281,7 @@ def case_page(c):
         parts.append(sec(quote(*c["quote"]), "tint"))
     parts.append(sec(head("", "Photos from this job") + f'<p>{F("Before, during and after photos from the real job go here.")}</p>' + photos(["placeholder_1", "placeholder_2", "placeholder_3"])))
     parts.append(cta())
-    return {"path": f"/case-studies/{c['slug']}/", "title": f"{c['title']} | Magnolia Roofing case study",
+    return {"path": f"/case-studies/{c['slug']}/", "title": f"Magnolia Roofing & Remodeling | Case Study: {c['title']}",
             "desc": c["short"], "h1": f"{c['kind']} case study", "body": "".join(parts), "noindex": True, "hero_img": PHOTOS[c["hero"]]["src"]}
 
 
@@ -352,7 +352,7 @@ def residential():
         ])),
         cta(),
     ]
-    return {"path": "/residential/", "active": "/residential/", "title": "Residential Roofing in the Midlands & Lowcountry, SC: Roof Repair, Replacement & Storm Damage | Magnolia Roofing",
+    return {"path": "/residential/", "active": "/residential/", "title": "Magnolia Roofing & Remodeling | Residential Roofing in the Midlands & Lowcountry, SC: Roof Repair, Replacement & Storm Damage",
             "desc": "Roof leaks, storm and hail damage, insurance claims and roof replacement for homeowners in the Midlands and Lowcountry. Free inspections with photos. Call (803) 908-7131.",
             "h1": "Residential roofing", "sub": "Leaks, storm damage, insurance claims and new roofs, with photos and straight answers.",
             "hero_img": PHOTOS["hero_residential"]["src"], "body": "".join(body)}
@@ -401,7 +401,7 @@ def commercial():
         ])),
         cta("Get a commercial roof assessment", "Photos, options and pricing your owner or board can act on."),
     ]
-    return {"path": "/commercial/", "active": "/commercial/", "title": "Commercial Roofing in South Carolina: Flat Roof Repair, Restoration & Replacement | Magnolia Roofing",
+    return {"path": "/commercial/", "active": "/commercial/", "title": "Magnolia Roofing & Remodeling | Commercial Roofing in South Carolina: Flat Roof Repair, Restoration & Replacement",
             "desc": "Commercial roofing for offices, churches, retail, warehouses and apartments across South Carolina. Flat roof repair, coatings, metal and replacement with photo reports.",
             "h1": "Commercial roofing", "sub": "Flat, metal and shingle roofs for occupied buildings across South Carolina.",
             "hero_img": PHOTOS["hero_commercial"]["src"], "body": "".join(body)}
@@ -447,7 +447,7 @@ def government():
         ])),
         cta("Have a solicitation coming up?", "Send us a message with the solicitation number or a link. We'll confirm we got it the same day."),
     ]
-    return {"path": "/government/", "active": "/government/", "title": "State, County, City & Municipal Roofing Contractor in South Carolina | Magnolia Roofing",
+    return {"path": "/government/", "active": "/government/", "title": "Magnolia Roofing & Remodeling | State, County, City & Municipal Roofing Contractor in South Carolina",
             "desc": "Roofing contractor for South Carolina state agencies, counties, cities and municipalities, school districts and housing authorities. IFB/RFP bids, bonding, submittals, prevailing wage and closeout.",
             "h1": "Municipal & government roofing", "sub": "State, county, city and municipal roofing: public bids, term contracts and emergency repairs.",
             "hero_img": PHOTOS["hero_government"]["src"], "body": "".join(body)}
@@ -499,7 +499,7 @@ def real_estate():
         ])),
         cta("Closing coming up?", "Send us a message with the inspection report and closing date. We'll look at it today."),
     ]
-    return {"path": "/real-estate/", "active": "/real-estate/", "title": "Roof Inspection Repairs Before Closing | Realtors & Property Managers, South Carolina | Magnolia Roofing",
+    return {"path": "/real-estate/", "active": "/real-estate/", "title": "Magnolia Roofing & Remodeling | Roof Inspection Repairs Before Closing | Realtors & Property Managers, South Carolina",
             "desc": "Inspection repairs before closing, pre-listing roof checks, roof condition letters and property management roofing across South Carolina. Trusted by local Realtors.",
             "h1": "Real estate & property managers", "sub": "Inspection repairs before closing, roof letters and one roofer for your whole portfolio.",
             "hero_img": PHOTOS["hero_real_estate"]["src"], "body": "".join(body)}
@@ -549,7 +549,7 @@ def about():
 def case_index():
     body = [sec(SAMPLE_NOTE + head("Case studies", "How we handle real jobs", "Each one walks through the problem, the options and their prices, what we did and what it cost.")
                 + cards([case_card(c) for c in CASES])), cta()]
-    return {"path": "/case-studies/", "title": "Roofing Case Studies | Magnolia Roofing", "desc": "Commercial, government and real estate roofing case studies from Magnolia Roofing & Remodeling.",
+    return {"path": "/case-studies/", "title": "Magnolia Roofing & Remodeling | Roofing Case Studies", "desc": "Commercial, government and real estate roofing case studies from Magnolia Roofing & Remodeling.",
             "h1": "Case studies", "body": "".join(body), "noindex": True, "hero_img": PHOTOS["hero_case_county"]["src"]}
 
 
@@ -560,7 +560,7 @@ def services_hub():
         {"href": "/government/", "img": "crew_tearoff", "h": "Government", "p": "Public bids and term contracts for SC agencies."},
         {"href": "/real-estate/", "img": "house_after2", "h": "Real estate & property managers", "p": "Inspection repairs before closing and portfolio roofing."},
     ])), cta()]
-    return {"path": "/services/", "title": "Roofing Services in South Carolina | Magnolia Roofing",
+    return {"path": "/services/", "title": "Magnolia Roofing & Remodeling | Roofing Services in South Carolina",
             "desc": "Residential, commercial, government and real estate roofing services across South Carolina.", "h1": "Our services", "body": "".join(body)}
 
 
@@ -651,7 +651,7 @@ def county_page(a):
     ]
     sch = business_schema({"areaServed": {"@type": "AdministrativeArea", "name": place}})
     what = "Roof repair, replacement and storm damage for homes and businesses" if tier == "core" else "Commercial, government and real estate roofing"
-    return {"path": f"/service-areas/{slug(name)}/", "title": f"Roofing in {name}, SC: Roof Repair & Replacement | Magnolia Roofing",
+    return {"path": f"/service-areas/{slug(name)}/", "title": f"Magnolia Roofing & Remodeling | Roofing in {name}, SC: Roof Repair & Replacement",
             "desc": f"{what} in {place}" + (f" ({and_list(areas[:3])})" if areas else "") + ". Locally and family owned. Free inspections: (803) 908-7131.",
             "h1": f"Roofing in {place}", "body": "".join(body), "schema": sch, "hero_img": PHOTOS["hero_areas"]["src"]}
 
@@ -729,7 +729,7 @@ def areas_index():
             sec(head("", f"All {len(counties)} counties", "Each county page covers the towns, landmarks and weather that matter for roofs there.")
                 + f'<ul class="county-list">{rows}</ul>', "tint"),
             cta()]
-    return {"path": "/service-areas/", "title": "Service Areas: South Carolina Roofing by County | Magnolia Roofing",
+    return {"path": "/service-areas/", "title": "Magnolia Roofing & Remodeling | Service Areas: South Carolina Roofing by County",
             "desc": "Magnolia Roofing coverage map: commercial, government and real estate roofing in every South Carolina county, and residential roofing in the Midlands and Lowcountry. Find your county.",
             "h1": "Service areas", "body": "".join(body)}
 
