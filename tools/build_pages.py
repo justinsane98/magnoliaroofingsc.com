@@ -130,10 +130,33 @@ def main():
     de = s3.index('"', di + len('data-parallax="'))
     s3 = s3[:di] + 'data-parallax="/assets/site/hero-motion/shot-1.jpg' + s3[de:]
     te = s3.index(">", de) + 1
-    pick = ('\n<script id="mr-hero-pick">(function(){var k=Math.floor(Math.random()*3),e=document.currentScript.parentElement;'
-            'document.documentElement.setAttribute("data-hero-shot",k);'
+    pick = ('\n<script id="mr-hero-pick">(function(){var k=+document.documentElement.getAttribute("data-hero-shot")||0,e=document.currentScript.parentElement;'
             'e.setAttribute("data-parallax","/assets/site/hero-motion/shot-"+(k+1)+".jpg");})();</script>')
     s3 = s3[:te] + pick + s3[te:]
+    # the opening shot is the LCP image: choose it in <head> and preload it, so it is requested at once instead of
+    # after the platform JS and hero-motion.js (it used to start ~3.7 s in on a slow phone). High priority: the
+    # render-blocking CSS is small now (tools/purge_css.py) and is still requested first at "VeryHigh".
+    s3 = re.sub(r'\n?\s*<script id="mr-hero-preload">[\s\S]*?</script>', "", s3)
+    head_pick = ('\n      <script id="mr-hero-preload">(function(){var k=Math.floor(Math.random()*3),d=document,l=d.createElement("link");'
+                 'd.documentElement.setAttribute("data-hero-shot",k);l.rel="preload";l.as="image";l.fetchPriority="high";'
+                 'l.href="/assets/site/hero-motion/shot-"+(k+1)+".jpg";d.head.appendChild(l);})();</script>')
+    vp = s3.index('<meta name="viewport"')
+    vp = s3.index(">", vp) + 1
+    s3 = s3[:vp] + head_pick + s3[vp:]
+    # hero badges + classes in the HTML itself (hero.js used to add them after load and the headline jumped).
+    # Wide screens: hero.js moves the badges into .grid-content (absolute, flanking the headline);
+    # narrow: they sit in flow above the (hidden) eyebrow, which is where they are written here.
+    s3 = re.sub(r'<div class="mr-badges"[^>]*>(?:<div class="mr-badge[^>]*><img[^>]*></div>)+</div><div class="mr-eyebrow" hidden></div>', "", s3)
+    gi = s3.index('class="grid-row', ci)
+    if "mr-hero--home" not in s3[gi:gi + 80]:
+        s3 = s3[:gi] + 'class="grid-row mr-hero mr-hero--home' + s3[gi + len('class="grid-row'):]
+    badges = ('<div class="mr-badges" aria-label="The State\'s Best roofer, winner 2025 and 2026">' + "".join(
+        f'<div class="mr-badge mr-badge--{side}"><img src="/assets/site/badges/the-states-best-{y}.webp" '
+        f'alt="The State\u2019s Best {y} Winner" width="144" height="142"></div>' for side, y in (("left", "2025"), ("right", "2026")))
+        + '</div><div class="mr-eyebrow" hidden></div>')
+    h1i = s3.index("<h1", ci)
+    wr = s3.rindex('<div class="widget-row', 0, h1i)
+    s3 = s3[:wr] + badges + s3[wr:]
     if "data-hero-motion" not in s3[:3000]:
         s3 = s3.replace("<html", "<html data-hero-motion", 1)
     s3 = s3.replace("</body>", f'<script src="/assets/site/hero-motion.js?v={hv}"></script>\n</body>', 1)
@@ -159,6 +182,8 @@ def main():
     sm += [f"  <url><loc>{SITE}{u}</loc></url>" for u in urls]
     sm.append("</urlset>")
     open(os.path.join(ROOT, "sitemap.xml"), "w").write("\n".join(sm) + "\n")
+    import perf  # WebP image URLs, lazy map, deferred plugin (tools/perf.py)
+    perf.main(images=False)
     for path, _ in built:
         print(path)
     print(len(built), "pages")

@@ -17,6 +17,10 @@
   ].join("\n");
   document.head.appendChild(css);
 
+  function thumb(u) {
+    return /^\/assets\/site\/work\/[\w-]+\.(jpg|webp)$/.test(u) ? u.replace(/\.(jpg|webp)$/, "-thumb.webp") : u;
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -92,9 +96,10 @@
       b.type = "button";
       b.setAttribute("aria-label", "Enlarge project photo " + (i + 1));
       var img = el("img");
-      img.src = u;
+      img.loading = "lazy"; // before src, or the browser has already started the request
+      img.decoding = "async";
+      img.src = thumb(u); // 1100px strip copy (tools/perf.py); the lightbox opens the full photo
       img.alt = "Magnolia Roofing project photo " + (i + 1);
-      img.loading = "lazy";
       b.appendChild(img);
       b.addEventListener("click", function () { lightbox(urls, i); });
       return b;

@@ -28,6 +28,7 @@
     "@media (prefers-reduced-motion:reduce){.mr-shot{animation:none}.mr-shot:first-child{opacity:1}}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
+  var later = [];
   var wrap = document.createElement("div");
   wrap.className = "mr-motion"; wrap.setAttribute("aria-hidden", "true");
   SHOTS.forEach(function (s, i) {
@@ -40,12 +41,21 @@
       m.muted = true; m.autoplay = true; m.loop = true; m.playsInline = true; m.preload = i ? "metadata" : "auto";
       m.poster = s.src; m.src = s.video;
     } else {
-      m = document.createElement("img"); m.alt = ""; m.src = s.src; m.decoding = i ? "async" : "sync"; if (!i) m.fetchPriority = "high";
-      if (i) m.loading = "lazy";
+      m = document.createElement("img"); m.alt = "";
+      if (!i) { m.fetchPriority = "high"; m.decoding = "sync"; m.src = s.src; } // preloaded from <head>
+      else { m.decoding = "async"; later.push([m, s.src]); } // not on screen for ~9 s: load once the page is done
     }
     d.appendChild(m); wrap.appendChild(d);
   });
   hero.insertBefore(wrap, hero.querySelector(".background-overlay") || null);
+  var started = false, first = wrap.querySelector("img");
+  function loadRest() { if (started) return; started = true; later.forEach(function (p) { p[0].src = p[1]; }); }
+  function afterFirst() { // never compete with the opening shot (the LCP image) for bandwidth
+    if (document.readyState === "complete") loadRest();
+    else { window.addEventListener("load", loadRest); setTimeout(loadRest, 2500); } // whichever comes first
+  }
+  if (!first || first.complete) afterFirst();
+  else { first.addEventListener("load", afterFirst); first.addEventListener("error", afterFirst); }
 
   /* Overlay colour variants, preview page only: ?overlay=live|warm|red|green|black, plus a small switcher.
      The live overlay itself is in site.css (.mr-hero .background-overlay). */

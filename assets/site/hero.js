@@ -10,26 +10,32 @@
     { year: "2026" },
   ];
 
-  var wrap = document.createElement("div");
-  wrap.className = "mr-badges";
-  wrap.setAttribute("aria-label", "The State's Best roofer, winner 2025 and 2026");
-  BADGES.forEach(function (b, i) {
-    var el = document.createElement("div");
-    el.className = "mr-badge mr-badge--" + (i ? "right" : "left");
-    el.innerHTML = '<img src="/assets/site/badges/the-states-best-' + b.year + '.png" alt="The State\u2019s Best ' + b.year + ' Winner" width="144" height="142">';
-    wrap.appendChild(el);
-  });
-  var eyebrow = document.createElement("div");
-  eyebrow.className = "mr-eyebrow";
-  eyebrow.hidden = true; // no hero eyebrow text; kept as the anchor the narrow-screen badges sit above
-
-  var row = h1.closest(".widget-row") || h1.parentNode;
-  row.parentNode.insertBefore(eyebrow, row);
+  // The home page ships this markup in its HTML (tools/build_pages.py, HERO_BADGES) so nothing moves when
+  // the page loads; building it here is only the fallback for pages that don't (the motion preview).
+  var wrap = hero.querySelector(".mr-badges"), eyebrow = hero.querySelector(".mr-eyebrow");
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.className = "mr-badges";
+    wrap.setAttribute("aria-label", "The State's Best roofer, winner 2025 and 2026");
+    BADGES.forEach(function (b, i) {
+      var el = document.createElement("div");
+      el.className = "mr-badge mr-badge--" + (i ? "right" : "left");
+      el.innerHTML = '<img src="/assets/site/badges/the-states-best-' + b.year + '.webp" alt="The State\u2019s Best ' + b.year + ' Winner" width="144" height="142">';
+      wrap.appendChild(el);
+    });
+  }
+  if (!eyebrow) {
+    eyebrow = document.createElement("div");
+    eyebrow.className = "mr-eyebrow";
+    eyebrow.hidden = true; // no hero eyebrow text; kept as the anchor the narrow-screen badges sit above
+    var row = h1.closest(".widget-row") || h1.parentNode;
+    row.parentNode.insertBefore(eyebrow, row);
+  }
   // wide: badges flank the headline (absolute in the hero content); narrow: in flow above the eyebrow
   var gc = hero.querySelector(".grid-content") || hero, mq = window.matchMedia("(min-width: 1100px)");
   function place() {
-    if (mq.matches) gc.appendChild(wrap);
-    else eyebrow.parentNode.insertBefore(wrap, eyebrow);
+    if (mq.matches) { if (wrap.parentNode !== gc) gc.appendChild(wrap); }
+    else if (wrap.nextSibling !== eyebrow) eyebrow.parentNode.insertBefore(wrap, eyebrow);
   }
   place();
   mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place);

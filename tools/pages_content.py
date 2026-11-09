@@ -43,6 +43,49 @@ def img(key, cls="pic", alt=None):
     return f'<img class="{cls}" src="{p["src"]}" alt="{alt or p["alt"]}" loading="lazy">'
 
 
+def img_size(path):
+    """(w, h) of a PNG, JPEG, WebP or SVG without Pillow (the build runs on plain python3)."""
+    import struct
+    b = open(path, "rb").read(65536)
+    if b[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", b[16:24])
+    if b[:4] == b"RIFF" and b[8:12] == b"WEBP":
+        c = b[12:16]
+        if c == b"VP8X":
+            return (int.from_bytes(b[24:27], "little") + 1, int.from_bytes(b[27:30], "little") + 1)
+        if c == b"VP8L":
+            v = int.from_bytes(b[21:25], "little")
+            return ((v & 0x3FFF) + 1, ((v >> 14) & 0x3FFF) + 1)
+        if c == b"VP8 ":
+            w, h = struct.unpack("<HH", b[26:30])
+            return (w & 0x3FFF, h & 0x3FFF)
+    if b[:2] == b"\xff\xd8":
+        i = 2
+        while i < len(b) - 9:
+            if b[i] != 0xFF:
+                i += 1
+                continue
+            m = b[i + 1]
+            if m in (0xC0, 0xC1, 0xC2):
+                h, w = struct.unpack(">HH", b[i + 5:i + 9])
+                return (w, h)
+            i += 2 + struct.unpack(">H", b[i + 2:i + 4])[0]
+    m = re.search(rb'<svg[^>]*?\bwidth="([\d.]+)"[^>]*?\bheight="([\d.]+)"', b)
+    if m:
+        return (round(float(m.group(1))), round(float(m.group(2))))
+    return None
+
+
+def card_img(key):
+    """Router-card photo: the 1100px copy from tools/perf.py when it exists (cards are <= ~520 CSS px)."""
+    src = PHOTOS[key]["src"]
+    card = os.path.splitext(src)[0] + "-card.webp"
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if os.path.exists(os.path.join(root, card.lstrip("/"))):
+        src = card
+    return f'<img class="" src="{src}" alt="" loading="lazy">'
+
+
 def ba(before, after):
     return (f'<div class="ba"><figure>{img(before, "")}<figcaption>Before</figcaption></figure>'
             f'<figure>{img(after, "")}<figcaption>After</figcaption></figure></div>')
@@ -714,7 +757,7 @@ JOBS = [
 
 def home_jobs():
     cards_html = "".join(
-        f'<a class="mr-job" href="{j["href"]}"><span class="mr-job-pic">{img(j["img"], "", alt="")}</span>'
+        f'<a class="mr-job" href="{j["href"]}"><span class="mr-job-pic">{card_img(j["img"])}</span>'
         f'<span class="mr-job-body"><span class="eyebrow">{j["who"]}</span><h3>{j["h"]}</h3>'
         f'<ul class="ticks">{"".join(f"<li>{i}</li>" for i in j["items"])}</ul>'
         f'<span class="theme-button hvr-grow-shadow mr-btn-pri mr-job-btn">{j["btn"].upper()}</span></span></a>'
@@ -729,14 +772,19 @@ def home_logos():
     logos = json.load(open(os.path.join(os.path.dirname(__file__), "logos.json"), encoding="utf-8"))
     import hashlib
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    for l in logos:  # cache-bust local files so a fixed logo shows up right away
+    for l in logos:  # small copy (tools/perf.py) when there is one; cache-bust so a fixed logo shows up right away
+        small = os.path.splitext(l["src"])[0] + ".logo.webp"
+        if os.path.exists(os.path.join(root, small.lstrip("/"))):
+            l["src"] = small
         f = os.path.join(root, l["src"].lstrip("/"))
         if os.path.exists(f):
+            wh = img_size(f)
+            l["wh"] = f' width="{wh[0]}" height="{wh[1]}"' if wh else ""  # aspect ratio only (CSS sets the size): no shift on load
             l["src"] += "?v=" + hashlib.md5(open(f, "rb").read()).hexdigest()[:8]
-    one = "".join(f'<li><img src="{l["src"]}" alt="{l["alt"]}"></li>' for l in logos)
+    one = "".join(f'<li><img src="{l["src"]}" alt="{l["alt"]}"{l.get("wh", "")}></li>' for l in logos)
     reps = max(1, -(-12 // len(logos)))          # fill at least ~12 slots so one set is wider than the screen
     track = one * reps
-    hidden = "".join(f'<li aria-hidden="true"><img src="{l["src"]}" alt=""></li>' for l in logos) * reps  # loop copy
+    hidden = "".join(f'<li aria-hidden="true"><img src="{l["src"]}" alt=""{l.get("wh", "")}></li>' for l in logos) * reps  # loop copy
     secs = len(logos) * reps * 6                 # ~6s per logo
     return (f'<section class="mr-logos" aria-label="Certifications, memberships and community partners">'
             f'<div class="mr-logos-viewport"><ul class="mr-logos-track" style="--dur:{secs}s">{track}{hidden}</ul></div></section>')

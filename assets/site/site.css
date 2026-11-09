@@ -13,7 +13,11 @@
 
 /* Mobile/tablet: the logo header overlays the first section; push that section's content below it.
    --mr-header-h is measured by site.js (0 when the overlay header isn't showing). */
-.mr-hero > .grid-content { padding-top: var(--mr-header-h, 0px); }
+.mr-hero > .grid-content { padding-top: var(--mr-header-h, var(--mr-header-h0)); }
+/* first-paint value of the same measurement, so the hero doesn't drop ~100px when site.js runs */
+:root { --mr-header-h0: 0px; }
+@media (max-width: 1024px) { :root { --mr-header-h0: 110px; } }
+@media (max-width: 480px) { :root { --mr-header-h0: 102.5px; } }
 
 /* Footer map is sized as a % of width, which leaves a ~70px sliver on phones. */
 @media (max-width: 1024px) {
